@@ -1,0 +1,6 @@
+devices:
+  default:
+    host: 192.168.0.15:5555
+  ShortFire:
+#  default:
+    host: 192.168.0.16:5555

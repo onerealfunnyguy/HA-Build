@@ -1,0 +1,14 @@
+AppDaemon:
+  logfile: STDOUT
+  errorfile: STDERR
+  threads: 10
+HASS:
+  ha_url: http://hive:8123
+  ha_key:
+HADashboard:
+  dash_url: http://hive:5050
+# Apps
+hello_world:
+  module: hello
+  class: HelloWorld
+

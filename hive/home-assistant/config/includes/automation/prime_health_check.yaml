@@ -1,0 +1,23 @@
+alias: Check Prime and Notify
+trigger:
+  platform: state
+  entity_id:
+    - sensor.prime_cpu_load
+    - sensor.prime_disk_use
+    - sensor.prime_ram_use
+condition:
+  - condition: or
+    conditions:
+      - condition: numeric_state
+        entity_id: sensor.prime_cpu_load
+        above: 59.9
+      - condition: numeric_state
+        entity_id: sensor.prime_disk_use
+        above: 59.9
+      - condition: numeric_state
+        entity_id: sensor.prime_ram_use
+        above: 59.9
+action:
+- service: notify.prime_slack
+  data_template:
+    message: "{{ trigger.to_state.attributes.friendly_name }} is now {{ trigger.to_state.state }}%"

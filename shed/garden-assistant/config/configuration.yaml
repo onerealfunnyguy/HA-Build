@@ -1,0 +1,99 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Garden-Assistant
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret latitude
+  longitude: !secret longitude
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 138
+  # metric for Metric, imperial for Imperial
+  unit_system: imperial
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: America/Los_Angeles
+      ############
+   # CUSTOMIZATIONS #
+      ############
+  customize: !include customizations/custom.yaml
+# Show links to resources in log and frontend
+#introduction:
+
+# Enables the frontend
+frontend:
+
+http:
+  # Uncomment this to add a password (recommended!)
+  # api_password: PASSWORD
+  # Uncomment this if you are using SSL or running in Docker etc
+  # base_url: example.duckdns.org:8123
+
+# Checks for available updates
+updater:
+
+# Discover some devices automatically
+#discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time.
+history:
+
+# View all events in a logbook
+logbook:
+
+recorder:
+  purge_days: 90
+  db_url: !secret db_host
+
+# Track the sun
+sun:
+
+# Text to speech
+tts:
+  platform: google
+
+ifttt:
+  key: !secret ifttt_key
+
+
+############
+# INCLUDES #
+############
+#
+group: !include includes/groups.yaml
+#light: !include includes/light.yaml
+#camera: !include includes/cameras.yaml
+android_ip_webcam: !include includes/android_ip_webcam.yaml
+#media_player: !include includes/media_player.yaml
+sensor: !include includes/sensor.yaml
+#switch: !include includes/switch.yaml
+#weblink: !include includes/weblinks.yaml
+#zone: !include includes/zones.yaml
+plant: !include includes/plant.yaml
+mqtt: !include includes/mqtt.yaml
+wemo: !include includes/wemo.yaml
+#automation: !include_dir_list automation
+automation: !include automations.yaml
+config:
+#
+#zoneminder: !include includes/zoneminder.yaml
+#device_tracker: !include includes/device_tracker.yaml
+# Amazon Echo Vhue
+#emulated_hue:
+
+#zabbix:
+#  host: !secret zabbix_host
+#  ssl: False
+#  path: /
+#  username: ha
+#  password: !secret zabbix_pass
+
+mqtt_eventstream:
+  publish_topic: slave/shed-stream
+
+## Add influxdb
+influxdb:
+  host: hive
+  database: garden_assistant
+  username: !secret influxuser
+  password: !secret influxpass

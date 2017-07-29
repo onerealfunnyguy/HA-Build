@@ -1,0 +1,29 @@
+#- platform: mjpeg
+#  mjpeg_url: http://192.168.0.113:8080/video
+#  name: Front Door
+
+#- platform: mjpeg
+#  mjpeg_url: http://192.168.0.112:8080/video
+#  name: Mister Bill
+
+#- platform: mjpeg
+#  mjpeg_url: http://192.168.0.111:8080/video
+#  name: Sk8board
+
+#- platform: mjpeg
+#  mjpeg_url: http://192.168.0.110:8080/video
+#  name: Back Yard
+
+#- platform: zoneminder
+
+#- platform: generic
+#  still_image_url: http://192.168.0.109:80/snapshot.jpg
+#  username: admin
+#  password: !secret cat_still_pass
+#  name: Yard Cam
+- platform: generic
+  still_image_url: http://images.intellicast.com/WxImages/RadarSummary/bfl.gif
+  name: Regional Summary
+- platform: generic
+  still_image_url: https://maps.googleapis.com/maps/api/staticmap?center=Oceanside&zoom=13&scale=1&size=600x300&maptype=roadmap&format=png&visual_refresh=true
+  name: Oceanside

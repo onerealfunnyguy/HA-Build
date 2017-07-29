@@ -1,0 +1,134 @@
+  entities:
+### Services on Hive ###
+    - name: Hive WebMin
+      url: https://hive:10000
+    - name: Hive CockPit
+      url: https://hive:9090
+    - name: Hive HASS
+      url: http://hive:8123
+    - name: Hive Appdaemon
+      url: http://hive:5050
+    - name: Hive Zabbix
+      url: http://hive:8080
+    - name: Hive Grafana
+      url: http://hive:3000
+    - name: Hive ZoneMinder
+      url: http://hive/zm
+    - name: Hive Transmission
+      url: http://hive:9091/transmission/web/
+    - name: Hive Plex
+      url: http://hive:32400
+  ### Services on shed  ###
+    - name: Shed WebMin
+      url: https://shed:10000
+    - name: Shed CockPit
+      url: https://shed:9090
+    - name: Shed HASS
+      url: http://shed:8123
+    - name: Shed Unifi
+      url: https://unifi:8443
+  ### Remote  Server Management ###
+    - name: gate
+      url: https://gate
+    - name: core-switch
+      url: http://core-switch
+    - name: nas
+      url: http://nas
+    - name: help
+      url: https://help.davedaley.com:10000/
+    - name: ovh
+      url: https://ovh.davedaley.com:10000
+    - name: pepper
+      url: https://pepper.davedaley.com:10000
+    - name: prime.optincall.com
+      url: https://prime.optincall.com:10000
+  ### Owned Sites ###
+  ### ShortBus Personal ###
+    - name: davedaley.com
+      url: https://davedaley.com
+    - name: onerealfunnyguy.com
+      url: https://onerealfunnyguy.com
+    - name: litterbox.co
+      url: https://litterbox.co
+    - name: youtube channel
+      url: https://www.youtube.com/onerealfunnyguy
+  ### Project Breaded Steak ###
+    - name: daleydogs.com
+      url: https://daleydogs.com
+  ### IT Services Project ###
+    - name: cdrblk.com
+      url: https://cdrblk.com
+  ### Project 215 ###
+    - name: chronictrackers.com
+      url: https://chronictrackers.com
+    - name: cart.chronictrackers.com
+      url: https://cart.chronictrackers.com
+    - name: cannablisscream.com
+      url: https://cannablisscream.com
+    - name: bakedwithbuddies.com
+      url: https://bakedwithbuddies.com
+    - name: dabnap.com
+      url: https://dabnap.com
+    - name: caviardabs.com
+      url: https://caviardabs.com
+    - name: cannablisskitchen.com
+      url: https://cannablisskitchen.com
+  ### Project Goldfish ###
+    - name: froggyfarms.com
+      url: https://froggyfarms.com
+  ### boys sites ###
+    - name: b-e-h.co
+      url: https://b-e-h.co
+    - name: joeydaley.com
+      url: https://joeydaley.com
+    - name: flashhunt.com
+      url: https://flashhunt.com
+  ### hosted sites ###
+  ### LeClaire ###
+    - name: armbarassassin.com
+      url: https://armbarassassin.com
+    - name: simplyeffectsmakeup.com
+      url: https://simplyeffectsmakeup.com
+  #### Stallings ###
+    - name: reliable-cable.com
+      url: https://reliable-cable.com
+  #### kirsten@kvonkruse.com ###
+    - name: auntiekskitchen.com
+      url: https://auntiekskitchen.com
+  ### Wayne ###
+    - name: pinheadztradingpost.com
+      url: https://pinheadztradingpost.com
+  ### brian@cannadiamond.com ###
+    - name: cannadiamond.com
+      url: https://cannadiamond.com
+  ### optincall.com ###
+    - name: blog.optincall.com
+      url: https://blog.optincall.com
+  ### Katrina ###
+    - name: concernedinkanab.com
+      url: https://concernedinkanab.com
+  ### Tech in build ###
+    - name: debian
+      url: https://www.debian.org
+    - name: docker-debian
+      url: https://www.docker.com/docker-debian
+    - name: home-assistant
+      url: https://home-assistant.io
+    - name: appdaemon
+      url: https://github.com/home-assistant/appdaemon
+    - name: python-firetv
+      url: https://github.com/happyleavesaoc/python-firetv
+    - name: zoneminder.com
+      url: https://www.zoneminder.com
+    - name: hub.docker.com/_/mariadb/
+      url: https://hub.docker.com/_/mariadb/
+    - name: hub.docker.com/_/eclipse-mosquitto/
+      url: https://hub.docker.com/_/eclipse-mosquitto/
+    - name: plex
+      url: https://github.com/plexinc/pms-docker
+    - name: zabbix
+      url: https://www.zabbix.org/wiki/Dockerized_Zabbix
+    - name: transmission
+      url: https://hub.docker.com/r/linuxserver/transmission/
+    - name: uifi
+      url: https://hub.docker.com/r/linuxserver/unifi/

@@ -1,0 +1,21 @@
+# Example configuration.yaml entry
+#scene:
+#  - name: Romantic
+#    entities:
+#      light.tv_back_light: on
+#      light.ceiling:
+#        state: on
+#        xy_color: [0.33, 0.66]
+#        brightness: 200
+#  - name: Movies
+##    entities:
+ #     light.tv_back_light:
+ ##       state: on
+  #      brightness: 100
+  #    light.ceiling: off
+  #    media_player.sony_bravia_tv:
+  #      source: HDMI 1
+    - name: imup
+      entities:
+        switch.coffee : on
+        switch.upstar: on

@@ -1,0 +1,47 @@
+- action:
+  - data:
+      entity_id: switch.sleep
+    service: switch.turn_on
+  - data:
+      entity_id: switch.sleep
+    service: switch.turn_on
+  - data:
+      entity_id: switch.sleep
+    service: switch.turn_on
+  - data:
+      entity_id: switch.sleep
+    service: switch.turn_on
+  alias: bedtime-upstar
+  id: '1495487475130'
+  trigger:
+  - entity_id: switch.lamp
+    from: 'on'
+    platform: state
+    to: 'off'
+- action:
+  - data:
+      entity_id: light.front_door_light
+    service: light.turn_on
+  alias: sundown_door_light_on
+  id: '1497993642533'
+  trigger:
+  - entity_id: sun.sun
+    from: above_horizon
+    platform: state
+    to: below_horizon
+- action:
+  - alias: ''
+    data:
+      entity_id: light.front_door_light
+    service: light.turn_off
+  alias: sunrise_door_light_off
+  id: '1497993956856'
+  trigger:
+  - entity_id: sun.sun
+    from: below_horizon
+    platform: state
+    to: above_horzion
+- action: []
+  alias: blank
+  id: '1497997521427'
+  trigger: []

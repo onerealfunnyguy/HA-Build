@@ -1,0 +1,5 @@
+devices:
+  ShortFire:
+    host: shortfire:5555
+  default:
+    host: shortstick:5555

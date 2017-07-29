@@ -1,0 +1,6 @@
+  #- platform: owntracks
+#    max_gps_accuracy: 200
+#    waypoints: True
+#    waypoint_whitelist:
+  - platform: nmap_tracker
+    hosts: 192.168.0.1/24

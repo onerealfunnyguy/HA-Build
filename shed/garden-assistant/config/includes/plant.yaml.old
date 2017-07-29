@@ -1,0 +1,38 @@
+# Example configuration.yaml entry
+#plant:
+  TilapiaTank:
+    sensors:
+      moisture: sensor.tilapia_tank_moisture_2
+      battery: sensor.tilapia_tank_battery
+      temperature: sensor.tilapia_tank_temperature
+      conductivity: sensor.tilapia_tank_conductivity
+      brightness: sensor.tilapia_tank_light_intensity
+    min_moisture: 0
+    max_moisture: 4
+    min_battery: 17
+    min_conductivity: 0
+    min_temperature: 15
+  CatNip1:
+    sensors:
+      moisture: sensor.catnip_1_moisture
+      battery: sensor.catnip_1_battery
+      temperature: sensor.catnip_1_temperature
+      conductivity: sensor.catnip_1_conductivity
+      brightness: sensor.catnip_1_light_intensity
+    min_moisture: 0
+    max_moisture: 4
+    min_battery: 17
+    min_conductivity: 0
+    min_temperature: 15
+  CatNip2:
+    sensors:
+      moisture: sensor.catnip_2_moisture
+      battery: sensor.catnip_2_battery
+      temperature: sensor.catnip_2_temperature
+      conductivity: sensor.catnip_2_conductivity
+      brightness: sensor.catnip_2_light_intensity
+    min_moisture: 0
+    max_moisture: 4
+    min_battery: 17
+    min_conductivity: 0
+    min_temperature: 15

@@ -1,0 +1,27 @@
+servers:
+  entities:
+  - group.speed_test
+  - group.activesites
+  - group.hive
+  - group.pepper
+  - group.help
+  - group.prime
+  name: Servers
+  view: true
+buscave:
+  entities:
+  - camera.cat_cam
+  - group.cave_control
+  - group.mediaplayers
+  - group.server_load
+  - group.climate
+  - group.misc
+  - device_tracker.rcivdbwd_shortt2
+  - device_tracker.shortt2_shortt2
+  - sensor.breaches_davedavedaleycom
+  - sensor.breaches_davedaleydogscom
+  - sensor.breaches_onerealfunnyguygmailcom
+  - binary_sensor.front_door_motion_active
+  - binary_sensor.cat_cam_motion_active
+  name: Bus Cave
+  view: true

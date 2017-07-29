@@ -1,0 +1,679 @@
+### Views ###
+  BusCave:
+      view: yes
+      name: Bus Cave
+      entities:
+        - group.mediaplayers
+        - group.cave_control
+        - group.transmission
+        - camera.cat_cam
+        - device_tracker.rcivdbwd_shortt2
+        - device_tracker.shortt2_shortt2
+        - sensor.breaches_davedavedaleycom
+        - sensor.breaches_davedaleydogscom
+        - sensor.breaches_onerealfunnyguygmailcom
+        - binary_sensor.front_door_motion_active
+        - binary_sensor.cat_cam_motion_active
+  FrontRoom:
+      view: yes
+      name: Living Room
+      entities:
+        - camera.front_door
+        - light.fireplace
+        - light.front_door_light
+        - light.dinning_room_light
+  Kitchen:
+      view: yes
+      name: Kitchen
+      entities:
+        - switch.coffee
+        - light.dinning_room_light
+  Cameras:
+      view: yes
+      name: Cameras
+      entities:
+        - group.droidvideo
+        - group.cam_control
+        - group.cam_sensors
+        - weblink.hive_zoneminder
+  Servers:
+      view: yes
+      name: Servers
+      entities:
+        - sensor.zabbix
+        - group.speed_test
+        - group.httpsx
+        - group.local_server_load
+        - group.remote_server_load
+  SiteLinks:
+      view: yes
+      name: Site Links
+      entities:
+        - group.servermanagement
+        - group.hiveservices
+        - group.shedservices
+        - group.lanmanagement
+        - group.shortsites
+        - group.projectsites
+        - group.boyssites
+        - group.hostedsites
+        - group.system_base
+  GardenWatch:
+      view: yes
+      name: Garden Watch
+      entities:
+        - group.all_plants
+        - group.climate
+        - group.catnip1
+        - group.catnip2
+        - group.toptable
+        - group.centertable
+        - group.bottomtable
+        - group.passion_fruit
+        - group.rosemary
+        - group.tomato_pot
+        - group.tilapia_tank
+        - group.koipond
+        - camera.tilapia_cam
+        - camera.koi_cam
+        - camera.regional_summary
+  TreeWatch:
+      view: yes
+      name: Tree Watch
+      entities:
+        - camera.regional_summary
+        - group.all_plants
+        - group.tree1
+        - group.tree2
+        - group.tree3
+        - group.tree4
+        - group.tree5
+### Groups ###
+  Cave_Control:
+    name: Cave Control
+    entities:
+    - switch.lamp
+    - group.cornerlamp
+    - light.bedroom_door
+    - light.table
+    - switch.frog
+    - switch.plasma
+    - switch.upstar
+    - switch.emerson
+    - switch.plex
+    - light.bathroom
+    - light.closet
+    - switch.fan_power
+    - switch.sleep
+  cornerlamp:
+    name: Corner Lamp
+    entities:
+    - light.top
+    - light.center
+    - light.bottom
+  hive:
+    entities:
+    - sensor.hive_cpu_load
+    - sensor.hive_disk_free
+    - sensor.hive_disk_use
+    - sensor.hive_disk_use_2
+    - sensor.hive_ram_free
+    - sensor.hive_ram_use
+    - sensor.hive_ram_use_2
+    - sensor.hive_running
+    - sensor.hive_sleeping
+    - sensor.hive_swap_free
+    - sensor.hive_swap_use
+    - sensor.hive_swap_use_2
+    - sensor.hive_thread
+    - sensor.hive_total
+  shed:
+    entities:
+    - sensor.shed_cpu_load
+    - sensor.shed_disk_free
+    - sensor.shed_disk_use
+    - sensor.shed_disk_use_2
+    - sensor.shed_ram_free
+    - sensor.shed_ram_use
+    - sensor.shed_ram_use_2
+    - sensor.shed_running
+    - sensor.shed_sleeping
+    - sensor.shed_swap_free
+    - sensor.shed_swap_use
+    - sensor.shed_swap_use_2
+    - sensor.shed_thread
+    - sensor.shed_total
+  pepper:
+    entities:
+    - sensor.pepper_cpu_load
+    - sensor.pepper_disk_free
+    - sensor.pepper_disk_use
+    - sensor.pepper_disk_use_2
+    - sensor.pepper_ram_free
+    - sensor.pepper_ram_use
+    - sensor.pepper_ram_use_2
+    - sensor.pepper_running
+    - sensor.pepper_sleeping
+    - sensor.pepper_swap_free
+    - sensor.pepper_swap_use
+    - sensor.pepper_swap_use_2
+    - sensor.pepper_thread
+    - sensor.pepper_total
+  help:
+    entities:
+    - sensor.help_cpu_load
+    - sensor.help_ram_free
+    - sensor.help_ram_use
+    - sensor.help_ram_use_2
+    - sensor.help_running
+    - sensor.help_sleeping
+    - sensor.help_swap_free
+    - sensor.help_swap_use
+    - sensor.help_swap_use_2
+    - sensor.help_thread
+    - sensor.help_total
+  ovh:
+    entities:
+    - sensor.ovh_cpu_load
+    - sensor.ovh_disk_free
+    - sensor.ovh_disk_use
+    - sensor.ovh_disk_use_2
+    - sensor.ovh_ram_free
+    - sensor.ovh_ram_use
+    - sensor.ovh_ram_use_2
+    - sensor.ovh_running
+    - sensor.ovh_sleeping
+    - sensor.ovh_swap_free
+    - sensor.ovh_swap_use
+    - sensor.ovh_swap_use_2
+    - sensor.ovh_thread
+    - sensor.ovh_total
+  prime:
+    entities:
+    - sensor.prime_cpu_load
+    - sensor.prime_disk_free
+    - sensor.prime_disk_use
+    - sensor.prime_disk_use_2
+    - sensor.prime_ram_free
+    - sensor.prime_ram_use
+    - sensor.prime_ram_use_2
+    - sensor.prime_running
+    - sensor.prime_sleeping
+    - sensor.prime_swap_free
+    - sensor.prime_swap_use
+    - sensor.prime_swap_use_2
+    - sensor.prime_thread
+    - sensor.prime_total
+  Cam Sensors:
+    entities:
+    - binary_sensor.front_door_motion_active
+    - binary_sensor.cat_cam_motion_active
+    - binary_sensor.cat_cam_motion_active
+    - sensor.front_door_events
+    - sensor.front_door_motion
+    - sensor.front_door_motion_2
+    - sensor.front_door_status
+    - sensor.cat_cam_audio_connections
+    - sensor.cat_cam_battery_level
+    - sensor.cat_cam_battery_temperature
+    - sensor.cat_cam_battery_voltage
+    - sensor.cat_cam_pressure
+    - sensor.cat_cam_events
+    - sensor.cat_cam_light_level
+    - sensor.cat_cam_motion
+    - sensor.cat_cam_proximity
+    - sensor.cat_cam_status
+    - sensor.cat_cam_video_connections
+    - sensor.front_door_audio_connections
+    - sensor.front_door_battery_level
+    - sensor.front_door_battery_temperature
+    - sensor.front_door_battery_voltage
+    - sensor.front_door_light_level
+    - sensor.front_door_proximity
+    - sensor.front_door_pressure
+    - sensor.front_door_video_connections
+    - sensor.yard_cam_events
+    - sensor.yard_cam_status
+    - sensor.tilapia_cam_audio_connections
+    - sensor.tilapia_cam_video_connections
+    - sensor.tilapiatank_events
+    - sensor.tilapiatank_status
+    - sensor.tilapia_tank_audio_connections
+    - sensor.tilapia_tank_video_connections
+    - sensor.koi_cam_audio_connections
+    - sensor.koi_cam_video_connections
+    - sensor.koi_cam_battery_level
+    - sensor.koi_cam_battery_temperature
+    - sensor.koi_cam_events
+    - sensor.koi_cam_light_level
+    - sensor.koi_cam_motion
+    - sensor.koi_cam_pressure
+    - sensor.koi_cam_status
+    - sensor.koi_cam_video_connections
+    - sensor.tilaipa_cam_state
+    - sensor.tilapia_cam_audio_connections
+    - sensor.tilapia_cam_battery_level
+    - sensor.tilapia_cam_battery_temperature
+    - sensor.tilapia_cam_events
+    - sensor.tilapia_cam_light_level
+    - sensor.tilapia_cam_motion
+    - sensor.tilapia_cam_pressure
+    - sensor.tilapia_cam_status
+    - sensor.tilapia_cam_video_connections
+
+  Cam Control:
+    entities:
+    - switch.cat_cam_state
+    - switch.cat_cam_exposure_lock
+    - switch.cat_cam_focus
+    - switch.cat_cam_frontfacing_camera
+    - switch.cat_cam_gps_active
+    - switch.cat_cam_night_vision
+    - switch.cat_cam_overlay
+    - switch.cat_cam_torch
+    - switch.cat_cam_video_recording
+    - switch.cat_cam_white_balance_lock
+    - switch.front_door_state
+    - switch.front_door_exposure_lock
+    - switch.front_door_focus
+    - switch.front_door_frontfacing_camera
+    - switch.front_door_gps_active
+    - switch.front_door_night_vision
+    - switch.front_door_overlay
+    - switch.front_door_torch
+    - switch.front_door_video_recording
+    - switch.front_door_white_balance_lock
+    - switch.koi_cam_state
+    - switch.koi_cam_exposure_lock
+    - switch.koi_cam_night_vision
+    - switch.koi_cam_overlay
+    - switch.koi_cam_torch
+    - switch.tilapia_cam_state
+    - switch.tilapia_cam_exposure_lock
+    - switch.tilapia_cam_night_vision
+    - switch.tilapia_cam_overlay
+    - switch.tilapia_cam_torch
+
+  MediaPlayers:
+    name: Media Players
+    entities:
+    - media_player.fire_tv
+    - media_player.shortfire
+    - media_player.shortstick
+    - media_player.bus_cast
+    - media_player.kodi
+  DroidVideo:
+    name: Video Cams
+    entities:
+    - camera.front_door
+    - camera.cat_cam
+    - camera.tilapia_cam
+    - camera.koi_cam
+  speed_test:
+    name: Speed Test
+    entities:
+    - sensor.speedtest_download
+    - sensor.speedtest_upload
+    - sensor.speedtest_ping
+    - group.network
+  local_server_load:
+    name: Local Server Load
+    entities:
+    - group.hive
+    - group.shed
+  remote_server_load:
+    name: Remote Server Load
+    entities:
+    - group.pepper
+    - group.help
+    - group.ovh
+    - group.prime
+  climate:
+    name: Climate
+    entities:
+    - sun.sun
+    - sensor.moon
+    - sensor.yweather_current
+    - sensor.yweather_humidity
+    - sensor.yweather_pressure
+    - sensor.yweather_temperature
+    - sensor.yweather_visibility
+    - sensor.yweather_wind_speed
+  Misc:
+    name: Misc
+    entities:
+    - sensor.broadlink_sensor_temperature
+    - sensor.ohmconnect_status
+  ### Services on Hive ###
+  hiveservices:
+    name: hive services
+    entities:
+    - weblink.hive_webmin
+    - weblink.hive_cockpit
+    - weblink.hive_hass
+    - weblink.hive_zoneminder
+    - weblink.hive_appdaemon
+    - weblink.hive_transmission
+    - weblink.hive_plex
+    - weblink.hive_zabbix
+    - weblink.hive_grafana
+  ### Services on shed  ###
+  shedservices:
+    name: shed services
+    entities:
+    - weblink.shed_cockpit
+    - weblink.shed_hass
+    - weblink.shed_unifi
+    - weblink.shed_webmin
+  ### LAN Management ###
+  lanmanagement:
+    name: LAN Management
+    entities:
+    - weblink.gate
+    - weblink.coreswitch
+    - weblink.nas
+  ### Remote  Server Management ###
+  servermanagement:
+    name: Remote Server Management
+    entities:
+    - weblink.help
+    - weblink.ovh
+    - weblink.pepper
+    - weblink.primeoptincallcom
+  ### Owned Sites ###
+  ### ShortBus Personal ###
+  shortsites:
+    name: ShortBus Personal
+    entities:
+    - weblink.davedaleycom
+    - weblink.onerealfunnyguycom
+    - weblink.youtube_channel
+    - weblink.litterboxco
+  ### Project Sites ###
+  projectsites:
+    name: Project Sites
+    entities:
+    - weblink.litterboxco
+  ### Project Breaded Steak ###
+    - weblink.daleydogscom
+  ### Project Goldfish ###
+    - weblink.froggyfarmscom
+  ### IT Services Project ###
+    - weblink.cdrblkcom
+    - weblink.litterboxco
+  ### Project 215 ###
+    - weblink.chronictrackerscom
+    - weblink.cartchronictrackerscom
+    - weblink.cannablisscreamcom
+    - weblink.bakedwithbuddiescom
+    - weblink.dabnapcom
+    - weblink.caviardabscom
+    - weblink.cannablisskitchencom
+  ### boys Personal ###
+  boyssites:
+    name: boys Personal
+    entities:
+    - weblink.behco
+    - weblink.joeydaleycom
+    - weblink.flashhuntcom
+  ### hosted sites ###
+  hostedsites:
+    name: hosted sites
+    entities:
+  ### LeClaire ###
+    - weblink.armbarassassincom
+    - weblink.simplyeffectsmakeupcom
+  #### Stallings ###
+    - weblink.reliablecablecom
+  #### kirsten@kvonkruse.com ###
+    - weblink.auntiekskitchencom
+  ### Wayne ###
+    - weblink.pinheadztradingpostcom
+  ### brian@cannadiamond.com ###
+    - weblink.cannadiamondcom
+  ### optincall.com ###
+    - weblink.blogoptincallcom
+  ### Katrina ###
+    - weblink.concernedinkanabcom
+  ### Tech in build ###
+  system_base:
+    name: system base
+    entities:
+    - weblink.debian
+    - weblink.dockerdebian
+    - weblink.homeassistant
+    - weblink.appdaemon
+    - weblink.hubdockercom_mariadb
+    - weblink.hubdockercom_eclipsemosquitto
+    - weblink.pythonfiretv
+    - weblink.plex
+    - weblink.transmission
+    - weblink.zabbix
+    - weblink.zonemindercom
+    - weblink.uifi
+# custom sensors to change home to online & away to offline
+  Network:
+    name:  Network
+    entities:
+    - sensor.airport_state
+    - sensor.boywin10_state
+    - sensor.busshow_state
+    - sensor.chromecaast_state
+    - sensor.coffee_state
+    - sensor.coreswitch_state
+    - sensor.digitalreflection_state
+    - sensor.echodcbano_state
+    - sensor.emote_state
+    - sensor.frogs_state
+    - sensor.hue_state
+    - sensor.kitchenecho_state
+    - sensor.lamp_state
+    - sensor.nas_state
+    - sensor.hive_state
+    - sensor.shed_state
+    - sensor.shorthdx_state
+    - sensor.shortmac_state
+    - sensor.shortstick_state
+    - sensor.shorttv_state
+    - sensor.tilaipa_cam_state
+    - sensor.vocore_state
+    - sensor.xbox_state
+# devices being tracked
+  DeviceTracker:
+    name:  DeviceTracker
+    entities:
+    - device_tracker.gate
+    - device_tracker.unifiap1
+    - device_tracker.airport
+    - device_tracker.boardcam
+    - device_tracker.chromecast
+    - device_tracker.plasmapower
+    - device_tracker.emote
+    - device_tracker.firestick
+    - device_tracker.firetv
+    - device_tracker.hue
+    - device_tracker.rcivdbwd_shortt2
+    - device_tracker.shorthdx
+    - device_tracker.shortmac
+    - device_tracker.shortt2_shortt2
+    - device_tracker.gardendot
+    - device_tracker.turbocam
+    - device_tracker.wemo_coffee
+    - device_tracker.wemo_frogs
+    - device_tracker.wemo_lamp
+    - device_tracker.wemo_plex
+    - device_tracker.alexa
+    - device_tracker.cat_cam
+    - device_tracker.coreswitch
+    - device_tracker.dan_tv
+    - device_tracker.joey_iphone
+    - device_tracker.kitchen_echo
+    - device_tracker.xbox
+    - device_tracker.wintube
+    - device_tracker.digital_reflection_monitor
+    - device_tracker.cat_cam_net
+    - device_tracker.vocore
+    - device_tracker.shed
+    - device_tracker.plex
+    - device_tracker.nas
+    - device_tracker.busshow
+    - device_tracker.boy_win10
+    - device_tracker.kmc1
+    - device_tracker.kmc2
+    - device_tracker.plantpump
+    - device_tracker.tilapiacam
+    - device_tracker.tilaipa_cam
+    - device_tracker.petcubecamera
+#### MiFlora Groups ####
+  catnip1:
+    name: CatNip 1
+    entities:
+    - sensor.catnip_1_battery
+    - sensor.catnip_1_conductivity
+    - sensor.catnip_1_light_intensity
+    - sensor.catnip_1_moisture
+    - sensor.catnip_1_temperature
+  catnip2:
+    name: CatNip 2
+    entities:
+    - sensor.catnip_2_battery
+    - sensor.catnip_2_conductivity
+    - sensor.catnip_2_light_intensity
+    - sensor.catnip_2_moisture
+    - sensor.catnip_2_temperature
+  toptable:
+    name: Top Table
+    entities:
+    - sensor.top_table_battery
+    - sensor.top_table_conductivity
+    - sensor.top_table_light_intensity
+    - sensor.top_table_moisture
+    - sensor.top_table_temperature
+  centertable:
+    name: Center Table
+    entities:
+    - sensor.center_table_battery
+    - sensor.center_table_conductivity
+    - sensor.center_table_light_intensity
+    - sensor.center_table_moisture
+    - sensor.center_table_temperature
+  bottomtable:
+    name: Bottom Table
+    entities:
+    - sensor.bottom_table_battery
+    - sensor.bottom_table_conductivity
+    - sensor.bottom_table_light_intensity
+    - sensor.bottom_table_moisture
+    - sensor.bottom_table_temperature
+  tilapia_tank:
+    name: Tilapia Tank
+    entities:
+    - sensor.tilapia_tank_battery
+    - sensor.tilapia_tank_conductivity
+    - sensor.tilapia_tank_light_intensity
+    - sensor.tilapia_tank_moisture
+    - sensor.tilapia_tank_temperature
+  koipond:
+    name: Koi Pond
+    entities:
+    - sensor.pond_battery
+    - sensor.pond_conductivity
+    - sensor.pond_light_intensity
+    - sensor.pond_moisture
+    - sensor.pond_temperature
+  rosemary:
+    name: Rosemary
+    entities:
+    - sensor.rosemary_battery
+    - sensor.rosemary_conductivity
+    - sensor.rosemary_light_intensity
+    - sensor.rosemary_moisture
+    - sensor.rosemary_temperature
+  passion_fruit:
+    name: Passion Fruit
+    entities:
+    - sensor.passion_fruit_battery
+    - sensor.passion_fruit_conductivity
+    - sensor.passion_fruit_light_intensity
+    - sensor.passion_fruit_moisture
+    - sensor.passion_fruit_temperature
+  tomato_pot:
+    name: Tomato Pot
+    entities:
+    - sensor.tomato_pot_battery
+    - sensor.tomato_pot_conductivity
+    - sensor.tomato_pot_light_intensity
+    - sensor.tomato_pot_moisture
+    - sensor.tomato_pot_temperature
+  tree1:
+    name: Tree 1
+    entities:
+    - sensor.tree_1_battery
+    - sensor.tree_1_conductivity
+    - sensor.tree_1_light_intensity
+    - sensor.tree_1_moisture
+    - sensor.tree_1_temperature
+  tree2:
+    name: Tree 2
+    entities:
+    - sensor.tree_2_battery
+    - sensor.tree_2_conductivity
+    - sensor.tree_2_light_intensity
+    - sensor.tree_2_moisture
+    - sensor.tree_2_temperature
+  tree3:
+    name: Tree 3
+    entities:
+    - sensor.tree_3_battery
+    - sensor.tree_3_conductivity
+    - sensor.tree_3_light_intensity
+    - sensor.tree_3_moisture
+    - sensor.tree_3_temperature
+  tree4:
+    name: Tree 4
+    entities:
+    - sensor.tree_4_battery
+    - sensor.tree_4_conductivity
+    - sensor.tree_4_light_intensity
+    - sensor.tree_4_moisture
+    - sensor.tree_4_temperature
+  tree5:
+    name: Tree 5
+    entities:
+    - sensor.tree_5_battery
+    - sensor.tree_5_conductivity
+    - sensor.tree_5_light_intensity
+    - sensor.tree_5_moisture
+    - sensor.tree_5_temperature
+### SSL Sensors ###
+  httpsx:
+    name: Cert. Expiration
+    entities:
+    - sensor.davedaleycom
+    - sensor.orfg
+    - sensor.froggyfarmscom
+    - sensor.litterboxco
+    - sensor.bakedwithbuddiescom
+    - sensor.cdrblkcom
+    - sensor.cartchronictrackerscom
+    - sensor.chronictrackerscom
+    - sensor.cannablisscreamcom
+    - sensor.dabnapcom
+    - sensor.behco
+    - sensor.flashhuntcom
+    - sensor.auntiekskitchencom
+    - sensor.pinheadztradingpostcom
+    - sensor.reliablecablecom
+    - sensor.armbarassassincom
+    - sensor.simplyeffectsmakeupcom
+    - sensor.concernedinkanabcom
+    - sensor.cannadiamondcom
+    - sensor.blogoptincallcom
+    - sensor.optincallcom
+ ### Transmission ###
+  transmission:
+    name: Transmission
+    entities:
+    - sensor.transmission_down_speed
+    - sensor.transmission_status
+    - sensor.transmission_up_speed

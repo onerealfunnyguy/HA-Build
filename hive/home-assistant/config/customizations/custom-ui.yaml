@@ -1,0 +1,141 @@
+#
+# Prolific use of custom-ui component
+# https://github.com/andrey-git/home-assistant-custom-ui
+#
+
+    "*.*":
+      custom_ui_state_card: custom-ui
+    group.hive:
+      state_card_mode: badges
+      badges_list:
+        - sensor.hive_cpu_load
+        - sensor.hive_disk_free
+        - sensor.hive_disk_use
+        - sensor.hive_disk_use_2
+        - sensor.hive_ram_free
+        - sensor.hive_ram_use
+        - sensor.hive_ram_use_2
+        - sensor.hive_running
+        - sensor.hive_sleeping
+        - sensor.hive_swap_free
+        - sensor.hive_swap_use
+        - sensor.hive_swap_use_2
+        - sensor.hive_thread
+        - sensor.hive_total
+    group.shed:
+      state_card_mode: badges
+      badges_list:
+        - sensor.shed_cpu_load
+        - sensor.shed_disk_free
+        - sensor.shed_disk_use
+        - sensor.shed_disk_use_2
+        - sensor.shed_ram_free
+        - sensor.shed_ram_use
+        - sensor.shed_ram_use_2
+        - sensor.shed_running
+        - sensor.shed_sleeping
+        - sensor.shed_swap_free
+        - sensor.shed_swap_use
+        - sensor.shed_swap_use_2
+        - sensor.shed_thread
+        - sensor.shed_total
+    group.pepper:
+      state_card_mode: badges
+      badges_list:
+        - sensor.pepper_cpu_load
+        - sensor.pepper_disk_free
+        - sensor.pepper_disk_use
+        - sensor.pepper_disk_use_2
+        - sensor.pepper_ram_free
+        - sensor.pepper_ram_use
+        - sensor.pepper_ram_use_2
+        - sensor.pepper_running
+        - sensor.pepper_sleeping
+        - sensor.pepper_swap_free
+        - sensor.pepper_swap_use
+        - sensor.pepper_swap_use_2
+        - sensor.pepper_thread
+        - sensor.pepper_total
+    group.help:
+      state_card_mode: badges
+      badges_list:
+        - sensor.help_cpu_load
+        - sensor.help_ram_free
+        - sensor.help_ram_use
+        - sensor.help_ram_use_2
+        - sensor.help_running
+        - sensor.help_sleeping
+        - sensor.help_swap_free
+        - sensor.help_swap_use
+        - sensor.help_swap_use_2
+        - sensor.help_thread
+        - sensor.help_total
+    group.ovh:
+      state_card_mode: badges
+      badges_list:
+        - sensor.ovh_cpu_load
+        - sensor.ovh_disk_free
+        - sensor.ovh_disk_use
+        - sensor.ovh_disk_use_2
+        - sensor.ovh_ram_free
+        - sensor.ovh_ram_use
+        - sensor.ovh_ram_use_2
+        - sensor.ovh_running
+        - sensor.ovh_sleeping
+        - sensor.ovh_swap_free
+        - sensor.ovh_swap_use
+        - sensor.ovh_swap_use_2
+        - sensor.ovh_thread
+        - sensor.ovh_total
+    group.prime:
+      state_card_mode: badges
+      badges_list:
+        - sensor.prime_cpu_load
+        - sensor.prime_disk_free
+        - sensor.prime_disk_use
+        - sensor.prime_disk_use_2
+        - sensor.prime_ram_free
+        - sensor.prime_ram_use
+        - sensor.prime_ram_use_2
+        - sensor.prime_running
+        - sensor.prime_sleeping
+        - sensor.prime_swap_free
+        - sensor.prime_swap_use
+        - sensor.prime_swap_use_2
+        - sensor.prime_thread
+        - sensor.prime_total
+    group.network:
+      state_card_mode: badges
+      badges_list:
+        - sensor.airport_state
+        - sensor.boywin10_state
+        - sensor.busshow_state
+        - sensor.chromecaast_state
+        - sensor.coffee_state
+        - sensor.coreswitch_state
+        - sensor.digitalreflection_state
+        - sensor.echodcbano_state
+        - sensor.emote_state
+        - sensor.frogs_state
+        - sensor.hue_state
+        - sensor.kitchenecho_state
+        - sensor.lamp_state
+        - sensor.nas_state
+        - sensor.hive_state
+        - sensor.shed_state
+        - sensor.shorthdx_state
+        - sensor.shortmac_state
+        - sensor.shortstick_state
+        - sensor.shorttv_state
+        - sensor.tilaipa_cam_state
+        - sensor.vocore_state
+        - sensor.xbox_state
+    light.*:
+      custom_ui_state_card: custom-ui
+      state_card_mode: single-line
+      hide_control: false
+      stretch_slider: true
+      slider_theme:
+        min: 0
+        max: 255
+        off_when_min: true

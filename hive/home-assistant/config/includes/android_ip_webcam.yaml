@@ -1,0 +1,53 @@
+## includes/android_ip_webcam.yaml
+- host: fdcam
+  name: Front Door
+  sensors:
+    - battery_level
+    - battery_temp
+    - light
+    - pressure
+    - motion
+  switches:
+    - exposure_lock
+    - night_vision
+    - overlay
+    - torch
+- host: catcam
+  name: Cat Cam
+  sensors:
+    - battery_level
+    - battery_temp
+    - light
+    - pressure
+    - motion
+  switches:
+    - exposure_lock
+    - night_vision
+    - overlay
+    - torch
+- host: koicam
+  name: Koi Cam
+  sensors:
+    - battery_level
+    - battery_temp
+    - light
+    - pressure
+    - motion
+  switches:
+    - exposure_lock
+    - night_vision
+    - overlay
+    - torch
+- host: TilapiaCam
+  name: Tilapia Cam
+  sensors:
+    - battery_level
+    - battery_temp
+    - light
+    - pressure
+    - motion
+  switches:
+    - exposure_lock
+    - night_vision
+    - overlay
+    - torch

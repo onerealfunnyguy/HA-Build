@@ -1,0 +1,14 @@
+  - platform: firetv
+    host: hive
+    name: ShortStick
+    device: default
+
+  - platform: firetv
+    host: hive
+    name: ShortFire
+    device: ShortFire
+
+  - platform: plex
+
+  - platform: kodi
+    host: 192.168.42.16
