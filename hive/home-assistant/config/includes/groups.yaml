@@ -206,62 +206,85 @@
     - sensor.prime_total
   Cam Sensors:
     entities:
+    - group.cam__events_and_status_sensors
+    - group.cam_battery_sensors
+    - group.cam_connection_sensors
+    - group.cam_light_and_proximity_sensors
+    - group.cam_motion_sensors
+    - group.cam_pressure_sensors
+  Cam Motion Sensors:
+    entities:
     - binary_sensor.front_door_motion_active
     - binary_sensor.cat_cam_motion_active
     - binary_sensor.cat_cam_motion_active
-    - sensor.front_door_events
     - sensor.front_door_motion
     - sensor.front_door_motion_2
-    - sensor.front_door_status
-    - sensor.cat_cam_audio_connections
+    - sensor.tilapia_cam_motion
+    - sensor.koi_cam_motion
+    - sensor.cat_cam_motion
+  Cam Battery Sensors:
+    entities:
     - sensor.cat_cam_battery_level
     - sensor.cat_cam_battery_temperature
     - sensor.cat_cam_battery_voltage
-    - sensor.cat_cam_pressure
-    - sensor.cat_cam_events
-    - sensor.cat_cam_light_level
-    - sensor.cat_cam_motion
-    - sensor.cat_cam_proximity
-    - sensor.cat_cam_status
-    - sensor.cat_cam_video_connections
-    - sensor.front_door_audio_connections
     - sensor.front_door_battery_level
     - sensor.front_door_battery_temperature
     - sensor.front_door_battery_voltage
-    - sensor.front_door_light_level
-    - sensor.front_door_proximity
-    - sensor.front_door_pressure
+    - sensor.koi_cam_battery_level
+    - sensor.koi_cam_battery_temperature
+    - sensor.tilapia_cam_battery_level
+    - sensor.tilapia_cam_battery_temperature
+  Cam Connection Sensors:
+    entities:
+    - sensor.cat_cam_audio_connections
+    - sensor.cat_cam_video_connections
+    - sensor.front_door_audio_connections
     - sensor.front_door_video_connections
-    - sensor.yard_cam_events
-    - sensor.yard_cam_status
     - sensor.tilapia_cam_audio_connections
     - sensor.tilapia_cam_video_connections
-    - sensor.tilapiatank_events
-    - sensor.tilapiatank_status
     - sensor.tilapia_tank_audio_connections
     - sensor.tilapia_tank_video_connections
     - sensor.koi_cam_audio_connections
     - sensor.koi_cam_video_connections
-    - sensor.koi_cam_battery_level
-    - sensor.koi_cam_battery_temperature
-    - sensor.koi_cam_events
-    - sensor.koi_cam_light_level
-    - sensor.koi_cam_motion
-    - sensor.koi_cam_pressure
-    - sensor.koi_cam_status
     - sensor.koi_cam_video_connections
-    - sensor.tilaipa_cam_state
     - sensor.tilapia_cam_audio_connections
-    - sensor.tilapia_cam_battery_level
-    - sensor.tilapia_cam_battery_temperature
-    - sensor.tilapia_cam_events
-    - sensor.tilapia_cam_light_level
-    - sensor.tilapia_cam_motion
-    - sensor.tilapia_cam_pressure
-    - sensor.tilapia_cam_status
     - sensor.tilapia_cam_video_connections
-
+  Cam Pressure Sensors:
+    entities:
+    - sensor.cat_cam_pressure
+    - sensor.front_door_pressure
+    - sensor.koi_cam_pressure
+    - sensor.tilapia_cam_pressure
+  Cam  Events and Status Sensors:
+    entities:
+    - sensor.front_door_events
+    - sensor.front_door_status
+    - sensor.cat_cam_events
+    - sensor.cat_cam_status
+    - sensor.yard_cam_events
+    - sensor.yard_cam_status
+    - sensor.tilapiatank_events
+    - sensor.tilapiatank_status
+    - sensor.koi_cam_events
+    - sensor.koi_cam_status
+    - sensor.tilaipa_cam_state
+    - sensor.tilapia_cam_events
+    - sensor.tilapia_cam_status
+  Cam Light and Proximity Sensors:
+    entities:
+    - sensor.cat_cam_light_level
+    - sensor.cat_cam_proximity
+    - sensor.front_door_light_level
+    - sensor.front_door_proximity
+    - sensor.koi_cam_light_level
+    - sensor.tilapia_cam_light_level
   Cam Control:
+    entities:
+    - group.cat_cam_control
+    - group.front_door_cam_control
+    - group.koi_cam_control
+    - group.tilapia_cam_control
+  Cat Cam Control:
     entities:
     - switch.cat_cam_state
     - switch.cat_cam_exposure_lock
@@ -273,6 +296,8 @@
     - switch.cat_cam_torch
     - switch.cat_cam_video_recording
     - switch.cat_cam_white_balance_lock
+  Front Door Cam Control:
+    entities:
     - switch.front_door_state
     - switch.front_door_exposure_lock
     - switch.front_door_focus
@@ -283,11 +308,16 @@
     - switch.front_door_torch
     - switch.front_door_video_recording
     - switch.front_door_white_balance_lock
+
+  Koi Cam Control:
+    entities:
     - switch.koi_cam_state
     - switch.koi_cam_exposure_lock
     - switch.koi_cam_night_vision
     - switch.koi_cam_overlay
     - switch.koi_cam_torch
+  Tilapia Cam Control:
+    entities:
     - switch.tilapia_cam_state
     - switch.tilapia_cam_exposure_lock
     - switch.tilapia_cam_night_vision
@@ -645,6 +675,127 @@
     - sensor.tree_5_light_intensity
     - sensor.tree_5_moisture
     - sensor.tree_5_temperature
+#### MiFlora Rest Sensor Groups ####
+  catnip1R:
+    name: CatNip 1R
+    entities:
+    - sensor.catnip1battery
+    - sensor.catnip_1conductivity
+    - sensor.catnip_1_light
+    - sensor.catnip_1moisture
+    - sensor.catnip_1temp
+  catnip2R:
+    name: CatNip 2R
+    entities:
+    - sensor.catnip2battery
+    - sensor.catnip_2conductivity
+    - sensor.catnip_2_light
+    - sensor.catnip_2moisture
+    - sensor.catnip_2temp
+  toptableR:
+    name: Top TableR
+    entities:
+    - sensor.toptablebattery
+    - sensor.toptableconductivity
+    - sensor.toptable_light
+    - sensor.toptablemoisture
+    - sensor.top_tabletemp
+  centertableR:
+    name: Center TableR
+    entities:
+    - sensor.centertablebattery
+    - sensor.centertableconductivity
+    - sensor.center_table_light
+    - sensor.center_tablemoisture
+    - sensor.center_tabletemp
+  bottomtableR:
+    name: Bottom TableR
+    entities:
+    - sensor.bottomtablebattery
+    - sensor.bottomtableconductivity
+    - sensor.bottom_table_light
+    - sensor.bottom_tablemoisture
+    - sensor.bottom_tabletemp
+  tilapia_tankR:
+    name: Tilapia TankR
+    entities:
+    - sensor.tilapia_tankbattery
+    - sensor.tilapia_tankconductivity
+    - sensor.tilapia_tankmoisture
+    - sensor.tilapia_tank_light
+    - sensor.tilapia_tanktemp
+  koipondR:
+    name: Koi PondR
+    entities:
+    - sensor.pondbattery
+    - sensor.pondconductivity
+    - sensor.pond_light
+    - sensor.pondmoisture
+    - sensor.pondtemp
+  rosemaryR:
+    name: RosemaryR
+    entities:
+    - sensor.rosemarybattery
+    - sensor.rosemaryconductivity
+    - sensor.rosemary_light
+    - sensor.rosemarymoisture
+    - sensor.rosemarytemp
+  passion_fruitR:
+    name: Passion Fruit
+    entities:
+    - sensor.passion_fruitbattery
+    - sensor.passion_fruitconductivity
+    - sensor.passion_fruit_light
+    - sensor.passion_fruitmoisture
+    - sensor.passion_fruittemp
+  tomato_potR:
+    name: Tomato PotR
+    entities:
+    - sensor.tomato_potbattery
+    - sensor.tomato_potconductivity
+    - sensor.tomato_pot_light
+    - sensor.tomato_potmoisture
+    - sensor.tomato_pottemp
+  tree1R:
+    name: Tree 1R
+    entities:
+    - sensor.tree1battery
+    - sensor.tree1conductivity
+    - sensor.tree_1_light
+    - sensor.tree1moisture
+    - sensor.tree1temp
+  tree2R:
+    name: Tree 2R
+    entities:
+    - sensor.tree2battery
+    - sensor.tree2conductivity
+    - sensor.tree_2_light
+    - sensor.tree2moisture
+    - sensor.tree2temp
+  tree3R:
+    name: Tree 3R
+    entities:
+    - sensor.tree3battery
+    - sensor.tree3conductivity
+    - sensor.tree_3_light
+    - sensor.tree3moisture
+    - sensor.tree3temp
+  tree4R:
+    name: Tree 4R
+    entities:
+    - sensor.tree4battery
+    - sensor.tree4conductivity
+    - sensor.tree_4_light
+    - sensor.tree4moisture
+    - sensor.tree4temp
+  tree5R:
+    name: Tree 5R
+    entities:
+    - sensor.tree5battery
+    - sensor.tree5conductivity
+    - sensor.tree_5_light
+    - sensor.tree5moisture
+    - sensor.tree5temp
 ### SSL Sensors ###
   httpsx:
     name: Cert. Expiration

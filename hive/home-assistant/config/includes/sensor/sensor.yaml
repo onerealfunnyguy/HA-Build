@@ -433,3 +433,388 @@
     resource: https://api.ipify.org
     name: External IPv4
   #  value_template: '{{ value_json.ip }}'
+  ### bottom table ###
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.bottom_table_battery
+    name: bottom-table-battery
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "%"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.bottom_table_conductivity
+    name: bottom-table-conductivity
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "\u00b5S/cm"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.bottom_table_light_intensity
+    name: bottom_table_light
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "lux"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.bottom_table_moisture
+    name: bottom_table-moisture
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "%"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.bottom_table_temperature
+    name:  bottom_table-temp
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "\u00b0F"
+  ### catnip 1 ###
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.catnip_1_battery
+    name: catnip-1-battery
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "%"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.catnip_1_conductivity
+    name: catnip_1-conductivity
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "\u00b5S/cm"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.catnip_1_light_intensity
+    name: catnip_1_light
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "lux"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.catnip_1_temperature
+    name:  catnip_1-temp
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "\u00b0F"
+  ### catnap 2 ###
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.catnip_2_battery
+    name: catnip-2-battery
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "%"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.catnip_2_conductivity
+    name: catnip_2-conductivity
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "\u00b5S/cm"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.catnip_2_light_intensity
+    name: catnip_2_light
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "lux"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.catnip_2_moisture
+    name: catnip_2-moisture
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "%"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.catnip_2_temperature
+    name:  catnip_2-temp
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "\u00b0F"
+  ### center tablee ###
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.center_table_battery
+    name: center-table-battery
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "%"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.center_table_conductivity
+    name: center-table-conductivity
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "\u00b5S/cm"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.center_table_light_intensity
+    name: center_table_light
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "lux"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.center_table_moisture
+    name: center_table-moisture
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "%"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.center_table_temperature
+    name:  center_table-temp
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "\u00b0F"
+  ### passion fruit ###
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.passion_fruit_battery
+    name: passion_fruit-battery
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "%"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.passion_fruit_conductivity
+    name: passion_fruit-conductivity
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "\u00b5S/cm"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.passion_fruit_light_intensity
+    name: passion_fruit_light
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "lux"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.passion_fruit_moisture
+    name: passion_fruit-moisture
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "%"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.passion_fruit_temperature
+    name:  passion_fruit-temp
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "\u00b0F"
+  ### pond ###
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.pond_battery
+    name: pond-battery
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "%"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.pond_conductivity
+    name: pond-conductivity
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "\u00b5S/cm"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.pond_light_intensity
+    name: pond_light
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "lux"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.pond_moisture
+    name: pond-moisture
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "%"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.pond_temperature
+    name:  pond-temp
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "\u00b0F"
+  ### rosemary ###
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.rosemary_battery
+    name: rosemary-battery
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "%"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.rosemary_conductivity
+    name: rosemary-conductivity
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "\u00b5S/cm"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.rosemary_light_intensity
+    name: rosemary-light
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "lux"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.rosemary_moisture
+    name: rosemary-moisture
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "%"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.rosemary_temperature
+    name:  rosemary-temp
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "\u00b0F"
+  ### tilapia tank ###
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.tilapia_tank_battery
+    name: tilapia_tank-battery
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "%"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.tilapia_tank_conductivity
+    name: tilapia_tank-conductivity
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "\u00b5S/cm"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.tilapia_tank_light_intensity
+    name: tilapia_tank_light
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "lux"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.tilapia_tank_moisture
+    name:  tilapia_tank-moisture
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "%"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.tilapia_tank_temperature
+    name:  tilapia_tank-temp
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "\u00b0F"
+  ### tomato pot ###
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.tomato_pot_battery
+    name: tomato_pot-battery
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "%"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.tomato_pot_conductivity
+    name: tomato_pot-conductivity
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "\u00b5S/cm"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.tomato_pot_light_intensity
+    name: tomato_pot_light
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "lux"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.tomato_pot_moisture
+    name: tomato_pot-moisture
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "%"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.tomato_pot_temperature
+    name:  tomato_pot-temp
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "\u00b0F"
+  ### top table ###
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.top_table_battery
+    name: top-table-battery
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "%"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.top_table_conductivity
+    name: top-table-conductivity
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "\u00b5S/cm"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.top_table_light_intensity
+    name: top-table_light
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "lux"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.top_table_moisture
+    name:  top-table-moisture
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "%"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.top_table_temperature
+    name:  top_table-temp
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "\u00b0F"
+  ### Tree 1 ###
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.tree_1_battery
+    name: tree-1-battery
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "%"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.tree_1_conductivity
+    name: tree-1-conductivity
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "\u00b5S/cm"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.tree_1_light_intensity
+    name: tree_1_light
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "lux"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.tree_1_moisture
+    name:  tree-1-moisture
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "%"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.tree_1_temperature
+    name:  tree-1-temp
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "\u00b0F"
+### tree 2 ###
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.tree_2_battery
+    name: tree-2-battery
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "%"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.tree_2_conductivity
+    name: tree-2-conductivity
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "\u00b5S/cm"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.tree_2_light_intensity
+    name: tree_2_light
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "lux"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.tree_2_moisture
+    name:  tree-2-moisture
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "%"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.tree_2_temperature
+    name:  tree-2-temp
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "\u00b0F"
+### tree 3 ###
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.tree_3_battery
+    name: tree-3-battery
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "%"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.tree_3_conductivity
+    name: tree-3-conductivity
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "\u00b5S/cm"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.tree_3_light_intensity
+    name: tree_3_light
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "lux"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.tree_3_moisture
+    name:  tree-3-moisture
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "%"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.tree_3_temperature
+    name:  tree-3-temp
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "\u00b0F"
+ ### tree 4 ###
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.tree_4_battery
+    name: tree-4-battery
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "%"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.tree_4_conductivity
+    name: tree-4-conductivity
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "\u00b5S/cm"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.tree_4_light_intensity
+    name: tree_4_light
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "lux"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.tree_4_moisture
+    name:  tree-4-moisture
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "%"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.tree_4_temperature
+    name:  tree-4-temp
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "\u00b0F"
+### tree 5 ###
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.tree_5_battery
+    name: tree-5-battery
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "%"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.tree_5_conductivity
+    name: tree-5-conductivity
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "\u00b5S/cm"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.tree_5_light_intensity
+    name: tree_5_light
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "lux"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.tree_5_moisture
+    name:  tree-5-moisture
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "%"
+  - platform: rest
+    resource: http://shed:8123/api/states/sensor.tree_5_temperature
+    name:  tree-5-temp
+    value_template: '{{ value_json.state }}'
+    unit_of_measurement: "\u00b0F"

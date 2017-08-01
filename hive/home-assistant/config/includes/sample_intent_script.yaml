@@ -1,0 +1,22 @@
+GetSensorState:
+  speech:
+    text: >
+      {%- if SensorType.lower() == "temperature" -%}
+        The {{ Room }} is
+        {{ states(
+        {"living room": "sensor.temperature_158d000186f935",
+        "bedroom": "sensor.temperature_158d000186f987",
+        "bathroom": "sensor.temperature_158d000186f8b8",
+        "kitchen": "sensor.temperature_158d000186f9be" }
+        [Room]) }}
+        degrees.
+      {%- elif SensorType.lower() == "humidity" -%}
+        The humidity in the {{ Room }} is
+        {{ states(
+        {"living room": "sensor.humidity_158d000186f935",
+        "bedroom": "sensor.humidity_158d000186f987",
+        "bathroom": "sensor.humidity_158d000186f8b8",
+        "kitchen": "sensor.humidity_158d000186f9be" }
+        [Room]) }}
+        percent.
+      {%- endif -%}

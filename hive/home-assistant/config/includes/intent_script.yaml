@@ -1,0 +1,41 @@
+#intent_script:
+  GetServerHealth:  # Intent type
+    speech:
+      type: ssml
+      text: !include templates/getserverhealth.yaml
+    card:
+      type: simple
+      title: Server Health
+      content: !include templates/getserverhealth_card.yaml
+  GetPlantHealth:  # Intent type
+    speech:
+      type: ssml
+      text: !include templates/getplanthealth.yaml
+    card:
+      type: simple
+      title: Plant Health
+      content: !include templates/getplanthealth_card.yaml
+  GetTreeHealth:  # Intent type
+    speech:
+      type: ssml
+      text: !include templates/gettreehealth.yaml
+    card:
+      type: simple
+      title: Tree Health
+      content: !include templates/gettreehealth_card.yaml
+  itisyourbirthday:  # Intent type
+    speech:
+      text: !include templates/birthday_wishes.yaml
+
+### Sample Utterances ####
+# GetServerHealth How are the servers
+# GetServerHealth How is the hive
+# GetServerHealth Hive how are you today
+# GetServerHealth system check
+# GetPlantHealth how are the plants
+# GetPlantHealth how are the plants today
+# GetPlantHealth how does the garden look
+# GetPlantHealth smell the roses
+# GetTreeHealth how are the trees
+# GetTreeHealth how do the trees look
+# GetTreeHealth are the trees health

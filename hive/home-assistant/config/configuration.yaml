@@ -23,9 +23,12 @@ frontend:
 
 http:
   # Uncomment this to add a password (recommended!)
-  # api_password: PASSWORD
+  api_password: !secret apipass
+  # SSL Cert
+  ssl_certificate: /etc/letsencrypt/live/hass.davedaley.com/fullchain.pem
+  ssl_key: /etc/letsencrypt/live/hass.davedaley.com/privkey.pem
   # Uncomment this if you are using SSL or running in Docker etc
-  # base_url: example.duckdns.org:8123
+  base_url: hass.davedaley.com
 
 # Checks for available updates
 updater:
@@ -79,7 +82,11 @@ plant: !include includes/plant.yaml
 #automation: !include_dir_list automation
 #automation: !include automations.yaml
 automation: !include_dir_list includes/automation
+intent_script: !include includes/intent_script.yaml
+#intent_script: !include_dir_list includes/intent_script
+#intent_script: !include_dir_named includes/intent_script
 notify: !include includes/notify.yaml
+
 config:
 zoneminder: !include includes/zoneminder.yaml
 device_tracker: !include includes/device_tracker.yaml
@@ -126,3 +133,14 @@ panel_custom:
 twilio:
   account_sid: !secret twillo_sid
   auth_token: !secret twillo_token
+# Add Custom Alexa Skill
+alexa:
+  flash_briefings: !include includes/flash_briefings.yaml  
+
+#intent_script:
+#  GetHiveRamUse:  # Intent type
+#    speech:
+#      text: hive ram is {{ states.sensor.hive_ram_use }} percent
+#  GetShedRamUse:  # Intent type
+#    speech:
+#      text: hive ram is {{ states.sensor.shed_ram_use }} percent
