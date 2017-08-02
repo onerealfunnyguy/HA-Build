@@ -20,6 +20,7 @@
     temp is {{ states("sensor.center_tabletemp") }} degrees
 
 
+
     Bottom Table battery is at {{ states("sensor.bottomtablebattery") }} %
     conductivity is at {{ states("sensor.bottomtableconductivity") }} siemins
     light is {{ states("sensor.bottom_table_light") }} lumes
@@ -37,7 +38,7 @@
     Rosemary battery is at {{ states("sensor.rosemarybattery") }} %
     conductivity is at {{ states("sensor.rosemaryconductivity") }} siemins
     light is {{ states("sensor.rosemary_light") }} lumes
-    moisture is at {{ states("sensor.rosemarymoisture") }} %
+    moisture is at {{ states("sensor.rosemarymoisture") }} % 
     temp is {{ states("sensor.rosemarytemp") }} degrees
 
 

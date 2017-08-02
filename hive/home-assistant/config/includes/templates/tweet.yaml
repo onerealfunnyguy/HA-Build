@@ -1,0 +1,11 @@
+>
+    {
+      "message":"Cat Cam from Littebox.co.",
+      "title":"LitterBox.co CatCam.",
+      "data":{
+        "file":{
+          "url":"http://catcam:8080/shot.jpg",
+          "auth":"digest"
+        }
+      }
+    }

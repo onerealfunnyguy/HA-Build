@@ -9,10 +9,14 @@
     platform: slack
     api_key: !secret slack_hive
     default_channel: '#ha-notify'
+  - name: hive_cat_slack
+    platform: slack
+    api_key: !secret slack_hive
+    default_channel: '#cat-pics'    
   - name: prime_slack
     platform: slack
     api_key: !secret slack_prime
-    default_channel: '#server-alerts'    
+    default_channel: '#server-alerts'
   - name: orfg-catcam
     platform: twitter
     consumer_key: !secret orfg_consumer_key

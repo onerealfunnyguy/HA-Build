@@ -1,5 +1,5 @@
 >
-    hive ram is at {{ states("sensor.hive_ram_use") }} %
+    hive ram is at {{ states("sensor.hive_ram_use") }} % 
     cpu is at {{ states("sensor.hive_cpu_load") }} %
     free disk space is {{ states("sensor.hive_disk_free") }} GiB
     shed ram is at {{ states("sensor.shed_ram_use") }} %

@@ -58,12 +58,12 @@
       !secret email_3
   - platform: ohmconnect
     id: !secret ohm_id
-    binary_sensor:
-  #- platform: rest
-  #  name: Front Door Motion
-  #  sensor_class: motion
-  #  resource: http://192.168.0.113:8080/sensors.json?sense=motion_active
-  #  value_template: '{{ value_json.motion_active.data[0][1][0] | round(0) }}'
+#    binary_sensor:
+#  - platform: rest
+#    name: Chewy Motion
+#    sensor_class: motion
+#    resource: http://catcam:8080/sensors.json?sense=motion_active
+#    value_template: '{{ value_json.motion_active.data[0][1][0] | round(0) }}'
   - platform: glances
     host: shed
     name: shed
