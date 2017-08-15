@@ -5,6 +5,19 @@
 
     "*.*":
       custom_ui_state_card: custom-ui
+
+    group.ip_report:
+      state_card_mode: badges
+      badges_list:
+        - sensor.external_ipv4
+        - sensor.external_ipv6
+    group.buoy_report:
+      state_card_mode: badges
+      badges_list:
+        - sensor.nearshore___h2o_temp
+        - sensor.nearshore__wave_ht
+        - sensor.offshore__h2o_temp
+        - sensor.offshore__wave_ht
     group.hive:
       state_card_mode: badges
       badges_list:

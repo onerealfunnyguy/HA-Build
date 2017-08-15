@@ -22,6 +22,12 @@
 #  password: !secret cat_still_pass
 #  name: Yard Cam
 - platform: generic
+  still_image_url: http://www.ndbc.noaa.gov/buoycam.php?station=46054
+  name: Buoy Cam 46054 Santa Barbara
+- platform: generic
+  still_image_url: http://www.ndbc.noaa.gov/buoycam.php?station=51001
+  name: Buoy Cam 51001 Hawaii
+- platform: generic
   still_image_url: http://images.intellicast.com/WxImages/RadarSummary/bfl.gif
   name: Regional Summary
 - platform: generic

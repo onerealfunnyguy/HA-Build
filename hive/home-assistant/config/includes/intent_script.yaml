@@ -27,9 +27,20 @@
     speech:
       text: !include templates/birthday_wishes.yaml
   CheckFrontDoor:  # Intent type
+    action:
+    - service: switch.turn_on
+      entity_id: switch.emerson
+    - service: shell_command.fdstream
+    - service: script.turn_on
+      entity_id: script.off_emerson
     speech:
       type: plain
       text: Door Check
+#    card:
+#      type: simple
+#      title: Front Door
+#      content: !include templates/gettreehealth_card.yaml
+
 #    card:
 #      type: standard
 #      title: Anyone at the door?

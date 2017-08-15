@@ -17,13 +17,5 @@ action:
   entity_id: switch.sleep
 - service: switch.turn_on
   entity_id: switch.sleep
-- service: switch.turn_on
-  entity_id: switch.sleep
-- service: switch.turn_on
-  entity_id: switch.sleep
-- service: switch.turn_on
-  entity_id: switch.sleep
-- service: switch.turn_on
-  entity_id: switch.sleep
 - service: switch.turn_off
   entity_id: switch.sleep

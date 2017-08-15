@@ -28,7 +28,7 @@ http:
   ssl_certificate: /etc/letsencrypt/live/hass.davedaley.com/fullchain.pem
   ssl_key: /etc/letsencrypt/live/hass.davedaley.com/privkey.pem
   # Uncomment this if you are using SSL or running in Docker etc
-  base_url: hass.davedaley.com
+  base_url: !secret burl
 
 # Checks for available updates
 updater:
@@ -86,7 +86,10 @@ intent_script: !include includes/intent_script.yaml
 #intent_script: !include_dir_list includes/intent_script
 #intent_script: !include_dir_named includes/intent_script
 notify: !include includes/notify.yaml
-
+media_extractor:
+#shell_command: !include_dir_list includes/shell
+shell_command: !include_dir_merge_named includes/shell
+script: !include_dir_merge_named includes/script
 config:
 zoneminder: !include includes/zoneminder.yaml
 device_tracker: !include includes/device_tracker.yaml
@@ -122,6 +125,11 @@ panel_iframe:
     title: 'Plant Graph'
     icon: mdi:flower
     url: 'http://hive:3000/dashboard/db/plant-status?orgId=1&from=1500820266079&to=1500831977203'
+### Added Buoy Panels ###
+  buoy_report:
+    title: 'Buoy Report'
+    icon: mdi:waves
+    url: 'http://www.ndbc.noaa.gov/widgets/station_page.php?station=462420'
  ### Added FloorPlan ###
 panel_custom:
   - name: floorplan
@@ -135,7 +143,7 @@ twilio:
   auth_token: !secret twillo_token
 # Add Custom Alexa Skill
 alexa:
-  flash_briefings: !include includes/flash_briefings.yaml  
+  flash_briefings: !include includes/flash_briefings.yaml
 
 #intent_script:
 #  GetHiveRamUse:  # Intent type

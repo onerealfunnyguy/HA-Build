@@ -1,21 +1,4 @@
-# Weather Prediction
 #sensor:
-#  platform: yr
-#  - platform: yr
-#    monitored_conditions:
-#      - temperature
-#      - symbol
-#      - precipitation
-#      - windSpeed
-#      - pressure
-#      - windDirection
-#      - humidity
-#      - fog
-#      - cloudiness
-#      - lowClouds
-#      - mediumClouds
-#      - highClouds
-#      - dewpointTemperature
   - platform: speedtest
     minute:
       - 0
@@ -24,10 +7,6 @@
       - ping
       - download
       - upload
-#  - platform: openweathermap
-#    api_key: ddd6718fd67a05ee6e1c89994d9e5269
-#    monitored_conditions:
-#      - weather
   - platform: moon
   - platform: yweather
     monitored_conditions:
@@ -58,12 +37,6 @@
       !secret email_3
   - platform: ohmconnect
     id: !secret ohm_id
-#    binary_sensor:
-#  - platform: rest
-#    name: Chewy Motion
-#    sensor_class: motion
-#    resource: http://catcam:8080/sensors.json?sense=motion_active
-#    value_template: '{{ value_json.motion_active.data[0][1][0] | round(0) }}'
   - platform: glances
     host: shed
     name: shed
@@ -818,3 +791,23 @@
     name:  tree-5-temp
     value_template: '{{ value_json.state }}'
     unit_of_measurement: "\u00b0F"
+#### Surf Data from NOAA ###
+  - platform: command_line
+    command: curl -s http://www.ndbc.noaa.gov/data/latest_obs/46242.rss|grep -i hei|grep -Eo '[0-9.]+'
+    name: NearShore - Wave Ht # Station 46242 - Camp Pendleton Nearshore, CA
+    unit_of_measurement: "ft"
+  - platform: command_line
+    command: curl -s http://www.ndbc.noaa.gov/data/latest_obs/46224.rss|grep -i hei|grep -Eo '[0-9.]+'
+    name: Offshore - Wave Ht # Station 46224 - Oceanside Offshore
+    unit_of_measurement: "ft"
+  - platform: command_line
+    command: curl -s http://www.ndbc.noaa.gov/data/latest_obs/46242.rss|grep -i temp|grep -Eo '[0-9.]+'|head -1
+    name:  Nearshore -  h2o Temp # Station 46242 - Camp Pendleton Nearshore, CA
+    unit_of_measurement: "°F"
+  - platform: command_line
+    command: curl -s http://www.ndbc.noaa.gov/data/latest_obs/46224.rss|grep -i temp|grep -Eo '[0-9.]+'|head -1
+    name:  Offshore - h2o Temp # Station 46224 - Oceanside Offshore
+    unit_of_measurement: "°F"
+  - platform: shodan
+    api_key: !secret SHODAN_API_KEY
+    query: 'home-assistant'

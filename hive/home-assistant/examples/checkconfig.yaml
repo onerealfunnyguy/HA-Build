@@ -1,0 +1,204 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: 11.1111
+  longitude: -11.1111
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 10000
+  # metric for Metric, imperial for Imperial
+  unit_system: imperial
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: America/NY
+  customize:
+    #add an entry for each entity that you want to overwrite.
+    light.linear_lb60z1_dimmable_led_light_bulb_level_4_0:
+      friendly_name: 'Bedroom Light'
+      icon: mdi:lightbulb
+    light.linear_lb60z1_dimmable_led_light_bulb_level_7_0:
+      friendly_name: 'Living Room Light'
+      icon: mdi:lightbulb
+    binary_sensor.zwave.vision_zg8101_garage_door_detector:
+      friendly_name: 'Garage'
+      sensor_class: opening
+      # alias_on: 'Open'
+      # alias_off: 'Closed'
+    switch.hank_hkzwso01_smart_plug_switch_8_0:
+      friendly_name: 'Bedroom Switch'
+      icon: mdi:lightbulb
+# Show links to resources in log and frontend
+#introduction:
+
+# Enables the frontend
+frontend:
+
+# Enables configuration UI
+config:
+
+http:
+  # Uncomment this to add a password (recommended!)
+  # api_password: PASSWORD
+  # Uncomment this if you are using SSL or running in Docker etc
+  # base_url: example.duckdns.org:8123
+
+# Checks for available updates
+updater:
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time.
+history:
+
+# View all events in a logbook
+logbook:
+
+# Track the sun
+sun:
+
+# Weather Prediction
+# sensor:
+  # platform: yr
+
+android_ip_webcam:
+  - host: 192.168.1.1
+    name: Garage Cam
+    username: username
+    password: password
+    sensors:
+      - battery_level
+      - battery_temp
+      - battery_voltage
+
+sensor:
+  - platform: yr
+  - platform: template
+
+
+# Text to speech
+tts:
+  platform: google
+
+zwave:
+  usb_path: /dev/ttyACM0
+  device_config:
+   light.linear_lb60z1_dimmable_led_light_bulb_level_4_0:
+     refresh_value: true
+   light.linear_lb60z1_dimmable_led_light_bulb_level_7_0:
+     refresh_value: true
+
+media_player:
+  - platform: plex
+
+# notify:
+  # - name: NOTIFIER_NAME
+    # platform: pushbullet
+    # api_key: apikeu
+
+notify:
+  - name: NOTIFIER_NAME
+    platform: pushover
+    api_key: apikeu
+    user_key: apikeu
+
+group:
+  default_view:
+    view: yes
+    entities:
+      - group.livingroom
+      - group.doors
+      - group.weather
+#VIEWS_are_Tabs
+  bedroom_view:
+   name: Bedroom
+   view: yes
+   entities:
+    - group.bedroom
+    - media_player.bedroom
+  livingroom_view:
+   name: Living Room
+   view: yes
+   entities:
+    - group.livingroom
+    - group.environment
+  office_view:
+   name: Office
+   view: yes
+   entities:
+    - group.office
+  door_view:
+   name: Doors
+   view: yes
+   entities:
+    - group.doors
+#Groups_are_Cards_in_the_tabs
+  livingroom:
+   name: Living Room
+   entities:
+    - light.linear_lb60z1_dimmable_led_light_bulb_level_7_0
+    - media_player.kitchen_home
+  bedroom:
+   name: Bedroom
+   entities:
+     - light.linear_lb60z1_dimmable_led_light_bulb_level_4_0
+     - switch.hank_hkzwso01_smart_plug_switch_8_0
+  office:
+   name: Office
+   entities:
+    - media_player.office
+  doors:
+   name: Doors
+   entities:
+    - camera.garage_cam
+  weather:
+    - sensor.dark_sky_summary
+    - sensor.dark_sky_temperature
+    - sensor.dark_sky_humidity
+    - sensor.dark_sky_precip_probability
+    - sun.sun
+    - sensor.moon_phase
+
+automation:
+  - alias: 'Turn light on at night'
+    trigger:
+      - platform: sun
+        event: sunset
+        offset: '-0:01:00'
+    action:
+        service: light.turn_on
+        entity_id: light.linear_lb60z1_dimmable_led_light_bulb_level_7_0
+  - alias: 'Turn living room light off at night after bed'
+    trigger:
+      - platform: time
+        at: '23:45:00'
+    action:
+        service: light.turn_off
+        entity_id: light.linear_lb60z1_dimmable_led_light_bulb_level_7_0
+  - alias: 'Turn light on at night'
+    trigger:
+      - platform: time
+        at: '23:45:00'
+    action:
+        service: switch.turn_on
+        entity_id: switch.hank_hkzwso01_smart_plug_switch_8_0
+  - alias: 'Turn bedroom light on'
+    trigger:
+      - platform: time
+        at: '23:55:00'
+    action:
+        service: light.turn_on
+        entity_id: light.linear_lb60z1_dimmable_led_light_bulb_level_4_0
+  - alias: 'Send Message garage door is closed'
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.zwave.vision_zg8101_garage_door_detector
+        from: 'on'
+        to: 'off'
+    action:
+      service: notify.NOTIFIER_NAME
+      data:
+        message: "Garage is closed"
+        title: "Garage"

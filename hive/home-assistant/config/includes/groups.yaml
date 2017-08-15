@@ -27,7 +27,6 @@
       name: Kitchen
       entities:
         - switch.coffee
-        - light.dinning_room_light
   Cameras:
       view: yes
       name: Cameras
@@ -35,7 +34,7 @@
         - group.droidvideo
         - group.cam_control
         - group.cam_sensors
-        - weblink.hive_zoneminder
+        - weblink.shed_zoneminder
   Servers:
       view: yes
       name: Servers
@@ -62,13 +61,19 @@
       view: yes
       name: Garden Watch
       entities:
+        - group.garden_power
         - group.all_plants
         - group.climate
         - group.catnip1
+        - group.catnip1r
         - group.catnip2
+        - group.catnip2r
         - group.toptable
+        - group.toptabler
         - group.centertable
+        - group.centertabler
         - group.bottomtable
+        - group.bottomtabler
         - group.passion_fruit
         - group.rosemary
         - group.tomato_pot
@@ -82,6 +87,7 @@
       name: Tree Watch
       entities:
         - camera.regional_summary
+        - group.garden_power
         - group.all_plants
         - group.tree1
         - group.tree2
@@ -105,12 +111,30 @@
     - light.closet
     - switch.fan_power
     - switch.sleep
+    - group.buoy_report
   cornerlamp:
     name: Corner Lamp
     entities:
     - light.top
     - light.center
     - light.bottom
+  buoy_report:
+    name: Surf
+    entities:
+    - sensor.nearshore___h2o_temp
+    - sensor.nearshore__wave_ht
+    - sensor.offshore__h2o_temp
+    - sensor.offshore__wave_ht
+  ip_report:
+    name: public ip
+    entities:
+    - sensor.external_ipv4
+    - sensor.external_ipv6
+  garden_power:
+    name: Garden Power
+    entities:
+    - switch.tree_lights
+    - switch.pond_transfer_pump
   hive:
     entities:
     - sensor.hive_cpu_load
@@ -332,6 +356,11 @@
     - media_player.shortstick
     - media_player.bus_cast
     - media_player.kodi
+    - media_player.plex_web_safari
+    - media_player.shortfire_kodi
+    - media_player.shortstick_kodi
+    - media_player.aftb16
+    - media_player.aftm15
   DroidVideo:
     name: Video Cams
     entities:
@@ -339,12 +368,17 @@
     - camera.cat_cam
     - camera.tilapia_cam
     - camera.koi_cam
+    - camera.oceanside
+    - camera.regional_summary
+    - camera.buoy_cam_46054_santa_barbara
+    - camera.buoy_cam_51001_hawaii
   speed_test:
     name: Speed Test
     entities:
     - sensor.speedtest_download
     - sensor.speedtest_upload
     - sensor.speedtest_ping
+    - group.ip_report
     - group.network
   local_server_load:
     name: Local Server Load
@@ -361,14 +395,17 @@
   climate:
     name: Climate
     entities:
+    - group.buoy_report
     - sun.sun
     - sensor.moon
+    - sensor.waqi_camp_pendleton_san_diego_california
     - sensor.yweather_current
     - sensor.yweather_humidity
     - sensor.yweather_pressure
     - sensor.yweather_temperature
     - sensor.yweather_visibility
     - sensor.yweather_wind_speed
+    - camera.regional_summary
   Misc:
     name: Misc
     entities:
@@ -395,6 +432,7 @@
     - weblink.shed_hass
     - weblink.shed_unifi
     - weblink.shed_webmin
+    - weblink.shed_zoneminder
   ### LAN Management ###
   lanmanagement:
     name: LAN Management
@@ -485,6 +523,7 @@
   Network:
     name:  Network
     entities:
+
     - sensor.airport_state
     - sensor.boywin10_state
     - sensor.busshow_state
@@ -737,7 +776,7 @@
     entities:
     - sensor.rosemarybattery
     - sensor.rosemaryconductivity
-    - sensor.rosemary_light
+    - sensor.rosemarylight
     - sensor.rosemarymoisture
     - sensor.rosemarytemp
   passion_fruitR:

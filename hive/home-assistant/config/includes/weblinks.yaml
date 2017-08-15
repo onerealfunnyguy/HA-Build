@@ -12,8 +12,6 @@
       url: http://hive:8080
     - name: Hive Grafana
       url: http://hive:3000
-    - name: Hive ZoneMinder
-      url: http://hive/zm
     - name: Hive Transmission
       url: http://hive:9091/transmission/web/
     - name: Hive Plex
@@ -27,6 +25,8 @@
       url: http://shed:8123
     - name: Shed Unifi
       url: https://unifi:8443
+    - name: Shed ZoneMinder
+      url: http://shed/zm
   ### Remote  Server Management ###
     - name: gate
       url: https://gate

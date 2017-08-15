@@ -1,4 +1,4 @@
-alias: Turn on front door light when sun sets
+alias: Turn on front door & tree lights when sun sets
 initial_state: True
 hide_entity: False
 trigger:
@@ -7,3 +7,5 @@ trigger:
 action:
 - service: light.turn_on
   entity_id: light.front_door_light
+- service: switch.turn_on
+  entity_id: switch.tree_lights  

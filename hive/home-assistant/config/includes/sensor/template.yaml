@@ -101,9 +101,9 @@
       tilaipa_cam_state:
         value_template: '{% if is_state("device_tracker.tilaipa_cam", "home") %}online{% else %}offline{% endif %}'
         friendly_name: 'tilaipa cam'
-      ram_on_hive:
-        value_template: '{% if is_state("sensor.hive_ram_use", ">25.9") %}Danger{% else %}Safe{% endif %}'
-        friendly_name: 'Hive Ram State'
+#      ram_on_hive:
+#        value_template: '{% if is_state("sensor.hive_ram_use", ">25.9") %}Danger{% else %}Safe{% endif %}'
+#        friendly_name: 'Hive Ram State'
 
 ### https://github.com/bassclarinetl2/hass_config/blob/master/configuration.yaml
 ## base exapmle

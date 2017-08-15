@@ -10,3 +10,7 @@
     username: !secret unifi_user
     password: !secret unifi_pass
     host: unifi
+  - platform: luci
+    host: coin
+    username: !secret coin_user
+    password: !secret coin_pass

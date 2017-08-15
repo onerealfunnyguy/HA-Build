@@ -1,0 +1,10 @@
+servers:
+  entities:
+  - group.speed_test
+  - group.activesites
+  - group.hive
+  - group.pepper
+  - group.help
+  - group.prime
+  name: Servers
+  view: true

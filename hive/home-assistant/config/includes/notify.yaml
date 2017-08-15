@@ -12,7 +12,7 @@
   - name: hive_cat_slack
     platform: slack
     api_key: !secret slack_hive
-    default_channel: '#cat-pics'    
+    default_channel: '#cat-pics'
   - name: prime_slack
     platform: slack
     api_key: !secret slack_prime
@@ -23,3 +23,9 @@
     consumer_secret: !secret orfg_consumer_secret
     access_token: !secret orfg_access_token
     access_token_secret: !secret orfg_access_token_secret
+  - platform: nfandroidtv
+    name: ShortFire
+    host: shortfire
+  - platform: nfandroidtv
+    name: ShortStick
+    host: shortstick  
