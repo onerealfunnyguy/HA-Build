@@ -25,8 +25,8 @@ http:
   # Uncomment this to add a password (recommended!)
   api_password: !secret apipass
   # SSL Cert
-  ssl_certificate: /etc/letsencrypt/live/hass.davedaley.com/fullchain.pem
-  ssl_key: /etc/letsencrypt/live/hass.davedaley.com/privkey.pem
+  ssl_certificate: !secret SSL_cert
+  ssl_key: !secret SSL_key
   # Uncomment this if you are using SSL or running in Docker etc
   base_url: !secret burl
 
