@@ -1,3 +1,4 @@
 #shell_command:
 fdstream:
-    ssh shortbus@hive "echo hive host && sleep 5 && cd stream2cast && ./start-fd-stream.sh"
+#    ssh shortbus@hive "echo hive host && sleep 5 && cd stream2cast && ./start-fd-stream.sh"
+    ssh shortbus@hive "echo $host && sleep 5 && cd stream2cast && ./update_fdcast.sh"

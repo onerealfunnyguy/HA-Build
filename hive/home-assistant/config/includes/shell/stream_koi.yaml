@@ -1,2 +1,2 @@
 koistream:
-    ssh shortbus@hive "echo hive host && sleep 5 && cd stream2cast && ./start-koi-stream.sh"
+    ssh shortbus@hive "echo $host && sleep 5 && cd stream2cast && ./update_koicast.sh"

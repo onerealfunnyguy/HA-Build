@@ -423,13 +423,13 @@
     - weblink.hive_transmission
     - weblink.hive_plex
     - weblink.hive_zabbix
-    - weblink.hive_grafana
   ### Services on shed  ###
   shedservices:
     name: shed services
     entities:
     - weblink.shed_cockpit
     - weblink.shed_hass
+    - weblink.shed_grafana
     - weblink.shed_unifi
     - weblink.shed_webmin
     - weblink.shed_zoneminder

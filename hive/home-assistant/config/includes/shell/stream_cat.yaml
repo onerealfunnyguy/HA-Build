@@ -1,2 +1,2 @@
 catstream:
-    ssh shortbus@hive "echo hive host && sleep 5 && cd stream2cast && ./start-cat-stream.sh"
+    ssh shortbus@hive "echo $host && sleep 5 && cd stream2cast && ./update_catcast.sh"

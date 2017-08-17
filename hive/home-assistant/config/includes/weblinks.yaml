@@ -10,8 +10,6 @@
       url: http://hive:5050
     - name: Hive Zabbix
       url: http://hive:8080
-    - name: Hive Grafana
-      url: http://hive:3000
     - name: Hive Transmission
       url: http://hive:9091/transmission/web/
     - name: Hive Plex
@@ -23,6 +21,8 @@
       url: https://shed:9090
     - name: Shed HASS
       url: http://shed:8123
+    - name: Shed Grafana
+      url: http://shed:3000
     - name: Shed Unifi
       url: https://unifi:8443
     - name: Shed ZoneMinder

@@ -13,6 +13,16 @@ condition:
       - condition: numeric_state
         entity_id: sensor.front_door_light_level
         above: 75
+      - condition: time
+        after: '09:00:00'
+        before: '22:00:00'
+      - condition: template
+        value_template: >
+          {%- if states.automation.cast_the_door.attributes.last_triggered -%}
+          {{ (as_timestamp(now()) - as_timestamp(states.automation.cast_the_door.attributes.last_triggered)) > 120 }}
+          {%- else -%}
+          true
+          {%- endif -%}
 action:
 - service: switch.turn_on
   entity_id: switch.emerson

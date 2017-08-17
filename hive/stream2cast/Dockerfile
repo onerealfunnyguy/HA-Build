@@ -6,13 +6,16 @@ RUN apt-get update && \
   echo 'deb http://httpredir.debian.org/debian jessie-backports main non-free' >> /etc/apt/sources.list && \
   echo 'deb-src http://httpredir.debian.org/debian jessie-backports main non-free' >> /etc/apt/sources.list && \
   apt-get update && \
-  apt-get install -y ffmpeg && \
   apt-get install -y libav-tools && \
+  apt-get install -y ffmpeg && \
+  mkdir s2c && \
+  cd s2c && \
   git clone https://github.com/Pat-Carter/stream2chromecast.git
 
-COPY start-stream.sh /usr/local/bin/start-stream.sh
-RUN chmod +x /usr/local/bin/start-stream.sh
+COPY start-stream.sh /root/s2c/start-stream.sh
+RUN chmod +x /root/s2c/start-stream.sh
 #ENTRYPOINT ["/usr/local/bin/start-stream.sh"]
+VOLUME ["/root/s2c"]
 #CMD [" ./start-stream.sh bash"]
-EXPOSE 8765:8765
-CMD ["/bin/bash","/usr/local/bin/start-stream.sh"]
+CMD ["/bin/bash","/root/s2c/start-stream.sh"]
+

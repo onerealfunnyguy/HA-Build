@@ -42,7 +42,7 @@ history:
 logbook:
 
 recorder:
-  purge_days: 90
+  purge_days: 366
   db_url: !secret db_host
 
 # Track the sun
@@ -97,3 +97,18 @@ influxdb:
   database: garden_assistant
   username: !secret influxuser
   password: !secret influxpass
+### Added Grafana Panels ###
+panel_iframe:
+  system_load:
+    title: 'System Load'
+    icon: mdi:server
+    url: 'http://shed:3000/dashboard/db/system-loads?orgId=1&from=1500698296231&to=1500713754680'
+  plant_graph:
+    title: 'Plant Graph'
+    icon: mdi:flower
+    url: 'http://shed:3000/dashboard/db/plant-status?orgId=1&from=1500820266079&to=1500831977203'
+### Added Buoy Panels ###
+  buoy_report:
+    title: 'Buoy Report'
+    icon: mdi:waves
+    url: 'http://www.ndbc.noaa.gov/widgets/station_page.php?station=462420'

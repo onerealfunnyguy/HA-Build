@@ -1,5 +1,5 @@
 #! /bin/bash
-cd home/$USER/stream2cast/stream2chromecast/ \
+cd stream2chromecast/ 
 ./stream2chromecast.py  \
 -devicename 192.168.42.17 \
 -transcoder avconv \
