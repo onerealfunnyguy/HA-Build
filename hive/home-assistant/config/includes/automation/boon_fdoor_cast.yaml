@@ -1,0 +1,14 @@
+alias: Casting the Door
+trigger:
+  platform: state
+  entity_id: input_boolean.notify_doorcast
+  to: 'on'
+  from: 'off'
+action:
+- service: switch.turn_on
+  entity_id: switch.emerson
+- service: shell_command.fdstream
+- service: input_boolean.turn_off
+  entity_id: input_boolean.notify_doorcast
+- service: script.turn_on
+  entity_id: script.off_emerson

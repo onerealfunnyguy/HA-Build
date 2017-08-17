@@ -9,7 +9,7 @@ condition:
     conditions:
       - condition: numeric_state
         entity_id: sensor.front_door_motion
-        above: 100
+        above: 175
       - condition: numeric_state
         entity_id: sensor.front_door_light_level
         above: 75

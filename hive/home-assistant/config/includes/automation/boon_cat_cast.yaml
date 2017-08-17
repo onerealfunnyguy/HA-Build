@@ -1,0 +1,14 @@
+alias: Casting the Cat
+trigger:
+  platform: state
+  entity_id: input_boolean.notify_catcast
+  to: 'on'
+  from: 'off'
+action:
+- service: switch.turn_on
+  entity_id: switch.emerson
+- service: shell_command.catstream
+- service: input_boolean.turn_off
+  entity_id: input_boolean.notify_catcast
+- service: script.turn_on
+  entity_id: script.off_emerson

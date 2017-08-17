@@ -46,7 +46,7 @@ history:
 logbook:
 
 recorder:
-  purge_days: 365
+  purge_days: 366
   db_url: !secret db_host
 
 # Track the sun
@@ -86,6 +86,7 @@ intent_script: !include includes/intent_script.yaml
 #intent_script: !include_dir_list includes/intent_script
 #intent_script: !include_dir_named includes/intent_script
 notify: !include includes/notify.yaml
+input_boolean: !include includes/input_boolean.yaml
 media_extractor:
 #shell_command: !include_dir_list includes/shell
 shell_command: !include_dir_merge_named includes/shell

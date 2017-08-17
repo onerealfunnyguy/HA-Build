@@ -27,20 +27,34 @@
     speech:
       text: !include templates/birthday_wishes.yaml
   CheckFrontDoor:  # Intent type
-    action:
-    - service: switch.turn_on
-      entity_id: switch.emerson
-    - service: shell_command.fdstream
-    - service: script.turn_on
-      entity_id: script.off_emerson
     speech:
       type: plain
-      text: Door Check
-#    card:
-#      type: simple
-#      title: Front Door
-#      content: !include templates/gettreehealth_card.yaml
-
+      text: Door cast will start in a moment
+    action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.notify_doorcast
+  ChecktheCat:  # Intent type
+    speech:
+      type: plain
+      text: Cat cast will start in a moment
+    action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.notify_catcast
+  ViewtheGarden:  # Intent type
+    speech:
+      type: plain
+      text: Garden cast will start in a moment
+    action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.notify_gardencast
+  ChecktheKoi:  # Intent type
+    speech:
+      type: plain
+      text: Koi cast will start in a moment
+    action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.notify_koicast
+## OFF during testing ###
 #    card:
 #      type: standard
 #      title: Anyone at the door?
