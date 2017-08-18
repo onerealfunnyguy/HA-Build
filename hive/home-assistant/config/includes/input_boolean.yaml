@@ -15,4 +15,8 @@
   notify_koincast:
     name: Cast the Koi
     initial: off
-    icon: mdi:camera-rear    
+    icon: mdi:camera-rear
+  notify_killthecast:
+    name: Kill all cast
+    initial: off
+    icon: mdi:radioactive

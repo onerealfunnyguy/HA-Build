@@ -30,6 +30,10 @@
     speech:
       type: plain
       text: Door cast will start in a moment
+    card:
+      type: simple
+      title: Door Cast
+      content: Your cast is starting.
     action:
     - service: input_boolean.turn_on
       entity_id: input_boolean.notify_doorcast
@@ -37,6 +41,10 @@
     speech:
       type: plain
       text: Cat cast will start in a moment
+    card:
+      type: simple
+      title: Cat Cast
+      content: Your cast is starting.
     action:
     - service: input_boolean.turn_on
       entity_id: input_boolean.notify_catcast
@@ -44,6 +52,10 @@
     speech:
       type: plain
       text: Garden cast will start in a moment
+    card:
+      type: simple
+      title: Garden Cast
+      content: Your cast is starting.
     action:
     - service: input_boolean.turn_on
       entity_id: input_boolean.notify_gardencast
@@ -51,6 +63,10 @@
     speech:
       type: plain
       text: Koi cast will start in a moment
+    card:
+      type: simple
+      title: Koi Cast
+      content: Your cast is starting.
     action:
     - service: input_boolean.turn_on
       entity_id: input_boolean.notify_koicast

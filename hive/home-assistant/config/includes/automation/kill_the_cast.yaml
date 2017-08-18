@@ -1,0 +1,8 @@
+alias: Kill the Cast emerson off
+trigger:
+  platform: state
+  entity_id: switch.emerson
+  to: 'off'
+  from: 'on'
+action:
+- service: shell_command.killcaststream
