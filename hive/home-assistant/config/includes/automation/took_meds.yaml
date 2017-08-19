@@ -1,0 +1,42 @@
+###################################
+##  LOG Medicine
+###################################
+alias: Log Medicine Activity
+#hide_entity: False
+trigger:
+  platform: state
+  entity_id: input_boolean.medicine
+  to: 'on'
+  from: 'off'
+action:
+#    - service: automation.turn_off
+#      entity_id: automation.log_medicine_activity
+- service: logbook.log
+  data:
+    name: "Medicine Push"
+    message: "Took Medicine today."
+-  delay:
+    seconds: 15
+- service: input_boolean.turn_off
+  entity_id: input_boolean.medicine
+- service: notify.hive_orfg_med_log
+  data_template:
+    message: "{{ trigger.to_state.attributes.friendly_name }} taken at {{ states.automation.log_medicine_activity.attributes.last_triggered }}"
+    title: Took meds here is Chewy
+    data:
+      file:
+        url: http://catcam:8080/shot.jpg
+
+#    - service: mqtt.publish
+#      data_template:
+#        payload: '{{ states("sensor.date") }}'
+#        topic: 'dash/medicine/medicine_time'
+#        retain: true
+
+#    -  service: script.ifttt_notify
+#       data_template:
+#         value1: 'Took Medicine today.'
+
+#    -  delay:
+#         minutes: 1
+#    - service: automation.turn_on

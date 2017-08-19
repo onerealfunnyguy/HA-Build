@@ -70,6 +70,17 @@
     action:
     - service: input_boolean.turn_on
       entity_id: input_boolean.notify_koicast
+  TookMyMeds:  # Intent type
+    speech:
+      type: plain
+      text: Good job, another day down. Have a pleasant night.
+    card:
+      type: simple
+      title: Medicine Update
+      content: Now you can have a cookie.
+    action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.medicine
 ## OFF during testing ###
 #    card:
 #      type: standard

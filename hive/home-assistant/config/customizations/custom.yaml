@@ -22,9 +22,9 @@
   group.ovh:
     order: 9
   group.help:
-    order: 10  
+    order: 10
   group.prime:
-    order: 11                
+    order: 11
   media_player.shortfire:
     icon: mdi:amazon
   media_player.shortstick:
@@ -205,3 +205,7 @@
     friendly_name: Im Up
     emulated_hue: true
     emulated_hue_name: Wakey Wakey
+  scene.meds:
+    friendly_name: Took meds
+    emulated_hue: true
+    emulated_hue_name: Took Meds    

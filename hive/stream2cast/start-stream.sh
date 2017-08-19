@@ -1,6 +1,6 @@
 #! /bin/bash
-cd stream2chromecast/ 
+cd stream2chromecast/
 ./stream2chromecast.py  \
 -devicename 192.168.42.17 \
 -transcoder avconv \
--transcode http://192.168.42.33:8080/video
+-transcode https://onerealfunnyguy.com/mister_little_kitty.mp4

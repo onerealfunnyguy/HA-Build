@@ -20,3 +20,6 @@
     name: Kill all cast
     initial: off
     icon: mdi:radioactive
+  medicine:
+    name: medicine
+    initial: off

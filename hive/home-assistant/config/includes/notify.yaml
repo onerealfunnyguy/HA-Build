@@ -13,6 +13,10 @@
     platform: slack
     api_key: !secret slack_hive
     default_channel: '#cat-pics'
+  - name: hive_orfg_med_log
+    platform: slack
+    api_key: !secret slack_hive
+    default_channel: ' #orfg-medication-log'
   - name: prime_slack
     platform: slack
     api_key: !secret slack_prime
@@ -28,4 +32,4 @@
     host: shortfire
   - platform: nfandroidtv
     name: ShortStick
-    host: shortstick  
+    host: shortstick
