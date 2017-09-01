@@ -1,0 +1,14 @@
+# Waits 3 minutes then turns off the emerson
+  hide_groups:
+    alias: hidegroups
+    sequence:
+      # This is Home Assistant Script Syntax
+      - event: LOGBOOK_ENTRY
+        event_data:
+          name: Hide Automations
+          message: groups hidden
+      - alias: hide_automations
+        service: group.set_visibility
+        data:
+          entity_id: group.all_automations
+          visible: False

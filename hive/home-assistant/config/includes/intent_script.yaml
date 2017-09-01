@@ -81,6 +81,17 @@
     action:
     - service: input_boolean.turn_on
       entity_id: input_boolean.medicine
+  FeedFrogs:  # Intent type
+    speech:
+      type: plain
+      text: Crickets in the tank, frogs are happy for now.
+    card:
+      type: simple
+      title: Frogs have crickets
+      content: Crickets are high in protien would you like one.
+    action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.fed_frog
 ## OFF during testing ###
 #    card:
 #      type: standard

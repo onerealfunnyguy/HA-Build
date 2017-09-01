@@ -55,6 +55,7 @@
       - 'process_total'
       - 'process_thread'
       - 'process_sleeping'
+    #  - 'cpu_temp'
   - platform: glances
     host: hive
     name: hive
@@ -73,6 +74,7 @@
       - 'process_total'
       - 'process_thread'
       - 'process_sleeping'
+    #  - 'cpu_temp'
   - platform: glances
     host: help.davedaley.com
     name: help

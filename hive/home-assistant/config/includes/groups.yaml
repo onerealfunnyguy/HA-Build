@@ -361,6 +361,8 @@
     - media_player.shortstick_kodi
     - media_player.aftb16
     - media_player.aftm15
+    - media_player.shorthdx
+    - media_player.shortturbo
   DroidVideo:
     name: Video Cams
     entities:
@@ -409,6 +411,7 @@
   Misc:
     name: Misc
     entities:
+    - sensor.shodan_sensor
     - sensor.broadlink_sensor_temperature
     - sensor.ohmconnect_status
   ### Services on Hive ###
@@ -593,6 +596,10 @@
     - device_tracker.tilapiacam
     - device_tracker.tilaipa_cam
     - device_tracker.petcubecamera
+    - device_tracker.hq
+    - device_tracker.wakewakey
+    - device_tracker.medash
+    - device_tracker.shortkindle
 #### MiFlora Groups ####
   catnip1:
     name: CatNip 1

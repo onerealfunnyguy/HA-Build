@@ -15,5 +15,8 @@
     host: shortstick
 
   - platform: kodi
-    name: ShortFire Kodi  
+    name: ShortFire Kodi
     host: shortfire
+
+  - platform: vlc
+    name: ShortKindle

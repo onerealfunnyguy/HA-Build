@@ -208,4 +208,8 @@
   scene.meds:
     friendly_name: Took meds
     emulated_hue: true
-    emulated_hue_name: Took Meds    
+    emulated_hue_name: Took Meds
+  scene.frogs:
+    friendly_name: Fed Frogs
+    emulated_hue: true
+    emulated_hue_name: Fed Frogs

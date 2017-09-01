@@ -23,3 +23,7 @@
   medicine:
     name: medicine
     initial: off
+  fed_frog:
+    name: Fed Frogs
+    initial: off
+    icon: mdi:bowl

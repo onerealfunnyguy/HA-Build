@@ -1,0 +1,459 @@
+~~~~~~
+SortTV
+~~~~~~
+Automatically sorts TV show episodes, movies, and music into an organised directory structure.
+For example, TV/[show]/[season x]/[eps]
+
+SortTV works on Linux, Windows, and Mac OS X.
+
+- Automatically sorts your media, so you don't have to.
+- Lots of renaming options.
+- Can optionally rename episodes and movies using information from thetvdb and tmdb.
+- Image downloading.
+- Integration with xbmc (notification and library update).
+- Can move non-episodes into a separate directory.
+- Sort by move, copy, or symlink.
+- Many many other options (see below).
+
+This provides the magic required to have your home theatre PC (HTPC) keep itself sorted out. 
+You can combine this script with an automatic episode downloader (there are many available*), 
+and this script can sort all of your new episodes, renaming them appropriately if you like.
+Then, if you use xbmc as a front end, it can tell xbmc to check for the new episodes and 
+display a message to anyone viewing, that new episodes are available.
+
+All you will have to do is sit back and enjoy.
+
+* Episodes of many openly licensed shows are available, and episodes can be downloaded using 
+RSS feeds, torrent downloaders, file hosting site downloaders etc.
+
+---
+Copyright 2010 Z. Cliffe Schreuders
+z.cliffe {at} schreuders.org
+http://schreuders.org
+
+Get SortTV here:
+https://sourceforge.net/projects/sorttv/files/
+
+Please goto the xbmc forum to discuss SortTV:
+http://forum.xbmc.org/showthread.php?t=75949
+
+Paypal donations:
+http://sourceforge.net/donate/index.php?group_id=330009
+
+---
+This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+---
+Install
+
+Make sure you have Perl installed. 
+If you are using Windows I recommend Strawberry Perl. Linux and Mac OS X often have Perl already installed.
+On Mac OS X you may need to install the CLI developer tools.
+
+Extract the SortTV script (sorttv.pl etc) wherever you like. 
+For example, on Linux into /home/[yourusername]/sorttv/
+
+Edit the sorttv.conf file to the settings you want (at minimum specify the location of the directories to sort from and to)
+
+Install the modules the script uses:
+
+To do so, run this command on Linux or Mac OS X:
+	sudo cpan File::Copy::Recursive File::Glob LWP::Simple TVDB::API Getopt::Long Switch WWW::TheMovieDB JSON::Parse XML::Simple
+
+To install on FreeBSD, run the above, then:
+	cd /usr/local/lib/perl5/site_perl/5.12.4/WWW
+	wget http://cpansearch.perl.org/src/PJOBSON/WWW-TheMovieDB-0.03/lib/WWW/TheMovieDB.pm
+	cpan JSON::Any JSON::Parse
+
+On Windows run this via the command prompt:
+	cpan File::Copy::Recursive File::Glob::Windows LWP::Simple TVDB::API Getopt::Long Switch WWW::TheMovieDB JSON::Parse XML::Simple
+
+When prompted, you can select the recommended options by pressing Enter (see the FAQ if you encounter problems)
+---
+Automation
+
+If you want to make it sort new episodes every hour:
+
+On Linux: 
+  In a console type: crontab -e
+  On a new line enter "5 * * * * " followed by the command to run the script.
+  This will run the script 5 mins past every hour.
+  Eg:
+  5 * * * * nice perl /home/cliffe/sorttv/sorttv.pl
+
+  Every hour this would sort new episodes according to the configuration in /home/cliffe/sorttv/sorttv.conf
+
+On Windows:
+  Create a .bat file with the command and use scheduler.
+  Google is your friend. 
+
+---
+USAGE:
+
+sorttv.pl [OPTIONS] [directory-to-sort directory-to-sort-into]
+
+By default SortTV tries to read the configuration from sorttv.conf
+	(an example config file is provided with SortTV)
+
+The simplest way to use SortTV is to edit the example config file, then just run "perl sorttv.pl" to do the sorting
+
+You can overwrite any config options with commandline arguments, which match the format of the config file (except that each argument starts with "--")
+
+OPTIONS:
+	--directory-to-sort=dir
+		A directory containing files to sort
+		For example, set this to where completed downloads are stored
+
+	--file-to-sort=file
+		A file to be sorted
+		This argument can be repeated to add multiple individual files to sort
+
+	--tv-directory=dir
+		Where to sort episodes into (dir that will contain dirs for each show)
+		This directory will contain the structure (Show)/(Seasons)/(episodes)
+		Alternatively set this to "KEEP_IN_SAME_DIRECTORIES" for a recursive renaming of files in directory-to-sort
+
+	--movie-directory
+		Where to sort movies into
+		If not specified, movies are not moved
+		Enabling this feature requires Internet access to look up movie names
+
+	--music-directory=dir
+		Where to sort music into
+		If not specified, music is not moved
+
+	--misc-directory=dir
+		Where to put things that are not episodes
+		If this is supplied then files and directories that SortTV does not believe are episodes will be moved here
+		If not specified, non-episodes are not moved
+
+	--dry-run
+		Dry run mode
+		No file operations will occur on the to-sort directory.
+		Some directories may be created at the destination.
+
+	--whitelist=pattern
+		Only copy if the file matches one of these patterns
+		Uses shell-like simple pattern matches (eg *.avi)
+		This argument can be repeated to add more rules
+
+	--ignore=pattern
+		Don't copy if the file matches one of these patterns
+		Uses shell-like simple pattern matches (eg *.avi)
+		This argument can be repeated to add more rules
+
+	--delete=pattern
+		Delete the source file, if the file matches one of these patterns
+		Uses shell-like simple pattern matches (eg *.avi)
+		This argument can be repeated to add more rules
+
+	--consider-media-file-extensions=[TRUE|FALSE]
+		Consider the file extension before treating certain files as movies or TV episodes
+		Recommended: SortTV is aware of a large number of extensions, and this can avoid many false matches
+		if not specified, TRUE
+
+	--non-media-extension=pattern
+		These extensions are NEVER movies or TV shows or music, treat them as "others" automatically
+		Note: Will not run these file types through tvdb, tmdb, etc.
+		Not typically required if consider-media-file-extensions=TRUE
+		This argument can be repeated to add multiple extensions
+
+	--filesize-range=pattern
+		Only copy files which fall within these filesize ranges.
+		Examples for the pattern include 345MB-355MB or 1.05GB-1.15GB
+
+	--sort-only-older-than-days=number
+		Sort only files or directories that are older than this number of days. 
+		If not specified or zero, sorts everything.
+
+	--xbmc-old-web-server=host:port
+		host:port for the xbmc webserver on older versions of xbmc, to automatically update library when new episodes arrive
+		Remember to enable the webserver within xbmc, and "set the content" of your TV directory in xbmc.
+		If not specified, xbmc is not updated
+
+	--xbmc-remote-control=host
+		host for the new xbmc communication, to automatically update library when new episodes arrive
+		You probably want to set this to "localhost"
+
+	--xbmc-remote-control-port=port
+		port number for the new xbmc communication
+		You probably want to set this to "9090", if that doesn't work, try "80"
+
+	--log-file=filepath
+		Log to this file
+		If not specified, output only goes to stdout (the screen)
+
+	--verbose
+		Output verbosity. Set to show messages describing the decision making process.
+		If not specified, it is disabled.
+
+	--polling-time:{X}
+		Tell the script to check for new files to sort every X seconds, minutes, hours, or days
+		You could set the script to start on system startup with polling, rather than using scheduling to start the script.
+		Valid values include "2secs", "2days", "1min", "3hrs", "30s" etc.
+		If not specified, polling is disabled and the script will only sort the directory once.
+
+	--read-config-file=filepath
+		Secondary config file, overwrites settings loaded so far
+		If not specified, only the default config file is loaded (sorttv.conf)
+
+	--fetch-show-title=[TRUE|FALSE]
+		Fetch show titles from thetvdb.com (for proper formatting)
+		If not specified, TRUE
+
+	--rename-episodes=[TRUE|FALSE]
+		Rename episodes to "show name S01E01.ext" format when moving
+		If not specified, FALSE
+
+	--rename-tv-format={formatstring}
+		The format to use if renaming to a new format (as specified above)
+		Hint: including the Episode Title as part of the name slows the process down a bit since titles are retrieved from thetvdb.com
+		The formatstring can be made up of:
+			[SHOW_NAME]: "My Show"
+			[EP1]: "S01E01"
+			[EP2]: "1x1"
+			[EP3]: "1x01"
+			[EP4]: "01" (Episode number only)
+			[EP_NAME1] " - Episode Title"
+			[EP_NAME2] ".Episode Title"
+			[QUALITY]: " HD" (or " SD") - extracted from original file name
+		If not specified the format is, "[SHOW_NAME] - [EP1][EP_NAME1]"
+		For example:
+			for "My Show S01E01 - Episode Title" (this is the default)
+			--rename-format=[SHOW_NAME] - [EP1][EP_NAME1]
+			for "My Show.S01E01.Episode Title"
+			--rename-format=[SHOW_NAME].[EP1][EP_NAME2]
+
+	--rename-movie-format={formatstring}
+		The format to use if renaming movies
+		The format can be made up of:
+			[MOVIE_TITLE]: "My Movie"
+			[YEAR1]: "(2011)"
+			[YEAR2]: "2011"
+			[QUALITY]: " HD" (or " SD") - extracted from original file name
+			[RATING]: "PG" - MPAA rating (US)
+			/: A sub-directory (folder) - movies can be in their own directories
+		If not specified the format is, "[MOVIE_TITLE] [YEAR2]/[MOVIE_TITLE] [YEAR1]"
+
+	--use-dots-instead-of-spaces=[TRUE|FALSE]
+		Renames episodes to replace spaces with dots
+		If not specified, FALSE
+
+	--use-season-directories=[TRUE|FALSE]
+		Whether to use directories for seasons 
+		For example, should "Show S1E01.avi" be sorted into "Show/Season 1/" or "Show"
+		If FALSE, all episodes will be put in the one show directory and season images will not be fetched
+		If not specified, TRUE
+
+	--season-title=string
+		Season title
+		Note: if you want a space it needs to be included
+		(eg "Season " -> "Season 1",  "Series "->"Series 1", "Season."->"Season.1")
+		If not specified, "Season "
+
+	--season-double-digits=[TRUE|FALSE]
+		Season format padded to double digits (eg "Season 01" rather than "Season 1")
+		If not specified, FALSE
+
+	--year-tolerance-for-error=number
+		The tolerated variance for year matches.
+		This applies to movies and to a lesser extent TV episodes (for sorting purposes).
+		For example, if a year is specified in the filename of a movie to sort, it can be off by this many years and still be considered the same movie as one in tmdb database.
+		Note that when sorting TV episodes, this is only considered when identifying local directories to sort into, and if a match is not found the year is subsequently ignored.
+		If not specified, 1
+
+	--match-type=[NORMAL|LIBERAL]
+		Match type. 
+		LIBERAL assumes all files are episodes and tries to extract season and episode number any way possible.
+		If not specified, NORMAL
+
+	--match-files-based-on-tvdb-lookups=[TRUE|FALSE]
+		Attempt to sort files that are named after the episode title or air date.
+		For example, "My show - My episode title.avi" or "My show - 2010-12-12.avi"
+		 could become "My Show - S01E01 - My episode title.avi"
+		Attempts to lookup the season and episode number based on the episodes in thetvdb.com database.
+		Since this involves downloading the list of episodes from the Internet, this will cause a slower sort.
+		If not specified, TRUE
+
+	--sort-by=[MOVE|COPY|MOVE-AND-LEAVE-SYMLINK-BEHIND|PLACE-SYMLINK|PLACE-HARDLINK]
+		Sort by moving or copying the file. If the file already exists because it was already copied it is silently skipped.
+		The MOVE-AND-LEAVE-SYMLINK-BEHIND option may be handy if you want to continue to seed after sorting, this leaves a symlink in place of the newly moved file.
+		PLACE-SYMLINK does not move the original file, but places a symlink in the sort-to directory (probably not what you want)
+		PLACE-HARDLINK does not move the original file, but places a hardlink in the sort-to directory. This might be helpful if you use Linux and you want a sorted and unsorted version on the same partition.
+		If not specified, MOVE
+
+	--treat-directories=[AS_FILES_TO_SORT|RECURSIVELY_SORT_CONTENTS|IGNORE]
+		How to treat directories. 
+		AS_FILES_TO_SORT - sorts directories, moving entire directories that represents an episode, also detects and moves directories of entire seasons
+		RECURSIVELY_SORT_CONTENTS - doesn't move directories, just their contents, including subdirectories
+		IGNORE - ignores directories
+		If not specified, RECURSIVELY_SORT_CONTENTS
+
+	--require-show-directories-already-exist=[TRUE|FALSE]
+		Only sort into show directories that already exist
+		This may be helpful if you have multiple destination directories. Just set up all the other details in the conf file, 
+		and specify the destination directory when invoking the script. Only episodes that match existing directories in the destination will be moved.
+		If this is false, then new directories are created for shows that dont have a directory.
+		TRUE/FALSE
+		If not specified, FALSE
+
+	--remove-symlinks=[TRUE|FALSE]
+		Deletes symlinks from the directory to sort while sorting.
+		This may be helpful if you want to remove all the symlinks you previously left behind using --sort-by=MOVE-AND-LEAVE-SYMLINK-BEHIND
+		You could schedule "perl sorttv.pl --remove-symlinks=TRUE" to remove these once a week/month
+		If this option is enabled and used at the same time as --sort-by=MOVE-AND-LEAVE-SYMLINK-BEHIND, 
+		 then only the previous links will be removed, and new ones may also be created
+		If not specified, FALSE
+
+	--show-name-substitute=NAME1-->NAME2
+		Substitutes files equal to NAME1 for NAME2
+		This argument can be repeated to add multiple rules for substitution
+
+	--tvdb-id-substitute=NAME1-->ID
+		Use these thetvdb.com IDs to lookup these shows
+		This argument can be repeated to add multiple rules for substitution
+
+	--music-extension=extension
+		Define additional extensions for music files (SortTV knows a lot already)
+		This argument can be repeated to add multiple additional extensions
+
+	--sort-movie-directories=[TRUE|FALSE]
+		Attempt to sort entire directories that represent a movie
+		The directory (and all its contents AS IS) will be sorted
+		Note: Currently, this option WILL NOT rename or sort ANY of the contents of the directory, 
+		including the movie. The directory will just be sorted into the movie-directory.
+		If not specified, FALSE
+
+	--force-windows-compatible-filenames=[TRUE|FALSE]
+		Forces MSWindows compatible file names, even when run on other platforms such as Linux
+		This may be helpful if you are writing to a Windows share from a Linux system
+		If not specified, TRUE
+
+	--tv-lookup-language=[en|...]
+	--movie-lookup-language=[en|...]
+		Set language for thetvdb / tmdb lookups, this effects episode titles etc
+		Valid values include: it, zh, es, hu, nl, pl, sl, da, de, el, he, sv, eng, fi, no, fr, ru, cs, en, ja, hr, tr, ko, pt
+		If not specified, en (English)
+
+	--flatten-non-eps=[TRUE|FALSE]
+		Should non-episode files loose their directory structure?
+		This option only has an effect if a non-episode directory was specified.
+		If set to TRUE, they will be renamed after directory they were in.
+		Otherwise they keep their directory structure in the new non-episode-directory location.
+		If not specified, FALSE
+
+	--fetch-images=[NEW_SHOWS|FALSE]
+		Download images for shows, seasons, and episodes from thetvdb
+		Downloaded images are copied into the sort-to (destination) directory.
+		NEW_SHOWS - When new shows, seasons, or episodes are created the associated images are downloaded
+		FALSE - No images are downloaded
+		If not specified, NEW_SHOWS
+	
+	--fetch-movie-images=[TRUE|FALSE]
+		Download images for movies
+		Downloaded images are copied into the sort-to (destination) directory.
+		If not specified, TRUE
+
+	--images-format=[POSTER/BANNER]
+		Sets the image format to use, poster or banner.
+		POSTER/BANNER
+		if not specified, POSTER
+
+	--duplicate-images=[SYMLINK|COPY]
+		Duplicate images can be symlinked or copied. For example TV season images get placed in the main directory, and in season subdirectories.
+		The SYMLINK option is recommended. If symlinks are not available (for example, on Windows), then they will be copied.
+		If not specified, SYMLINK.
+
+	--if-file-exists=[SKIP|OVERWRITE]
+		What to do if a file already exists in the destination
+		If not specified, SKIP
+
+	--tvdb-episode-name-required=[TRUE|FALSE]
+		Only sort tv episodes if the episode name was available from thetvdb
+		Note that this only applies if you include the tvdb episode name in the rename format (and have renaming enabled)
+		Also note that directories may still be created in the destination, even if the file is skipped due to this rule
+		If not specified, FALSE
+
+	--extract-compressed-before-sorting=[TRUE|FALSE]
+		Extracts the contents of archives (.zip, .rar) into the directory-to-sort while sorting
+		If "rar" and "unzip" programs are available they are used.
+		If not specified, TRUE
+
+	--dir-permissions=[octal]
+		Set permissions on new created directories (octal format : 0775)
+		If no specified, uses system defined umask
+
+	--check-for-updates=[TRUE|FALSE]
+		Check for newer versions of SortTV
+		If not specified, TRUE
+
+	--display-license=[TRUE|FALSE]
+		Shows the license and some information about donations when the program starts
+		If not specified, TRUE
+
+	--no-network
+		Disables all the network enabled features such as:
+			Disables notifying xbmc
+			Disables tvdb title formatting
+			Disables fetching images
+			Disables looking up files named "Show - EpTitle.ext"
+			Disables checking for updates
+			Changes rename format (if applicable) to not include episode titles
+
+EXAMPLES:
+Does a sort, as configured in sorttv.conf:
+	perl sorttv.pl
+
+The directory-to-sort and directory-to-sort-to can be supplied directly:
+To sort a Downloads directory contents into a TV directory
+	perl sorttv.pl /home/me/Downloads /home/me/Videos/TV
+Alternatively:
+	perl sorttv.pl --directory-to-sort=/home/me/Downloads --directory-to-sort-into=/home/me/Videos/TV
+
+To move non-episode files in a separate directory:
+	perl sorttv.pl --directory-to-sort=/home/me/Downloads --directory-to-sort-into=/home/me/Videos/TV --non-episode-dir=/home/me/Videos/Non-episodes
+
+To integrate with xbmc (notification and automatic library update):
+	perl sorttv.pl --directory-to-sort=/home/me/Downloads --directory-to-sort-into=/home/me/Videos/TV --xbmc-webserver=localhost:8080
+
+And so on...
+
+---
+
+Frequently Asked Queries
+
+Q: SortTV wont run, it gives an error indicating that modules are missing (cant find a .pm file)
+A: Make sure you followed the instructions on installing the cpan modules. If that doesn't work, see below.
+
+Q: I am having trouble installing the cpan modules...
+A: First, try repeating running the cpan commands.
+
+If cpan modules are not passing the tests, you can force cpan to install them anyway. Run sudo cpan, then type "force install Switch", where Switch is the name of the module you are trying to install.
+
+On Debian/Ubuntu you could try:
+	apt-get install make build-essential libxml-sax-expat-perl
+	cpan File::Copy::Recursive File::Glob LWP::Simple TVDB::API Getopt::Long Switch WWW::TheMovieDB::Search XML::Simple
+	perl -MXML::SAX -e "XML::SAX->add_parser(q(XML::SAX::Expat))->save_parsers()"
+
+Q: Why doesn't SortTV download images for TV shows/episodes on Windows?
+A: This is currently a limitation in the TVDB::API cpan module. The images should download fine for movies, or if you use SortTV on Linux all images should download correctly. Images downloaded by the module on Windows are corrupted, therefore this features is now automatically disabled for Windows users. Feel free to discuss this problem with the creator of the module.
+
+Q: How do I submit code?
+A: For simple patches, I suggest you make your changes in a copy, and create a patch using the command: "diff -ur dir1 dir2 > patch", where dir1 is a directory containing the latest release of SortTV, and dir2 is your-new-version. This creates a file named "patch" containing just your changes. Send "patch" via an email or via the forum. Alternatively, if you wish you can use Git. Find repo information on the SortTV sourceforge page.
+
+Q: How can I say thank you / make a donation?
+A: I am really glad you have found SortTV useful! Pop by the forum and say hello, or make a donation via Paypal here: http://sourceforge.net/donate/index.php?group_id=330009 If you would rather donate via Bitcoin let me know and I'll give you details.
+
+Q: Something else...
+A: Please discuss the issue on the forum
+
+---
+Enjoy!
+
+Paypal donations welcome:
+http://sourceforge.net/donate/index.php?group_id=330009
+
+If you find this script helpful then please consider making a $5 paypal donation :)

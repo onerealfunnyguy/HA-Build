@@ -1,4 +1,5 @@
 alias: Notify ShortFire
+initial_state: True
 trigger:
   platform: state
   entity_id:

@@ -1,4 +1,5 @@
 alias: Turn off front door light at 11pm
+initial_state: True
 trigger:
   platform: time
   at: "23:00:00"

@@ -22,3 +22,6 @@
     - name: meds
       entities:
         input_boolean.medicine : on
+    - name: frogs_fed
+      entities:
+        input_boolean.fed_frog : on

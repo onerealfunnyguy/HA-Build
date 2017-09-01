@@ -1,4 +1,5 @@
 alias: Slack the Cat
+initial_state: True
 trigger:
   platform: state
   entity_id:
@@ -9,7 +10,7 @@ condition:
     conditions:
       - condition: numeric_state
         entity_id: sensor.cat_cam_motion
-        above: 125
+        above: 210
       - condition: numeric_state
         entity_id: sensor.cat_cam_battery_level
         above: 65
