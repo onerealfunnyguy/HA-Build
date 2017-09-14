@@ -6,7 +6,7 @@ docker run  -d \
 --name="doorcast" \
 -v /home/$USER/stream2cast/fds2c:/root/s2c \
 --net=host \
-stream2cast
+onerealfunnyguy/stream2cast
 ###fea7c1c475fb
 
 #docker run  -d \
@@ -16,4 +16,3 @@ stream2cast
 #--net=host \
 #stream2cast
 ###fea7c1c475fb
-

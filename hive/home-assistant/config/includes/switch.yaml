@@ -1,6 +1,6 @@
-- platform: zoneminder
-  command_on: Modect
-  command_off: Monitor
+# - platform: zoneminder
+#   command_on: Modect
+#   command_off: Monitor
 - platform: transmission
   host: hive
 - platform: broadlink

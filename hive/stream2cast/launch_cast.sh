@@ -6,4 +6,4 @@ docker run  -d \
 --name="orfgcast" \
 -v /home/$USER/stream2cast/s2c:/root/s2c \
 --net=host \
-stream2cast
+onerealfunnyguy/stream2cast

@@ -25,7 +25,7 @@
     mac: 'B4:43:0D:EF:9E:73'
     monitored_conditions:
       - temperature
-  - platform: zoneminder
+#  - platform: zoneminder
   - platform: haveibeenpwned
     email:
       !secret email_1
@@ -147,8 +147,8 @@
       - 'process_total'
       - 'process_thread'
       - 'process_sleeping'
-  - platform: zabbix
-    triggers:
+  #- platform: zabbix
+  #  triggers:
 ### SSL Cert Check - Owned ###
   - platform: cert_expiry
     host: davedaley.com
@@ -813,3 +813,8 @@
   - platform: shodan
     api_key: !secret SHODAN_API_KEY
     query: 'home-assistant'
+  - platform: plex
+    host: hive
+    name: hive
+    username: !secret plex_user
+    password: !secret plex_pass

@@ -2,9 +2,10 @@
 # Prolific use of custom-ui component
 # https://github.com/andrey-git/home-assistant-custom-ui
 #
-
     "*.*":
-      custom_ui_state_card: custom-ui
+      custom_ui_state_card: state-card-custom-ui
+    # "*.*":
+    #   custom_ui_state_card: custom-ui
 
     group.ip_report:
       state_card_mode: badges
@@ -144,7 +145,7 @@
         - sensor.vocore_state
         - sensor.xbox_state
     light.*:
-      custom_ui_state_card: custom-ui
+      custom_ui_state_card: state-card-custom-ui
       state_card_mode: single-line
       hide_control: false
       stretch_slider: true

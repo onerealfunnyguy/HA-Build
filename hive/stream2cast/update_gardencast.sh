@@ -6,7 +6,7 @@ docker run  -d \
 --name="gardencast" \
 -v /home/$USER/stream2cast/gardens2c:/root/s2c \
 --net=host \
-stream2cast
+onerealfunnyguy/stream2cast
 
 #docker run  -d \
 #--rm \
@@ -32,4 +32,3 @@ stream2cast
 #--net=host \
 #stream2cast
 ###fea7c1c475fb
-

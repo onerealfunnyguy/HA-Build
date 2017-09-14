@@ -15,11 +15,21 @@ homeassistant:
       ############
   customize: !include customizations/custom.yaml
   customize_glob: !include customizations/custom-ui.yaml
+customizer:
+  custom_ui: local
+#   customize_glob:
+#     "*.*":
+#       custom_ui_state_card: state-card-custom-ui
+# customizer:
+#   custom_ui: local
+
 # Show links to resources in log and frontend
 #introduction:
 
 # Enables the frontend
 frontend:
+  extra_html_url:
+    - /local/custom_ui/state-card-custom-ui.html
 
 http:
   # Uncomment this to add a password (recommended!)

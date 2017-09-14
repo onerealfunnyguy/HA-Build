@@ -1,0 +1,10 @@
+shell_command:
+  # Use explicit options for security purposes
+  stream: >-
+    {% set streams = {
+      'input_boolean.notify_catcast': 'catcast',
+      'input_boolean.notify_doorcast': 'doorcast',
+      'input_boolean.notify_gardencast': 'gardencast',
+      'input_boolean.notify_koicast': 'koicast'
+    } %}
+    ssh shortbus@hive "echo $host && sleep 5 && cd stream2cast && ./update_stream.sh {{ streams[stream]|default('catcast') }}"
