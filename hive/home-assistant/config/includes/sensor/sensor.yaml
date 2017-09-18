@@ -76,6 +76,25 @@
       - 'process_sleeping'
     #  - 'cpu_temp'
   - platform: glances
+    host: maxx
+    name: maxx
+    resources:
+      - 'disk_use_percent'
+      - 'disk_use'
+      - 'disk_free'
+      - 'memory_use_percent'
+    #  - 'memory_use'
+    #  - 'memory_free'
+      - 'swap_use_percent'
+    #  - 'swap_use'
+    #  - 'swap_free'
+      - 'processor_load'
+      - 'process_running'
+      - 'process_total'
+      - 'process_thread'
+      - 'process_sleeping'
+    #  - 'cpu_temp'
+  - platform: glances
     host: help.davedaley.com
     name: help
     resources:
@@ -385,7 +404,7 @@
       - battery
 ## Transmission ##
   - platform: transmission
-    host: hive
+    host: maxx
     monitored_variables:
       - 'current_status'
       - 'download_speed'
@@ -814,7 +833,22 @@
     api_key: !secret SHODAN_API_KEY
     query: 'home-assistant'
   - platform: plex
-    host: hive
-    name: hive
+    host: maxx
+    name: maxx
     username: !secret plex_user
     password: !secret plex_pass
+  - platform: sonarr
+    api_key: !secret sonarr_api
+    host: maxx
+  - platform: sabnzbd
+    host: maxx
+    port: 8085
+    api_key: !secret sabnzbd_api
+    monitored_variables:
+      - 'current_status'
+      - 'speed'
+      - 'queue_size'
+      - 'queue_remaining'
+      - 'disk_size'
+      - 'disk_free'
+    unit: TB

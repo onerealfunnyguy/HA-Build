@@ -10,10 +10,7 @@
       url: http://hive:5050
     - name: Hive Zabbix
       url: http://hive:8080
-    - name: Hive Transmission
-      url: http://hive:9091/transmission/web/
-    - name: Hive Plex
-      url: http://hive:32400
+
   ### Services on shed  ###
     - name: Shed WebMin
       url: https://shed:10000
@@ -27,6 +24,17 @@
       url: https://unifi:8443
     - name: Shed ZoneMinder
       url: http://shed/zm
+  ### Services on maxx  ###
+    - name: maxx WebMin
+      url: https://maxx:10000
+    - name: maxx CockPit
+      url: https://maxx:9090
+    - name: maxx ZoneMinder
+      url: http://maxx/zm
+    - name: Maxx Transmission
+      url: http://maxx:9091/transmission/web/
+    - name: Maxx Plex
+      url: http://maxx:32400
   ### Remote  Server Management ###
     - name: gate
       url: https://gate

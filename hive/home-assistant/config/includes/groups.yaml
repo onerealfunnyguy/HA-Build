@@ -51,6 +51,7 @@
         - group.servermanagement
         - group.hiveservices
         - group.shedservices
+        - group.maxxservices
         - group.lanmanagement
         - group.shortsites
         - group.projectsites
@@ -167,6 +168,22 @@
     - sensor.shed_swap_use_2
     - sensor.shed_thread
     - sensor.shed_total
+  maxx:
+    entities:
+    - sensor.maxx_cpu_load
+    - sensor.maxx_disk_free
+    - sensor.maxx_disk_use
+    - sensor.maxx_disk_use_2
+    - sensor.maxx_ram_free
+    - sensor.maxx_ram_use
+    - sensor.maxx_ram_use_2
+    - sensor.maxx_running
+    - sensor.maxx_sleeping
+    - sensor.maxx_swap_free
+    - sensor.maxx_swap_use
+    - sensor.maxx_swap_use_2
+    - sensor.maxx_thread
+    - sensor.maxx_total
   pepper:
     entities:
     - sensor.pepper_cpu_load
@@ -387,6 +404,7 @@
     entities:
     - group.hive
     - group.shed
+    - group.maxx
   remote_server_load:
     name: Remote Server Load
     entities:
@@ -421,10 +439,9 @@
     - weblink.hive_webmin
     - weblink.hive_cockpit
     - weblink.hive_hass
-    - weblink.hive_zoneminder
     - weblink.hive_appdaemon
-    - weblink.hive_transmission
-    - weblink.hive_plex
+
+
     - weblink.hive_zabbix
   ### Services on shed  ###
   shedservices:
@@ -436,6 +453,15 @@
     - weblink.shed_unifi
     - weblink.shed_webmin
     - weblink.shed_zoneminder
+  ### Services on shed  ###
+  maxxservices:
+    name: maxx services
+    entities:
+    - weblink.maxx_cockpit
+    - weblink.maxx_webmin
+    - weblink.maxx_zoneminder
+    - weblink.maxx_plex
+    - weblink.maxx_transmission
   ### LAN Management ###
   lanmanagement:
     name: LAN Management

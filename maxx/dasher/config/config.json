@@ -1,0 +1,29 @@
+{"buttons":[
+  {
+    "name": "WakeyWakey",
+    "address": "34:d2:70:2f:89:cf",
+    "url": "https://1915.davedaley.com:8123/api/services/scene/turn_on?api_password=Joey5639joey",
+    "method": "POST",
+    "headers": {"authorization": "Joey5639joey"},
+    "json": true,
+    "body": {"entity_id": "scene.imup"}
+  },
+  {
+    "name": "MedLog",
+    "address": "40:b4:cd:b0:da:a9",
+    "url": "https://1915.davedaley.com:8123/api/services/scene/turn_on?api_password=Joey5639joey",
+    "method": "POST",
+    "headers": {"authorization": "Joey5639joey"},
+    "json": true,
+    "body": {"entity_id": "scene.meds"}
+  },
+  {
+    "name": "ForgsFed",
+    "address": "fc:a6:67:f0:b0:93",
+    "url": "https://1915.davedaley.com:8123/api/services/scene/turn_on?api_password=Joey5639joey",
+    "method": "POST",
+    "headers": {"authorization": "Joey5639joey"},
+    "json": true,
+    "body": {"entity_id": "scene.frogs_fed"}
+  }
+]}

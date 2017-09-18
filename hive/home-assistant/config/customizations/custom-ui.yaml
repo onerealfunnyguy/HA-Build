@@ -53,6 +53,23 @@
         - sensor.shed_swap_use_2
         - sensor.shed_thread
         - sensor.shed_total
+    group.maxx:
+      state_card_mode: badges
+      badges_list:
+        - sensor.maxx_cpu_load
+        - sensor.maxx_disk_free
+        - sensor.maxx_disk_use
+        - sensor.maxx_disk_use_2
+        - sensor.maxx_ram_free
+        - sensor.maxx_ram_use
+        - sensor.maxx_ram_use_2
+        - sensor.maxx_running
+        - sensor.maxx_sleeping
+        - sensor.maxx_swap_free
+        - sensor.maxx_swap_use
+        - sensor.maxx_swap_use_2
+        - sensor.maxx_thread
+        - sensor.maxx_total
     group.pepper:
       state_card_mode: badges
       badges_list:

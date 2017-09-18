@@ -4,7 +4,7 @@ docker run -d \
 --privileged \
 --restart unless-stopped \
 -e TZ="America/Los_Angeles" \
--e PLEX_CLAIM="YOUR-KEY" \
+-e PLEX_CLAIM="snVtpzwNpc7ZzZgY19NP" \
 -v /home/$USER/nas/plex_config/config:/config \
 -v /home/$USER/plex/transcode:/transcode \
 -v /home/$USER/nas/plex_media:/data \
