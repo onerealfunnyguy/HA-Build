@@ -27,3 +27,11 @@
     name: Fed Frogs
     initial: off
     icon: mdi:bowl
+  grab_start:
+    name: Media Grab
+    initial: off
+    icon: mdi:movie-roll
+  grab_stop:
+    name: Stop Media Grab
+    initial: off
+    icon: mdi:movie

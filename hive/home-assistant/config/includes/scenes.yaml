@@ -19,6 +19,7 @@
       entities:
         switch.coffee : on
         switch.upstar: on
+        input_boolean.grab_stop: on
     - name: meds
       entities:
         input_boolean.medicine : on

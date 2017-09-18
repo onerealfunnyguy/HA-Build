@@ -6,6 +6,8 @@
         - group.mediaplayers
         - group.cave_control
         - group.transmission
+        - group.sabnzbd
+        - group.sonarr
         - camera.cat_cam
         - device_tracker.rcivdbwd_shortt2
         - device_tracker.shortt2_shortt2
@@ -900,3 +902,18 @@
     - sensor.transmission_down_speed
     - sensor.transmission_status
     - sensor.transmission_up_speed
+ ### sabnzbd ###
+  sabnzbd:
+    name: sabnzbd
+    entities:
+    - sensor.sabnzbd_disk
+    - sensor.sabnzbd_disk_free
+    - sensor.sabnzbd_left
+    - sensor.sabnzbd_queue
+    - sensor.sabnzbd_speed
+    - sensor.sabnzbd_status
+ ### sabnzbd ###
+  sonarr:
+    name: sonarr
+    entities:
+    - sensor.sonarr_upcoming
