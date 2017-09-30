@@ -24,7 +24,7 @@
 *.AppleDouble
 
 shed/dasher/config/config.json
-
+maxx/dasher/config/config.json
 *.dev
 *.example
 hq/.bash_history
