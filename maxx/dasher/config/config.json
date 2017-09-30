@@ -4,7 +4,7 @@
     "address": "34:d2:70:2f:89:cf",
     "url": "https://Host/api/services/scene/turn_on?api_password=PASSWORD",
     "method": "POST",
-    "headers": {"authorization": "Joey5639joey"},
+    "headers": {"authorization": "Password"},
     "json": true,
     "body": {"entity_id": "scene.imup"}
   }
