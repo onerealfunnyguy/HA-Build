@@ -34,6 +34,7 @@ frontend:
 http:
   # Uncomment this to add a password (recommended!)
   api_password: !secret apipass
+#  server_port: 443
   # SSL Cert
   ssl_certificate: !secret SSL_cert
   ssl_key: !secret SSL_key
@@ -68,6 +69,9 @@ sun:
 # Text to speech
 tts:
   platform: google
+  cache: true
+  cache_dir: /config/tts
+  time_memory: 300
 
 ifttt:
   key: !secret ifttt_key

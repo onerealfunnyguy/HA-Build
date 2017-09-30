@@ -18,5 +18,5 @@
     name: ShortFire Kodi
     host: shortfire
 
-  - platform: vlc
-    name: ShortKindle
+  - platform: mpd
+    host: mpd

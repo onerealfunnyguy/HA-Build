@@ -250,6 +250,7 @@
     name: Tomato Pot
     force_update: false
     median: 3
+    adapter: hci1
     monitored_conditions:
       - moisture
       - light

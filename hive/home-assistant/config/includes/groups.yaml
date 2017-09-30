@@ -382,6 +382,7 @@
     - media_player.aftm15
     - media_player.shorthdx
     - media_player.shortturbo
+    - sensor.maxx
   DroidVideo:
     name: Video Cams
     entities:
@@ -418,6 +419,7 @@
     name: Climate
     entities:
     - group.buoy_report
+    - sensor.season
     - sun.sun
     - sensor.moon
     - sensor.waqi_camp_pendleton_san_diego_california
@@ -442,8 +444,6 @@
     - weblink.hive_cockpit
     - weblink.hive_hass
     - weblink.hive_appdaemon
-
-
     - weblink.hive_zabbix
   ### Services on shed  ###
   shedservices:
@@ -519,6 +519,8 @@
   hostedsites:
     name: hosted sites
     entities:
+  ### Hippysteve419@aol.com ###
+    - weblink.trinitygrowercom
   ### LeClaire ###
     - weblink.armbarassassincom
     - weblink.simplyeffectsmakeupcom
@@ -628,6 +630,9 @@
     - device_tracker.wakewakey
     - device_tracker.medash
     - device_tracker.shortkindle
+    - device_tracker.dcipc1915local
+    - device_tracker.um21915local
+    - device_tracker.boy21915local
 #### MiFlora Groups ####
   catnip1:
     name: CatNip 1
@@ -886,6 +891,7 @@
     - sensor.dabnapcom
     - sensor.behco
     - sensor.flashhuntcom
+    - sensor.trinitygrowercom
     - sensor.auntiekskitchencom
     - sensor.pinheadztradingpostcom
     - sensor.reliablecablecom

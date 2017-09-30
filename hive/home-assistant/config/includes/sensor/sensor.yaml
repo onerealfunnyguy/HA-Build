@@ -210,6 +210,9 @@
     name: dabnap.com
 ### SSL Cert Check - hosted ###
   - platform: cert_expiry
+    host: trinitygrower.com
+    name: trinitygrower.com
+  - platform: cert_expiry
     host: armbarassassin.com
     name: armbarassassin.com
   - platform: cert_expiry
@@ -852,3 +855,5 @@
       - 'disk_size'
       - 'disk_free'
     unit: TB
+  - platform: season
+    type: astronomical
