@@ -1,7 +1,7 @@
-
-
+#
+#
 - host: koicam
   name: Koi Cam
-
-- host: TilapiaCam
-  name: Tilapia Cam
+#
+# #- host: TilapiaCam
+#   name: Tilapia Cam

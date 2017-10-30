@@ -36,14 +36,16 @@ http:
   api_password: !secret apipass
 #  server_port: 443
   # SSL Cert
-  ssl_certificate: !secret SSL_cert
-  ssl_key: !secret SSL_key
+  # Off local - Added pfsense HAProxy
+#  ssl_certificate: !secret SSL_cert
+#  ssl_key: !secret SSL_key
   # Uncomment this if you are using SSL or running in Docker etc
-  base_url: !secret burl
+#  base_url: !secret burl
   trusted_networks:
-    - 127.0.0.1
-    - ::1
-    - 192.168.42.0/24
+    - !secret t1
+    - !secret t2
+    - !secret t3
+    - !secret t4
 # Checks for available updates
 updater:
 
@@ -60,7 +62,7 @@ history:
 logbook:
 
 recorder:
-  purge_days: 366
+#  purge_days: 366
   db_url: !secret db_host
 
 # Track the sun
@@ -69,9 +71,9 @@ sun:
 # Text to speech
 tts:
   platform: google
-  cache: true
-  cache_dir: /config/tts
-  time_memory: 300
+  # cache: true
+  # cache_dir: /config/tts
+  # time_memory: 300
 
 ifttt:
   key: !secret ifttt_key
@@ -148,6 +150,18 @@ twilio:
 # Add Custom Alexa Skill
 alexa:
   flash_briefings: !include includes/flash_briefings.yaml
+
+### Added Grafana Panels ###
+panel_iframe:
+  system_load:
+    title: 'System Load'
+    icon: mdi:server
+    url: 'http://shed:3000/dashboard/db/system-loads?orgId=1&from=1506841200000&to=1509319643223'
+  plant_graph:
+    title: 'Plant Graph'
+    icon: mdi:flower
+    url: 'http://shed:3000/dashboard/db/plant-status?refresh=15m&orgId=1&from=1506841200000&to=1509319567794'
+
 
 #intent_script:
 #  GetHiveRamUse:  # Intent type

@@ -19,6 +19,23 @@
         - sensor.nearshore__wave_ht
         - sensor.offshore__h2o_temp
         - sensor.offshore__wave_ht
+    group.um001:
+      state_card_mode: badges
+      badges_list:
+        - sensor.um001_cpu_load
+        - sensor.um001_disk_free
+        - sensor.um001_disk_use
+        - sensor.um001_disk_use_2
+        - sensor.um001_ram_free
+        - sensor.um001_ram_use
+        - sensor.um001_ram_use_2
+        - sensor.um001_running
+        - sensor.um001_sleeping
+        - sensor.um001_swap_free
+        - sensor.um001_swap_use
+        - sensor.um001_swap_use_2
+        - sensor.um001_thread
+        - sensor.um001_total
     group.hive:
       state_card_mode: badges
       badges_list:

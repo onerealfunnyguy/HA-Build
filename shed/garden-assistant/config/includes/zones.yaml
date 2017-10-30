@@ -1,4 +1,4 @@
-- name: home
+- name: garden
   latitude: !secret latitude
   longitude: !secret longitude
   radius: 25

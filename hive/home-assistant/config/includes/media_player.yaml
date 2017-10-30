@@ -18,5 +18,10 @@
     name: ShortFire Kodi
     host: shortfire
 
-  - platform: mpd
-    host: mpd
+  # - platform: cast
+  #   name: ShortCast
+  #   host: chromecast
+  #
+  # - platform: cast
+  #   name: ttsCast
+  #   host: ttscast

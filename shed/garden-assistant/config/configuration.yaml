@@ -42,7 +42,7 @@ history:
 logbook:
 
 recorder:
-  purge_days: 366
+#  purge_days: 366
   db_url: !secret db_host
 
 # Track the sun

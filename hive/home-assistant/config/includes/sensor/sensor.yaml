@@ -38,6 +38,25 @@
   - platform: ohmconnect
     id: !secret ohm_id
   - platform: glances
+    host: um001
+    name: um001
+    resources:
+      - 'disk_use_percent'
+      - 'disk_use'
+      - 'disk_free'
+      - 'memory_use_percent'
+  #  - 'memory_use'
+  #  - 'memory_free'
+      - 'swap_use_percent'
+  #  - 'swap_use'
+  #  - 'swap_free'
+      - 'processor_load'
+      - 'process_running'
+      - 'process_total'
+      - 'process_thread'
+      - 'process_sleeping'
+  #  - 'cpu_temp'
+  - platform: glances
     host: shed
     name: shed
     resources:
@@ -166,8 +185,8 @@
       - 'process_total'
       - 'process_thread'
       - 'process_sleeping'
-  #- platform: zabbix
-  #  triggers:
+  - platform: zabbix
+    triggers:
 ### SSL Cert Check - Owned ###
   - platform: cert_expiry
     host: davedaley.com
@@ -239,6 +258,9 @@
   - platform: cert_expiry
     host: optincall.com
     name: optincall.com
+  - platform: cert_expiry
+    host: whereislithian.com
+    name: whereislithian.com
 #### Start MiFlora Sensors ####
   - platform: miflora
     mac: 'C4:7C:8D:62:3F:9D'
@@ -857,3 +879,6 @@
     unit: TB
   - platform: season
     type: astronomical
+  - platform: uptime
+    name: Time Online
+    unit_of_measurement: hours    

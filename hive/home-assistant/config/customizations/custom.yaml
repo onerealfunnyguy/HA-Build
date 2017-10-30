@@ -213,3 +213,5 @@
     friendly_name: Fed Frogs
     emulated_hue: true
     emulated_hue_name: Fed Frogs
+  media_player.aftm15:
+    hidden: true

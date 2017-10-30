@@ -5,6 +5,7 @@
       entities:
         - group.mediaplayers
         - group.cave_control
+        - group.power_usage
         - group.transmission
         - group.sabnzbd
         - group.sonarr
@@ -138,113 +139,129 @@
     entities:
     - switch.tree_lights
     - switch.pond_transfer_pump
+  um001:
+    entities:
+    - sensor.um001_cpu_load
+    - sensor.um001_disk_free
+    - sensor.um001_disk_used
+    - sensor.um001_disk_used_2
+    - sensor.um001_ram_free
+    - sensor.um001_ram_used
+    - sensor.um001_ram_used_2
+    - sensor.um001_running
+    - sensor.um001_sleeping
+    - sensor.um001_swap_free
+    - sensor.um001_swap_used
+    - sensor.um001_swap_used_2
+    - sensor.um001_thread
+    - sensor.um001_total
   hive:
     entities:
     - sensor.hive_cpu_load
     - sensor.hive_disk_free
-    - sensor.hive_disk_use
-    - sensor.hive_disk_use_2
+    - sensor.hive_disk_used
+    - sensor.hive_disk_used_2
     - sensor.hive_ram_free
-    - sensor.hive_ram_use
-    - sensor.hive_ram_use_2
+    - sensor.hive_ram_used
+    - sensor.hive_ram_used_2
     - sensor.hive_running
     - sensor.hive_sleeping
     - sensor.hive_swap_free
-    - sensor.hive_swap_use
-    - sensor.hive_swap_use_2
+    - sensor.hive_swap_used
+    - sensor.hive_swap_used_2
     - sensor.hive_thread
     - sensor.hive_total
   shed:
     entities:
     - sensor.shed_cpu_load
     - sensor.shed_disk_free
-    - sensor.shed_disk_use
-    - sensor.shed_disk_use_2
+    - sensor.shed_disk_used
+    - sensor.shed_disk_used_2
     - sensor.shed_ram_free
-    - sensor.shed_ram_use
-    - sensor.shed_ram_use_2
+    - sensor.shed_ram_used
+    - sensor.shed_ram_used_2
     - sensor.shed_running
     - sensor.shed_sleeping
     - sensor.shed_swap_free
-    - sensor.shed_swap_use
-    - sensor.shed_swap_use_2
+    - sensor.shed_swap_used
+    - sensor.shed_swap_used_2
     - sensor.shed_thread
     - sensor.shed_total
   maxx:
     entities:
     - sensor.maxx_cpu_load
     - sensor.maxx_disk_free
-    - sensor.maxx_disk_use
-    - sensor.maxx_disk_use_2
+    - sensor.maxx_disk_used
+    - sensor.maxx_disk_used_2
     - sensor.maxx_ram_free
-    - sensor.maxx_ram_use
-    - sensor.maxx_ram_use_2
+    - sensor.maxx_ram_used
+    - sensor.maxx_ram_used_2
     - sensor.maxx_running
     - sensor.maxx_sleeping
     - sensor.maxx_swap_free
-    - sensor.maxx_swap_use
-    - sensor.maxx_swap_use_2
+    - sensor.maxx_swap_used
+    - sensor.maxx_swap_used_2
     - sensor.maxx_thread
     - sensor.maxx_total
   pepper:
     entities:
     - sensor.pepper_cpu_load
     - sensor.pepper_disk_free
-    - sensor.pepper_disk_use
-    - sensor.pepper_disk_use_2
+    - sensor.pepper_disk_used
+    - sensor.pepper_disk_used_2
     - sensor.pepper_ram_free
-    - sensor.pepper_ram_use
-    - sensor.pepper_ram_use_2
+    - sensor.pepper_ram_used
+    - sensor.pepper_ram_used_2
     - sensor.pepper_running
     - sensor.pepper_sleeping
     - sensor.pepper_swap_free
-    - sensor.pepper_swap_use
-    - sensor.pepper_swap_use_2
+    - sensor.pepper_swap_used
+    - sensor.pepper_swap_used_2
     - sensor.pepper_thread
     - sensor.pepper_total
   help:
     entities:
     - sensor.help_cpu_load
     - sensor.help_ram_free
-    - sensor.help_ram_use
-    - sensor.help_ram_use_2
+    - sensor.help_ram_used
+    - sensor.help_ram_used_2
     - sensor.help_running
     - sensor.help_sleeping
     - sensor.help_swap_free
-    - sensor.help_swap_use
-    - sensor.help_swap_use_2
+    - sensor.help_swap_used
+    - sensor.help_swap_used_2
     - sensor.help_thread
     - sensor.help_total
   ovh:
     entities:
     - sensor.ovh_cpu_load
     - sensor.ovh_disk_free
-    - sensor.ovh_disk_use
-    - sensor.ovh_disk_use_2
+    - sensor.ovh_disk_used
+    - sensor.ovh_disk_used_2
     - sensor.ovh_ram_free
-    - sensor.ovh_ram_use
-    - sensor.ovh_ram_use_2
+    - sensor.ovh_ram_used
+    - sensor.ovh_ram_used_2
     - sensor.ovh_running
     - sensor.ovh_sleeping
     - sensor.ovh_swap_free
-    - sensor.ovh_swap_use
-    - sensor.ovh_swap_use_2
+    - sensor.ovh_swap_used
+    - sensor.ovh_swap_used_2
     - sensor.ovh_thread
     - sensor.ovh_total
   prime:
     entities:
     - sensor.prime_cpu_load
     - sensor.prime_disk_free
-    - sensor.prime_disk_use
-    - sensor.prime_disk_use_2
+    - sensor.prime_disk_used
+    - sensor.prime_disk_used_2
     - sensor.prime_ram_free
-    - sensor.prime_ram_use
-    - sensor.prime_ram_use_2
+    - sensor.prime_ram_used
+    - sensor.prime_ram_used_2
     - sensor.prime_running
     - sensor.prime_sleeping
     - sensor.prime_swap_free
-    - sensor.prime_swap_use
-    - sensor.prime_swap_use_2
+    - sensor.prime_swap_used
+    - sensor.prime_swap_used_2
     - sensor.prime_thread
     - sensor.prime_total
   Cam Sensors:
@@ -374,6 +391,7 @@
     - media_player.shortfire
     - media_player.shortstick
     - media_player.bus_cast
+    - media_player.castaudio
     - media_player.kodi
     - media_player.plex_web_safari
     - media_player.shortfire_kodi
@@ -405,6 +423,7 @@
   local_server_load:
     name: Local Server Load
     entities:
+    - group.um001
     - group.hive
     - group.shed
     - group.maxx
@@ -633,6 +652,9 @@
     - device_tracker.dcipc1915local
     - device_tracker.um21915local
     - device_tracker.boy21915local
+    - device_tracker.poeswitch1915local
+    - device_tracker.koicam1915local
+    - device_tracker.chromecastaudio1915local
 #### MiFlora Groups ####
   catnip1:
     name: CatNip 1
@@ -901,6 +923,8 @@
     - sensor.cannadiamondcom
     - sensor.blogoptincallcom
     - sensor.optincallcom
+    - sensor.whereislithiancom
+    - sensor.joeydaleycom
  ### Transmission ###
   transmission:
     name: Transmission
@@ -923,3 +947,9 @@
     name: sonarr
     entities:
     - sensor.sonarr_upcoming
+ ### sabnzbd ###
+  power_usage:
+    name: Power Usage
+    entities:
+    - sensor.coffee_power
+    - sensor.treelights_power

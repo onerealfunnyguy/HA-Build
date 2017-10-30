@@ -6,6 +6,34 @@
 
   - platform: template
     sensors:
+### Example WeMo Insight ####
+#      wemopowerused:
+#        friendly_name: "Wemo Current Power"
+#        unit_of_measurement: "w"
+#        value_template: >-
+#           {%- if states.switch.wemoinsight.attributes.current_power_w != None -%}
+#             {{(states.switch.wemoinsight.attributes|default({})).current_power_w|default(0)|round(2)}}
+#           {%- else -%}
+#             0
+#           {%- endif -%}
+      treelights_power:
+        friendly_name: "Tree Lights Current Power"
+        unit_of_measurement: "w"
+        value_template: >-
+           {%- if states.switch.tree_lights.attributes.current_power_w != None -%}
+             {{(states.switch.tree_lights.attributes|default({})).current_power_w|default(0)|round(2)}}
+           {%- else -%}
+             0
+           {%- endif -%}
+      coffee_power:
+        friendly_name: "Coffee Current Power"
+        unit_of_measurement: "w"
+        value_template: >-
+           {%- if states.switch.coffee.attributes.current_power_w != None -%}
+             {{(states.switch.coffee.attributes|default({})).current_power_w|default(0)|round(2)}}
+           {%- else -%}
+             0
+           {%- endif -%}
 #      sun_state:
 #        value_template: '{% if is_state("sun.sun", "above_horizon") %}up{% else %}down{% endif %}'
 #        friendly_name: 'Sun state'
