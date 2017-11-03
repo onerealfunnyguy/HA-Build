@@ -44,7 +44,7 @@ Home Assistant runs on 2 hand me down i5s with 8gbs of ram and an AMD with 12gbs
 
 **Devices I have :**
 * [Ubiquiti Networks Unifi 802.11ac Pro](http://amzn.to/2zdBR0i)
-* Lots of Android Devices ([iPads](http://amzn.to/2l2qyRb), iPods, [iPhones](http://amzn.to/2l9Yoq9))
+* Lots of Android Devices ([Moto](http://amzn.to/2xWSxYr) running ipwebcam
 * [Amazon Echo](http://amzn.to/2zb9EHa) and [DOT](http://amzn.to/2h1pg7V)
 * [Amazon Echo Show](http://amzn.to/2zfLayF)
 * [Amazon Echo Look](http://amzn.to/2zh7w2J)
