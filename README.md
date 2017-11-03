@@ -73,7 +73,7 @@ Feel free to join the conversations there.
 ![Screenshot of Living Room View](https://onerealfunnyguy.com/screenshots/pic3.png)
 ![Screenshot of Cameras](https://onerealfunnyguy.com/screenshots/pic5.png)
 ![Screenshot of Network Monitor](https://onerealfunnyguy.com/screenshots/pic6.png)
-![Screenshot of Garden HA](https://onerealfunnyguy.com/screenshots/pic10.pngg)
+![Screenshot of Garden HA](https://onerealfunnyguy.com/screenshots/pic10.png)
 ![Screenshot of More Garden HA](https://onerealfunnyguy.com/screenshots/pic13.png)
 ![Screenshot of CockPit Admin hive](https://onerealfunnyguy.com/screenshots/admin1.png)
 ![Screenshot of CockPit Admin shed](https://onerealfunnyguy.com/screenshots/admin2.png)
