@@ -13,7 +13,7 @@ This is my Home Assistant Configuration created with [Docker](https://home-assis
 Home Assistant runs on 2 hand me down i5s with 8gbs of ram and an AMD with 12gbs of ram
 
 **Gate:**
-* SSL via [HAProxy](http://www.haproxy.org) & [letsencrypt](https://letsencrypt.org) - Free - cron auto renew on [PfSense Firewall] (http://amzn.to/2Aj7XYH)
+* SSL via [HAProxy](http://www.haproxy.org) & [letsencrypt](https://letsencrypt.org) - Free - cron auto renew on [PfSense Firewall](http://amzn.to/2Aj7XYH)
 
 **Software Used on Host:**
 * [debain](https://www.debian.org)
