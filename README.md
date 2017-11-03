@@ -1,6 +1,7 @@
 Home-Assistant Build by [@onerealfunnyguy](https://twitter.com/onerealfunnyguy)
 
 [Home Assistant](https://home-assistant.io/) configuration files (YAMLs)
+[bash](https://www.gnu.org/software/bash/) instanse are deployed using shell scripts start the docker run sting
 
 Please :star: this repo and keep up to date on the progress!
 
