@@ -8,6 +8,7 @@ Please :star: this repo and keep up to date on the progress!
 Also visit my [blog](https://onerealfunnyguy.com).
 
 ![Screenshot of hive](https://onerealfunnyguy.com/screenshots/pic1.png)
+![Screenshot of hive gaphs](https://onerealfunnyguy.com/screenshots/pic14.png)
 
 This is my Home Assistant Configuration created with [Docker](https://home-assistant.io/docs/installation/docker/)
 
