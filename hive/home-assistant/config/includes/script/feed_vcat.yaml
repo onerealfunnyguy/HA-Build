@@ -14,7 +14,7 @@ feed_the_vcat:
           {% else %}
             Please give my cat a mouse.
           {% endif %}
-    - delay: '00:00:15'
+    - delay: '00:00:09'
     - service: tts.google_say
       entity_id: media_player.castaudio
       data:

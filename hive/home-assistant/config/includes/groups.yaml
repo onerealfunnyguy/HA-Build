@@ -141,6 +141,7 @@
     - switch.pond_transfer_pump
   um001:
     entities:
+    - sensor.um001_linux_distro      
     - sensor.um001_cpu_load
     - sensor.um001_disk_free
     - sensor.um001_disk_used
@@ -157,6 +158,8 @@
     - sensor.um001_total
   hive:
     entities:
+    - sensor.hive_cpu_temperature
+    - sensor.hive_linux_distro
     - sensor.hive_cpu_load
     - sensor.hive_disk_free
     - sensor.hive_disk_used
@@ -173,6 +176,8 @@
     - sensor.hive_total
   shed:
     entities:
+    - sensor.shed_cpu_temperature
+    - sensor.shed_linux_distro
     - sensor.shed_cpu_load
     - sensor.shed_disk_free
     - sensor.shed_disk_used
@@ -189,6 +194,8 @@
     - sensor.shed_total
   maxx:
     entities:
+    - sensor.maxx_cpu_temperature
+    - sensor.maxx_linux_distro
     - sensor.maxx_cpu_load
     - sensor.maxx_disk_free
     - sensor.maxx_disk_used
@@ -205,6 +212,7 @@
     - sensor.maxx_total
   pepper:
     entities:
+    - sensor.pepper_linux_distro
     - sensor.pepper_cpu_load
     - sensor.pepper_disk_free
     - sensor.pepper_disk_used
@@ -221,6 +229,7 @@
     - sensor.pepper_total
   help:
     entities:
+    - sensor.help_linux_distro
     - sensor.help_cpu_load
     - sensor.help_ram_free
     - sensor.help_ram_used
@@ -234,6 +243,7 @@
     - sensor.help_total
   ovh:
     entities:
+    - sensor.ovh_linux_distro
     - sensor.ovh_cpu_load
     - sensor.ovh_disk_free
     - sensor.ovh_disk_used
@@ -250,6 +260,7 @@
     - sensor.ovh_total
   prime:
     entities:
+    - sensor.prime_linux_distro
     - sensor.prime_cpu_load
     - sensor.prime_disk_free
     - sensor.prime_disk_used
@@ -902,6 +913,7 @@
     name: Cert. Expiration
     entities:
     - sensor.davedaleycom
+    - sensor.1915davedaleycom
     - sensor.orfg
     - sensor.froggyfarmscom
     - sensor.litterboxco
@@ -921,6 +933,7 @@
     - sensor.simplyeffectsmakeupcom
     - sensor.concernedinkanabcom
     - sensor.cannadiamondcom
+    - sensor.democannadiamondcom
     - sensor.blogoptincallcom
     - sensor.optincallcom
     - sensor.whereislithiancom

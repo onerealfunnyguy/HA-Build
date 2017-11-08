@@ -328,3 +328,4 @@
       - temperature
       - conductivity
       - battery
+  - platform: uptime       

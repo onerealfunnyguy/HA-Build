@@ -192,6 +192,9 @@
     host: davedaley.com
     name: davedaley.com
   - platform: cert_expiry
+    host: 1915.davedaley.com
+    name: 1915.davedaley.com
+  - platform: cert_expiry
     host: onerealfunnyguy.com
     name: orfg
   - platform: cert_expiry
@@ -252,6 +255,9 @@
   - platform: cert_expiry
     host: cannadiamond.com
     name: cannadiamond.com
+  - platform: cert_expiry
+    host: demo.cannadiamond.com
+    name: demo.cannadiamond.com
   - platform: cert_expiry
     host: blog.optincall.com
     name: blog.optincall.com
@@ -881,4 +887,64 @@
     type: astronomical
   - platform: uptime
     name: Time Online
-    unit_of_measurement: hours    
+    unit_of_measurement: hours
+  ###### CUSTOM LINUX VERSION
+  ###### Thanks to https://github.com/Norien/Home-Assistant-Config/blob/master/packages/server_status.yaml#L92
+  - platform: command_line
+    command: curl -X GET http://um001:61208/api/2/system
+    name: 'um001_linux_distro'
+    value_template: '{{ value_json.linux_distro }}'
+    scan_interval: 604800
+  - platform: command_line
+    command: curl -X GET http://hive:61208/api/2/system
+    name: 'hive_linux_distro'
+    value_template: '{{ value_json.linux_distro }}'
+    scan_interval: 604800
+  - platform: command_line
+    command: curl -X GET http://shed:61208/api/2/system
+    name: 'shed_linux_distro'
+    value_template: '{{ value_json.linux_distro }}'
+    scan_interval: 604800
+  - platform: command_line
+    command: curl -X GET http://maxx:61208/api/2/system
+    name: 'maxx_linux_distro'
+    value_template: '{{ value_json.linux_distro }}'
+    scan_interval: 604800
+  - platform: command_line
+    command: curl -X GET http://pepper.davedaley.com:61208/api/2/system
+    name: 'pepper_linux_distro'
+    value_template: '{{ value_json.linux_distro }}'
+    scan_interval: 604800
+  - platform: command_line
+    command: curl -X GET http://ovh.davedaley.com:61208/api/2/system
+    name: 'ovh_linux_distro'
+    value_template: '{{ value_json.linux_distro }}'
+    scan_interval: 604800
+  - platform: command_line
+    command: curl -X GET http://help.davedaley.com:61208/api/2/system
+    name: 'help_linux_distro'
+    value_template: '{{ value_json.linux_distro }}'
+    scan_interval: 604800
+  - platform: command_line
+    command: curl -X GET http://prime.optincall.com:61208/api/2/system
+    name: 'prime_linux_distro'
+    value_template: '{{ value_json.linux_distro }}'
+    scan_interval: 604800
+  - platform: command_line
+    command: curl -X GET http://hive:61208/api/2/sensors
+    name: hive CPU Temperature
+    value_template: '{{ value_json[0].value }}'
+    unit_of_measurement: '°C'
+    scan_interval: 300
+  - platform: command_line
+    command: curl -X GET http://shed:61208/api/2/sensors
+    name: shed CPU Temperature
+    value_template: '{{ value_json[0].value }}'
+    unit_of_measurement: '°C'
+    scan_interval: 300
+  - platform: command_line
+    command: curl -X GET http://maxx:61208/api/2/sensors
+    name: maxx CPU Temperature
+    value_template: '{{ value_json[0].value }}'
+    unit_of_measurement: '°C'
+    scan_interval: 300
