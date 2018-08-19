@@ -185,6 +185,24 @@
       - 'process_total'
       - 'process_thread'
       - 'process_sleeping'
+  - platform: glances
+    host: beta.optincall.com
+    name: beta
+    resources:
+      - 'disk_use_percent'
+      - 'disk_use'
+      - 'disk_free'
+      - 'memory_use_percent'
+    #  - 'memory_use'
+    #  - 'memory_free'
+      - 'swap_use_percent'
+    #  - 'swap_use'
+    #  - 'swap_free'
+      - 'processor_load'
+      - 'process_running'
+      - 'process_total'
+      - 'process_thread'
+      - 'process_sleeping'
   - platform: zabbix
     triggers:
 ### SSL Cert Check - Owned ###
@@ -931,6 +949,11 @@
     value_template: '{{ value_json.linux_distro }}'
     scan_interval: 604800
   - platform: command_line
+    command: curl -X GET http://beta.optincall.com:61208/api/2/system
+    name: 'beta_linux_distro'
+    value_template: '{{ value_json.linux_distro }}'
+    scan_interval: 604800
+  - platform: command_line
     command: curl -X GET http://hive:61208/api/2/sensors
     name: hive CPU Temperature
     value_template: '{{ value_json[0].value }}'
@@ -948,3 +971,7 @@
     value_template: '{{ value_json[0].value }}'
     unit_of_measurement: '°C'
     scan_interval: 300
+  # - platform: fitbit
+  #   clock_format: 12H
+  #   monitored_resources:
+  #     - "activities/heart"

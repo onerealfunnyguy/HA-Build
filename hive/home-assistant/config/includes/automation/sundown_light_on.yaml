@@ -8,4 +8,4 @@ action:
 - service: light.turn_on
   entity_id: light.front_door_light
 - service: switch.turn_on
-  entity_id: switch.tree_lights  
+  entity_id: switch.coffee  

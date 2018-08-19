@@ -46,6 +46,7 @@ http:
     - !secret t2
     - !secret t3
     - !secret t4
+    - !secret t5
 # Checks for available updates
 updater:
 
@@ -118,6 +119,9 @@ emulated_hue:
   expose_by_default: false
   exposed_domains:
      - switch
+  entities:
+    switch.tv_emerson:
+      name: "Emerson"
 
 zabbix:
   host: !secret zabbix_host

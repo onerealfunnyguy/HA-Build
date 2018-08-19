@@ -7,6 +7,7 @@
   host: emote
   mac: 'B4:43:0D:EF:9E:73'
   timeout: 60
+  type: rm2
   switches:
     tv:
       friendly_name: "UpStar"

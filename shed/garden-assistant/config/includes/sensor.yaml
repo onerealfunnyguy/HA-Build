@@ -227,6 +227,7 @@
     mac: 'C4:7C:8D:62:6B:96'
     name: Rosemary
     force_update: false
+    adapter: hci1    
     median: 3
     monitored_conditions:
       - moisture
@@ -328,4 +329,4 @@
       - temperature
       - conductivity
       - battery
-  - platform: uptime       
+  - platform: uptime

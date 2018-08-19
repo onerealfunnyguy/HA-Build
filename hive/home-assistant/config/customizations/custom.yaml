@@ -33,19 +33,19 @@
     icon: mdi:lightbulb
   switch.frog:
     icon: mdi:lightbulb
-  switch.upstar:
+  switch.tv:
     icon: mdi:monitor
     emulated_hue: true
     emulated_hue_name: "UpStar"
-  switch.plasma:
+  switch.tv_plasma:
     emulated_hue: true
     emulated_hue_name: "Plasma"
     icon: mdi:monitor
-  switch.emerson:
+  switch.tv_emerson:
     emulated_hue: true
     emulated_hue_name: "Emerson"
     icon: mdi:monitor
-  switch.fan_power:
+  switch.fan_pwr:
       emulated_hue: true
       emulated_hue_name: "Fan"
       icon: mdi:fan

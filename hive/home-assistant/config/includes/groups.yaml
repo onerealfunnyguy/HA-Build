@@ -107,14 +107,15 @@
     - light.bedroom_door
     - light.table
     - switch.frog
-    - switch.plasma
-    - switch.upstar
-    - switch.emerson
+    - switch.tv_plasma
+    - switch.tv_upstar
+    - switch.tv
+    - switch.tv_emerson
     - switch.plex
     - light.bathroom
     - light.closet
-    - switch.fan_power
-    - switch.sleep
+    - switch.fan_pwr
+    - switch.tv_usleep
     - group.buoy_report
   cornerlamp:
     name: Corner Lamp
@@ -141,7 +142,7 @@
     - switch.pond_transfer_pump
   um001:
     entities:
-    - sensor.um001_linux_distro      
+    - sensor.um001_linux_distro
     - sensor.um001_cpu_load
     - sensor.um001_disk_free
     - sensor.um001_disk_used
@@ -275,6 +276,23 @@
     - sensor.prime_swap_used_2
     - sensor.prime_thread
     - sensor.prime_total
+  beta:
+    entities:
+    - sensor.beta_linux_distro
+    - sensor.beta_cpu_load
+    - sensor.beta_disk_free
+    - sensor.beta_disk_used
+    - sensor.beta_disk_used_2
+    - sensor.beta_ram_free
+    - sensor.beta_ram_used
+    - sensor.beta_ram_used_2
+    - sensor.beta_running
+    - sensor.beta_sleeping
+    - sensor.beta_swap_free
+    - sensor.beta_swap_used
+    - sensor.beta_swap_used_2
+    - sensor.beta_thread
+    - sensor.beta_total
   Cam Sensors:
     entities:
     - group.cam__events_and_status_sensors
@@ -445,6 +463,7 @@
     - group.help
     - group.ovh
     - group.prime
+    - group.beta
   climate:
     name: Climate
     entities:

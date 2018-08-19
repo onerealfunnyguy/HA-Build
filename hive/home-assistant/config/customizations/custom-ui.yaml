@@ -22,7 +22,7 @@
     group.um001:
       state_card_mode: badges
       badges_list:
-        - sensor.um001_linux_distro        
+        - sensor.um001_linux_distro
         - sensor.um001_cpu_load
         - sensor.um001_disk_free
         - sensor.um001_disk_use
@@ -163,6 +163,24 @@
         - sensor.prime_swap_use_2
         - sensor.prime_thread
         - sensor.prime_total
+    group.beta:
+      state_card_mode: badges
+      badges_list:
+        - sensor.beta_linux_distro
+        - sensor.beta_cpu_load
+        - sensor.beta_disk_free
+        - sensor.beta_disk_use
+        - sensor.beta_disk_use_2
+        - sensor.beta_ram_free
+        - sensor.beta_ram_use
+        - sensor.beta_ram_use_2
+        - sensor.beta_running
+        - sensor.beta_sleeping
+        - sensor.beta_swap_free
+        - sensor.beta_swap_use
+        - sensor.beta_swap_use_2
+        - sensor.beta_thread
+        - sensor.beta_total
     group.network:
       state_card_mode: badges
       badges_list:
