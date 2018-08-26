@@ -1,0 +1,5 @@
+switch.lamp:
+  config_entry_id:
+  name:
+  platform: wemo
+  unique_id: 221506K1301180

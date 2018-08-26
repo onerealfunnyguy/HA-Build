@@ -1,0 +1,28 @@
+{
+    "data": {
+        "entries": [
+            {
+                "data": {
+                    "bridge_id": "001788FFFE12092D",
+                    "host": "192.168.42.6",
+                    "username": "vCL31-fyOB-8ADvZWxNsb81dneoJ8a2s89XMy3yE"
+                },
+                "domain": "hue",
+                "entry_id": "c252f2d690874fffb6cab6fe7f9c1f36",
+                "source": "discovery",
+                "title": "Short hue Bridge",
+                "version": 1
+            },
+            {
+                "data": {},
+                "domain": "cast",
+                "entry_id": "c5bca33ef5f940a68834cca95c446281",
+                "source": "discovery",
+                "title": "Google Cast",
+                "version": 1
+            }
+        ]
+    },
+    "key": "core.config_entries",
+    "version": 1
+}

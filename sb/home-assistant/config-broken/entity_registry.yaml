@@ -1,0 +1,65 @@
+light.center:
+  config_entry_id: c252f2d690874fffb6cab6fe7f9c1f36
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:02:8c:b2:09-0b
+light.bottom:
+  config_entry_id: c252f2d690874fffb6cab6fe7f9c1f36
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:02:96:c8:64-0b
+light.top:
+  config_entry_id: c252f2d690874fffb6cab6fe7f9c1f36
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:02:96:cd:e9-0b
+light.table:
+  config_entry_id: c252f2d690874fffb6cab6fe7f9c1f36
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:00:e5:e4:d3-0b
+light.bedroom_door:
+  config_entry_id: c252f2d690874fffb6cab6fe7f9c1f36
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:02:96:c8:cc-0b
+light.fireplace:
+  config_entry_id: c252f2d690874fffb6cab6fe7f9c1f36
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:00:e5:e6:63-0b
+light.front_door_light:
+  config_entry_id: c252f2d690874fffb6cab6fe7f9c1f36
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:02:8c:ae:b9-0b
+light.closet_light:
+  config_entry_id: c252f2d690874fffb6cab6fe7f9c1f36
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:02:8c:ae:57-0b
+switch.lamp:
+  config_entry_id:
+  name:
+  platform: wemo
+  unique_id: 221506K1301180
+media_player.castaudio:
+  config_entry_id: c5bca33ef5f940a68834cca95c446281
+  name:
+  platform: cast
+  unique_id: 99c05ed7-bc21-94e0-b9e6-ec24976662a6
+media_player.bus_cast:
+  config_entry_id: c5bca33ef5f940a68834cca95c446281
+  name:
+  platform: cast
+  unique_id: 300d1341-bea9-1e1f-3257-45b37a1f5e64
+media_player.aftb16:
+  config_entry_id: c5bca33ef5f940a68834cca95c446281
+  name:
+  platform: cast
+  unique_id: af80fb25-f0f4-43fd-a047-103d65981e0f
+media_player.aftm15:
+  config_entry_id: c5bca33ef5f940a68834cca95c446281
+  name:
+  platform: cast
+  unique_id: 6cf5c33a-84cb-4f7f-b7a3-6f57cd56a91b

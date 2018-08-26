@@ -1,0 +1,36 @@
+alias: Check Ram and Notify
+initial_state: True
+trigger:
+  platform: state
+  entity_id:
+    - sensor.hive_ram_use
+    - sensor.shed_ram_use
+    - sensor.pepper_ram_use
+    - sensor.help_ram_use
+    - sensor.ovh_ram_use
+    - sensor.prime_ram_use
+condition:
+  - condition: or
+    conditions:
+      - condition: numeric_state
+        entity_id: sensor.hive_ram_use
+        above: 59.9
+      - condition: numeric_state
+        entity_id: sensor.shed_ram_use
+        above: 59.9
+      - condition: numeric_state
+        entity_id: sensor.pepper_ram_use
+        above: 59.9
+      - condition: numeric_state
+        entity_id: sensor.help_ram_use
+        above: 59.9
+      - condition: numeric_state
+        entity_id: sensor.ovh_ram_use
+        above: 59.9
+      - condition: numeric_state
+        entity_id: sensor.prime_ram_use
+        above: 59.9
+action:
+- service: notify.hive_slack
+  data_template:
+    message: "{{ trigger.to_state.attributes.friendly_name }} is now {{ trigger.to_state.state }}%"

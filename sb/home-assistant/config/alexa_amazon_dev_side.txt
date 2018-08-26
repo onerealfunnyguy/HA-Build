@@ -1,0 +1,75 @@
+{
+  "intents": [
+    {
+      "intent": "AMAZON.StopIntent"
+    },
+    {
+      "intent": "AMAZON.NavigateSettingsIntent"
+    },
+    {
+      "intent": "AMAZON.NavigateHomeIntent"
+    },
+    {
+      "intent": "AMAZON.MoreIntent"
+    },
+    {
+      "intent": "AMAZON.PageDownIntent"
+    },
+    {
+      "intent": "AMAZON.PageUpIntent"
+    },
+    {
+      "intent": "AMAZON.ScrollRightIntent"
+    },
+    {
+      "intent": "AMAZON.ScrollDownIntent"
+    },
+    {
+      "intent": "AMAZON.ScrollLeftIntent"
+    },
+    {
+      "intent": "AMAZON.ScrollUpIntent"
+    },
+    {
+      "intent": "AMAZON.HelpIntent"
+    },
+    {
+      "intent": "AMAZON.NextIntent"
+    },
+    {
+      "intent": "AMAZON.PreviousIntent"
+    },
+    {
+      "slots": [
+        {
+          "name": "User",
+          "type": "AMAZON.US_FIRST_NAME"
+        }
+      ],
+      "intent": "GetServerHealth"
+    },
+    {
+      "intent": "GetPlantHealth"
+    },
+    {
+      "intent": "GetTreeHealth"
+    },
+    {
+      "intent": "itisyourbirthday"
+    }
+  ]
+}
+
+GetServerHealth How are the servers
+GetServerHealth How is the hive
+GetServerHealth Hive how are you today
+GetServerHealth system check
+GetPlantHealth how are the plants
+GetPlantHealth how are the plants today
+GetPlantHealth how does the garden look
+GetPlantHealth is the garden well
+GetPlantHealth smell the roses
+GetTreeHealth how are the trees
+GetTreeHealth how do the trees look
+GetTreeHealth are the trees healthly
+itisyourbirthday it is my birthday

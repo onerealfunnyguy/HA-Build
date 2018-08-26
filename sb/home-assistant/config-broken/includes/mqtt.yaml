@@ -1,0 +1,16 @@
+#mqtt:
+  broker: !secret mqtt_broker
+  #port: 16114
+  client_id: sb
+  #username: core_ha
+  #password: !secret mqtt_pass
+  birth_message:
+    topic: 'sb/status'
+    payload: 'online'
+    qos: 1
+    retain: true
+  will_message:
+    topic: 'sb/status'
+    payload: 'offline'
+    qos: 1
+    retain: true

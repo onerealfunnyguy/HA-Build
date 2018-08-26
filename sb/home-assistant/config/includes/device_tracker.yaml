@@ -1,0 +1,16 @@
+  #- platform: owntracks
+#    max_gps_accuracy: 200
+#    waypoints: True
+#    waypoint_whitelist:
+  - platform: nmap_tracker
+    hosts:
+    -  !secret nmap_net1
+    -  !secret nmap_net2
+  - platform: unifi
+    username: !secret unifi_user
+    password: !secret unifi_pass
+    host: unifi
+  - platform: luci
+    host: coin
+    username: !secret coin_user
+    password: !secret coin_pass

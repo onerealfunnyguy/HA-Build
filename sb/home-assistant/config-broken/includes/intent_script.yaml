@@ -1,0 +1,122 @@
+#intent_script:
+  GetServerHealth:  # Intent type
+    speech:
+      type: ssml
+      text: !include templates/getserverhealth.yaml
+    card:
+      type: simple
+      title: Server Health
+      content: !include templates/getserverhealth_card.yaml
+  GetPlantHealth:  # Intent type
+    speech:
+      type: ssml
+      text: !include templates/getplanthealth.yaml
+    card:
+      type: simple
+      title: Plant Health
+      content: !include templates/getplanthealth_card.yaml
+  GetTreeHealth:  # Intent type
+    speech:
+      type: ssml
+      text: !include templates/gettreehealth.yaml
+    card:
+      type: simple
+      title: Tree Health
+      content: !include templates/gettreehealth_card.yaml
+  itisyourbirthday:  # Intent type
+    speech:
+      text: !include templates/birthday_wishes.yaml
+  CheckFrontDoor:  # Intent type
+    speech:
+      type: plain
+      text: Door cast will start in a moment
+    card:
+      type: simple
+      title: Door Cast
+      content: Your cast is starting.
+    action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.notify_doorcast
+  ChecktheCat:  # Intent type
+    speech:
+      type: plain
+      text: Cat cast will start in a moment
+    card:
+      type: simple
+      title: Cat Cast
+      content: Your cast is starting.
+    action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.notify_catcast
+  ViewtheGarden:  # Intent type
+    speech:
+      type: plain
+      text: Garden cast will start in a moment
+    card:
+      type: simple
+      title: Garden Cast
+      content: Your cast is starting.
+    action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.notify_gardencast
+  ChecktheKoi:  # Intent type
+    speech:
+      type: plain
+      text: Koi cast will start in a moment
+    card:
+      type: simple
+      title: Koi Cast
+      content: Your cast is starting.
+    action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.notify_koicast
+  TookMyMeds:  # Intent type
+    speech:
+      type: plain
+      text: Good job, another day down. Have a pleasant night.
+    card:
+      type: simple
+      title: Medicine Update
+      content: Now you can have a cookie.
+    action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.medicine
+  FeedFrogs:  # Intent type
+    speech:
+      type: plain
+      text: Crickets in the tank, frogs are happy for now.
+    card:
+      type: simple
+      title: Frogs have crickets
+      content: Crickets are high in protien would you like one.
+    action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.fed_frog
+## OFF during testing ###
+#    card:
+#      type: standard
+#      title: Anyone at the door?
+#      text: Front Door Cam
+#      image:
+#        smallImageUrl: http://fdcam:8080/shot.jpg
+#        largeImageUrl: http://fdcam:8080/shot.jpg
+
+### Sample Utterances ####
+#GetServerHealth How are the servers
+#GetServerHealth How is the hive
+#GetServerHealth Hive how are you today
+#GetServerHealth system check
+#GetPlantHealth how are the plants
+#GetPlantHealth how are the plants today
+#GetPlantHealth how does the garden look
+#GetPlantHealth is the garden well
+#GetPlantHealth smell the roses
+#GetTreeHealth how are the trees
+#GetTreeHealth how do the trees look
+#GetTreeHealth are the trees healthly
+#itisyourbirthday it is my birthday
+#CheckFrontDoor Check the front door
+#CheckFrontDoor someone at the door
+#CheckFrontDoor check front door cam
+#CheckFrontDoor who is out front
+#CheckFrontDoor why are the dogs barking

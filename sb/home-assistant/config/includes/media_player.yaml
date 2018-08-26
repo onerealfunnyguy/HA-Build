@@ -1,0 +1,27 @@
+  - platform: firetv
+    host: sb
+    name: ShortStick
+    device: default
+
+  - platform: firetv
+    host: sb
+    name: ShortFire
+    device: ShortFire
+
+  - platform: plex
+
+  - platform: kodi
+    name: ShortStick Kodi
+    host: shortstick
+
+  - platform: kodi
+    name: ShortFire Kodi
+    host: shortfire
+
+  # - platform: cast
+  #   name: ShortCast
+  #   host: chromecast
+  #
+  # - platform: cast
+  #   name: ttsCast
+  #   host: ttscast

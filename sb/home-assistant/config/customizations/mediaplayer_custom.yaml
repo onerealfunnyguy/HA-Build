@@ -1,0 +1,22 @@
+  media_player.shortfire:
+    icon: mdi:amazon
+  media_player.shortstick:
+    icon: mdi:amazon
+  switch.lamp:
+    icon: mdi:lightbulb
+  switch.frog:
+    icon: mdi:lightbulb
+  switch.upstar:
+    icon: mdi:monitor
+  switch.plasma:
+    icon: mdi:monitor
+  switch.emerson:
+    icon: mdi:monitor
+  switch.sleep:
+    icon: mdi:sleep
+  switch.plex:
+    icon: mdi:plex
+  switch.coffee:
+    icon: mdi:coffee
+  group.core:
+    icon: mdi:server

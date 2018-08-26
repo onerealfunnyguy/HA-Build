@@ -1,0 +1,16 @@
+# Waits 3 minutes then turns off the emerson
+  off_emerson:
+    alias: emerson4automation
+    sequence:
+      # This is Home Assistant Script Syntax
+      - event: LOGBOOK_ENTRY
+        event_data:
+          name: FDStream
+          message: has started
+      - delay:
+          # supports seconds, milliseconds, minutes, hours
+          minutes: 3
+      - alias: emerson_tv_off
+        service: switch.turn_off
+        data:
+          entity_id: switch.emerson

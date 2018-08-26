@@ -1,0 +1,30 @@
+>
+    Tree 1 tank battery is at {{ states("sensor.tree1battery") }} % 
+    conductivity is at {{ states("sensor.tree1conductivity") }} siemins
+    light is {{ states("sensor.tree_1_light") }} lumes
+    moisture is at {{ states("sensor.tree1moisture") }} %
+    temp is {{ states("sensor.tree1temp") }} degrees
+
+    Tree 2 battery is at {{ states("sensor.tree2battery") }} %
+    conductivity is at {{ states("sensor.tree2conductivity") }} siemins
+    light is {{ states("sensor.tree_2_light") }} lumes
+    moisture is at {{ states("sensor.tree2moisture") }} %
+    temp is {{ states("sensor.tree2temp") }} degrees
+
+    Tree 3 battery is at {{ states("sensor.tree3battery") }} %
+    conductivity is at {{ states("sensor.tree3conductivity") }} siemins
+    light is {{ states("sensor.tree_3_light") }} lumes
+    moisture is at {{ states("sensor.tree3moisture") }} %
+    temp is {{ states("sensor.tree3temp") }} degrees
+
+    Tree 4 battery is at {{ states("sensor.tree4battery") }} %
+    conductivity is at {{ states("sensor.tree4conductivity") }} siemins
+    light is {{ states("sensor.tree_4_lighty") }} lumes
+    moisture is at {{ states("sensor.tree4moisture") }} %
+    temp is {{ states("sensor.tree4temp") }} degrees
+
+    Tree 5 battery is at {{ states("sensor.tree5battery	") }} %
+    conductivity is at {{ states("sensor.tree5conductivity") }} siemins
+    light is {{ states("sensor.tree_5_light") }} lumes
+    moisture is at {{ states("sensor.tree5moisture") }} %
+    temp is {{ states("sensor.tree5temp") }} degrees

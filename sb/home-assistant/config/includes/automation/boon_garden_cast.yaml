@@ -1,0 +1,15 @@
+alias: Casting the Garden
+initial_state: True
+trigger:
+  platform: state
+  entity_id: input_boolean.notify_gardencast
+  to: 'on'
+  from: 'off'
+action:
+- service: switch.turn_on
+  entity_id: switch.emerson
+- service: shell_command.gardenstream
+- service: input_boolean.turn_off
+  entity_id: input_boolean.notify_gardencast
+- service: script.turn_on
+  entity_id: script.off_emerson

@@ -1,0 +1,71 @@
+>
+    <speak> <prosody rate="medium">
+    tilapia tank battery is at {{ states("sensor.tilapia_tankbattery") }} percent
+    conductivity is at {{ states("sensor.tilapia_tankconductivity") }} siemins
+    light is {{ states("sensor.tilapia_tank_light") }} lumes
+    moisture is at {{ states("sensor.tilapia_tankmoisture") }} percent
+    temp is {{ states("sensor.tilapia_tanktemp") }} degrees
+    <break time="1s"/>
+
+    Top Table battery is at {{ states("sensor.toptablebattery") }} percent
+    conductivity is at {{ states("sensor.toptableconductivity") }} siemins
+    light is {{ states("sensor.toptable_light") }} lumes
+    moisture is at {{ states("sensor.toptablemoisture") }} percent
+    temp is {{ states("sensor.top_tabletemp") }} degrees
+    <break time="1s"/>
+
+    Center Table battery is at {{ states("sensor.centertablebattery") }} percent
+    conductivity is at {{ states("sensor.centertableconductivity") }} siemins
+    light is {{ states("sensor.center_table_light") }} lumes
+    moisture is at {{ states("sensor.center_tablemoisture") }} percent
+    temp is {{ states("sensor.center_tabletemp") }} degrees
+    <break time="1s"/>
+
+    Bottom Table battery is at {{ states("sensor.bottomtablebattery") }} percent
+    conductivity is at {{ states("sensor.bottomtableconductivity") }} siemins
+    light is {{ states("sensor.bottom_table_light") }} lumes
+    moisture is at {{ states("sensor.bottom_tablemoisture") }} percent
+    temp is {{ states("sensor.bottom_tabletemp") }} degrees
+    <break time="1s"/>
+
+    Pond battery is at {{ states("sensor.pondbattery") }} percent
+    conductivity is at {{ states("sensor.pondconductivity") }} siemins
+    light is {{ states("sensor.pond_light") }} lumes
+    moisture is at {{ states("sensor.pondmoisture") }} percent
+    temp is {{ states("sensor.pondtemp") }} degrees
+    <break time="1s"/>
+
+    Rosemary battery is at {{ states("sensor.rosemarybattery") }} percent
+    conductivity is at {{ states("sensor.rosemaryconductivity") }} siemins
+    light is {{ states("sensor.rosemary_light") }} lumes
+    moisture is at {{ states("sensor.rosemarymoisture") }} percent
+    temp is {{ states("sensor.rosemarytemp") }} degrees
+    <break time="1s"/>
+
+    CatNip 1s battery is at {{ states("sensor.catnip1battery") }} percent
+    conductivity is at {{ states("sensor.catnip_1conductivity") }} siemins
+    light is {{ states("sensor.catnip_1_light") }} lumes
+    moisture is at {{ states("sensor.catnip_1moisture") }} percent
+    temp is {{ states("sensor.catnip_1temp") }} degrees
+    <break time="1s"/>
+
+    CatNip 2s battery is at {{ states("sensor.catnip2battery") }} percent
+    conductivity is at {{ states("sensor.catnip_2conductivity") }} siemins
+    light is {{ states("sensor.catnip_2_light") }} lumes
+    moisture is at {{ states("sensor.catnip_2moisture") }} percent
+    temp is {{ states("sensor.catnip_2temp") }} degrees
+    <break time="1s"/>
+
+    tomato pot battery is at {{ states("sensor.tomato_potbattery") }} percent
+    conductivity is at {{ states("sensor.tomato_potconductivity") }} siemins
+    light is {{ states("sensor.tomato_pot_light") }} lumes
+    moisture is at {{ states("sensor.tomato_potmoisture") }} percent
+    temp is {{ states("sensor.tomato_pottemp") }} degrees
+    <break time="1s"/>
+
+    passion fruit battery is at {{ states("sensor.passion_fruitbattery") }} percent
+    conductivity is at {{ states("sensor.passion_fruitconductivity") }} siemins
+    light is {{ states("sensor.passion_fruit_light") }} lumes
+    moisture is at {{ states("sensor.passion_fruitmoisture") }} percent
+    temp is {{ states("sensor.passion_fruit_temperature") }} degrees
+    </prosody></speak>

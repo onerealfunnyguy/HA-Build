@@ -1,0 +1,10 @@
+alias: Turn off tree light when sun rises
+initial_state: True
+trigger:
+    platform: sun
+    event: sunrise
+action:
+- service: switch.turn_off
+  entity_id: switch.coffee
+- service: light.turn_off
+  entity_id: light.front_door_light

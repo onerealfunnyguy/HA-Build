@@ -1,0 +1,70 @@
+>
+    tilapia tank battery is at {{ states("sensor.tilapia_tankbattery") }} %
+    conductivity is at {{ states("sensor.tilapia_tankconductivity") }} siemins
+    light is {{ states("sensor.tilapia_tank_light") }} lumes
+    moisture is at {{ states("sensor.tilapia_tankmoisture") }} %
+    temp is {{ states("sensor.tilapia_tanktemp") }} degrees
+
+
+    Top Table battery is at {{ states("sensor.toptablebattery") }} %
+    conductivity is at {{ states("sensor.toptableconductivity") }} siemins
+    light is {{ states("sensor.toptable_light") }} lumes
+    moisture is at {{ states("sensor.toptablemoisture") }} %
+    temp is {{ states("sensor.top_tabletemp") }} degrees
+
+
+    Center Table battery is at {{ states("sensor.centertablebattery") }} %
+    conductivity is at {{ states("sensor.centertableconductivity") }} siemins
+    light is {{ states("sensor.center_table_light") }} lumes
+    moisture is at {{ states("sensor.center_tablemoisture") }} %
+    temp is {{ states("sensor.center_tabletemp") }} degrees
+
+
+
+    Bottom Table battery is at {{ states("sensor.bottomtablebattery") }} %
+    conductivity is at {{ states("sensor.bottomtableconductivity") }} siemins
+    light is {{ states("sensor.bottom_table_light") }} lumes
+    moisture is at {{ states("sensor.bottom_tablemoisture") }} %
+    temp is {{ states("sensor.bottom_tabletemp") }} degrees
+
+
+    Pond battery is at {{ states("sensor.pondbattery") }} %
+    conductivity is at {{ states("sensor.pondconductivity") }} siemins
+    light is {{ states("sensor.pond_light") }} lumes
+    moisture is at {{ states("sensor.pondmoisture") }} %
+    temp is {{ states("sensor.pondtemp") }} degrees
+
+
+    Rosemary battery is at {{ states("sensor.rosemarybattery") }} %
+    conductivity is at {{ states("sensor.rosemaryconductivity") }} siemins
+    light is {{ states("sensor.rosemary_light") }} lumes
+    moisture is at {{ states("sensor.rosemarymoisture") }} % 
+    temp is {{ states("sensor.rosemarytemp") }} degrees
+
+
+    CatNip 1s battery is at {{ states("sensor.catnip1battery") }} %
+    conductivity is at {{ states("sensor.catnip_1conductivity") }} siemins
+    light is {{ states("sensor.catnip_1_light") }} lumes
+    moisture is at {{ states("sensor.catnip_1moisture") }} %
+    temp is {{ states("sensor.catnip_1temp") }} degrees
+
+
+    CatNip 2s battery is at {{ states("sensor.catnip2battery") }} %
+    conductivity is at {{ states("sensor.catnip_2conductivity") }} siemins
+    light is {{ states("sensor.catnip_2_light") }} lumes
+    moisture is at {{ states("sensor.catnip_2moisture") }} %
+    temp is {{ states("sensor.catnip_2temp") }} degrees
+
+
+    tomato pot battery is at {{ states("sensor.tomato_potbattery") }} %
+    conductivity is at {{ states("sensor.tomato_potconductivity") }} siemins
+    light is {{ states("sensor.tomato_pot_light") }} lumes
+    moisture is at {{ states("sensor.tomato_potmoisture") }} %
+    temp is {{ states("sensor.tomato_pottemp") }} degrees
+
+
+    passion fruit battery is at {{ states("sensor.passion_fruitbattery") }} %
+    conductivity is at {{ states("sensor.passion_fruitconductivity") }} siemins
+    light is {{ states("sensor.passion_fruit_light") }} lumes
+    moisture is at {{ states("sensor.passion_fruitmoisture") }} %
+    temp is {{ states("sensor.passion_fruit_temperature") }} degrees

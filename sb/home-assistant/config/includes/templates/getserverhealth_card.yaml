@@ -1,0 +1,19 @@
+>
+    hive ram is at {{ states("sensor.hive_ram_use") }} % 
+    cpu is at {{ states("sensor.hive_cpu_load") }} %
+    free disk space is {{ states("sensor.hive_disk_free") }} GiB
+    shed ram is at {{ states("sensor.shed_ram_use") }} %
+    cpu is at {{ states("sensor.shed_cpu_load") }} %
+    free disk space is {{ states("sensor.shed_disk_free") }} GiB
+    help ram is at {{ states("sensor.help_ram_use") }} %
+    cpu is at {{ states("sensor.help_cpu_load") }} %
+    free disk space is {{ states("sensor.help_disk_free") }} GiB
+    pepper ram is at {{ states("sensor.pepper_ram_use") }} %
+    cpu is at {{ states("sensor.pepper_cpu_load") }} %
+    free disk space is {{ states("sensor.pepper_disk_free") }} GiB
+    o v h ram is at {{ states("sensor.ovh_ram_use") }} %
+    cpu is at {{ states("sensor.ovh_cpu_load") }} %
+    free disk space is {{ states("sensor.ovh_disk_free") }} GiB
+    prime ram is at {{ states("sensor.prime_ram_use") }} %
+    cpu is at {{ states("sensor.prime_cpu_load") }} %
+    free disk space is {{ states("sensor.prime_disk_free") }} GiB

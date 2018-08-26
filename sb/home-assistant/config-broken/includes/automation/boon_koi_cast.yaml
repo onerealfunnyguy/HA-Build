@@ -1,0 +1,15 @@
+alias: Casting the Koi
+initial_state: True
+trigger:
+  platform: state
+  entity_id: input_boolean.notify_koicast
+  to: 'on'
+  from: 'off'
+action:
+- service: switch.turn_on
+  entity_id: switch.emerson
+- service: shell_command.koistream
+- service: input_boolean.turn_off
+  entity_id: input_boolean.notify_koicast
+- service: script.turn_on
+  entity_id: script.off_emerson

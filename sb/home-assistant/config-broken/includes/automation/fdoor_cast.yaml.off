@@ -1,0 +1,21 @@
+alias: Cast the Door
+trigger:
+  platform: state
+  entity_id:
+    - sensor.front_door_motion
+    - sensor.front_door_light_level
+condition:
+  - condition: and
+    conditions:
+      - condition: numeric_state
+        entity_id: sensor.front_door_motion
+        above: 100
+      - condition: numeric_state
+        entity_id: sensor.front_door_light_level
+        above: 75
+action:
+- service: switch.turn_on
+  entity_id: switch.emerson
+- service: shell_command.fdstream
+- service: script.turn_on
+  entity_id: script.off_emerson

@@ -1,0 +1,2 @@
+media_grab_start:
+    ssh shortbus@maxx "echo $host && sleep 5 && ./start_media_grab.sh"

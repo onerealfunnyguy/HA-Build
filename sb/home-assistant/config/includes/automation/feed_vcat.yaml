@@ -1,0 +1,8 @@
+alias: Feed vCat AM
+initial_state: True
+trigger:
+  -  platform: time
+     at: "08:50:00"
+action:
+- service: script.feed_the_vcat
+  entity_id: script.feed_the_vcat

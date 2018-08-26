@@ -1,0 +1,37 @@
+# Example configuration.yaml entry
+# input_boolean:
+  notify_doorcast:
+    name: Cast the Door
+    initial: off
+    icon: mdi:camera-rear
+  notify_catcast:
+    name: Cast the Cat
+    initial: off
+    icon: mdi:camera-rear
+  notify_gardencast:
+    name: Cast the Garden
+    initial: off
+    icon: mdi:camera-rear
+  notify_koincast:
+    name: Cast the Koi
+    initial: off
+    icon: mdi:camera-rear
+  notify_killthecast:
+    name: Kill all cast
+    initial: off
+    icon: mdi:radioactive
+  medicine:
+    name: medicine
+    initial: off
+  fed_frog:
+    name: Fed Frogs
+    initial: off
+    icon: mdi:bowl
+  grab_start:
+    name: Media Grab
+    initial: off
+    icon: mdi:movie-roll
+  grab_stop:
+    name: Stop Media Grab
+    initial: off
+    icon: mdi:movie

@@ -1,0 +1,176 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: ShortHouse
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret latitude
+  longitude: !secret longitude
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 138
+  # metric for Metric, imperial for Imperial
+  unit_system: imperial
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: America/Los_Angeles
+      ############
+   # CUSTOMIZATIONS #
+      ############
+#   customize: !include customizations/custom.yaml
+#   customize_glob: !include customizations/custom-ui.yaml
+# customizer:
+#   custom_ui: local
+#   customize_glob:
+#     "*.*":
+#       custom_ui_state_card: state-card-custom-ui
+# customizer:
+#   custom_ui: local
+
+# Show links to resources in log and frontend
+#introduction:
+
+# Enables the frontend
+frontend:
+  # extra_html_url:
+  #   - /local/custom_ui/state-card-custom-ui.html
+
+http:
+  # Uncomment this to add a password (recommended!)
+  api_password: !secret apipass
+#  server_port: 443
+  # SSL Cert
+  # Off local - Added pfsense HAProxy
+#  ssl_certificate: !secret SSL_cert
+#  ssl_key: !secret SSL_key
+  # Uncomment this if you are using SSL or running in Docker etc
+#  base_url: !secret burl
+  trusted_networks:
+    - !secret t1
+    - !secret t2
+    - !secret t3
+    - !secret t4
+    - !secret t5
+# Checks for available updates
+updater:
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time.
+history:
+
+# View all events in a logbook
+logbook:
+
+recorder:
+#  purge_days: 366
+  db_url: !secret db_host
+
+# Track the sun
+sun:
+
+# Text to speech
+tts:
+  platform: google
+  # cache: true
+  # cache_dir: /config/tts
+  # time_memory: 300
+
+ifttt:
+  key: !secret ifttt_key
+
+
+############
+# INCLUDES #
+############
+group: !include includes/groups.yaml
+scene: !include includes/scenes.yaml
+#group: !include_dir_merge_list includes/groups
+light: !include includes/light.yaml
+camera: !include includes/cameras.yaml
+android_ip_webcam: !include includes/android_ip_webcam.yaml
+media_player: !include includes/media_player.yaml
+## Add merger of sensors
+#sensor: !include includes/sensor.yaml
+sensor: !include_dir_merge_list includes/sensor
+switch: !include includes/switch.yaml
+weblink: !include includes/weblinks.yaml
+zone: !include includes/zones.yaml
+mqtt: !include includes/mqtt.yaml
+#wemo: !include includes/wemo.yaml
+# plant: !include includes/plant.yaml
+#automation: !include_dir_list automation
+#automation: !include automations.yaml
+automation: !include_dir_list includes/automation
+intent_script: !include includes/intent_script.yaml
+#intent_script: !include_dir_list includes/intent_script
+#intent_script: !include_dir_named includes/intent_script
+notify: !include includes/notify.yaml
+input_boolean: !include includes/input_boolean.yaml
+media_extractor:
+#shell_command: !include_dir_list includes/shell
+shell_command: !include_dir_merge_named includes/shell
+script: !include_dir_merge_named includes/script
+config:
+zoneminder: !include includes/zoneminder.yaml
+device_tracker: !include includes/device_tracker.yaml
+# Amazon Echo Vhue
+emulated_hue:
+  expose_by_default: false
+  exposed_domains:
+     - switch
+  entities:
+    switch.tv_emerson:
+      name: "Emerson"
+
+zabbix:
+  host: !secret zabbix_host
+  ssl: False
+  path: /
+  username: ha
+  password: !secret zabbix_pass
+
+mqtt_eventstream:
+  subscribe_topic: slave/#
+  publish_topic: master/sb-stream
+## Add influxdb
+influxdb:
+  host: sb
+  database: home_assistant
+  username: !secret influxuser
+  password: !secret influxpass
+
+ ### Added FloorPlan ###
+panel_custom:
+  - name: floorplan
+    sidebar_title: Floorplan
+    sidebar_icon: mdi:home
+    url_path: floorplan
+    config: !include floorplan.yaml
+# Added Twillo ###
+twilio:
+  account_sid: !secret twillo_sid
+  auth_token: !secret twillo_token
+# Add Custom Alexa Skill
+alexa:
+  flash_briefings: !include includes/flash_briefings.yaml
+
+### Added Grafana Panels ###
+panel_iframe:
+  system_load:
+    title: 'System Load'
+    icon: mdi:server
+    url: 'http://shed:3000/dashboard/db/system-loads?orgId=1&from=1506841200000&to=1509319643223'
+  plant_graph:
+    title: 'Plant Graph'
+    icon: mdi:flower
+    url: 'http://shed:3000/dashboard/db/plant-status?refresh=15m&orgId=1&from=1506841200000&to=1509319567794'
+
+
+#intent_script:
+#  GetHiveRamUse:  # Intent type
+#    speech:
+#      text: hive ram is {{ states.sensor.hive_ram_use }} percent
+#  GetShedRamUse:  # Intent type
+#    speech:
+#      text: hive ram is {{ states.sensor.shed_ram_use }} percent

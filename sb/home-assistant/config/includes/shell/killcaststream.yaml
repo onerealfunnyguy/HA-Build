@@ -1,0 +1,2 @@
+killcaststream:
+    ssh shortbus@hive "echo $host && sleep 5 && cd stream2cast && ./killthecast.sh"

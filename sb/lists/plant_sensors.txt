@@ -1,0 +1,83 @@
+### bottom table ###
+sensor.bottom_table_battery
+sensor.bottom_table_conductivity
+sensor.bottom_table_light_intensity
+sensor.bottom_table_moisture
+sensor.bottom_table_temperature
+### catnip 1 ###
+sensor.catnip_1_battery	0
+sensor.catnip_1_conductivity	266
+sensor.catnip_1_light_intensity	13977
+sensor.catnip_1_moisture	41
+sensor.catnip_1_temperature	73.4
+### catnap 2 ###
+sensor.catnip_2_battery	0
+sensor.catnip_2_conductivity	174
+sensor.catnip_2_light_intensity	15961
+sensor.catnip_2_moisture	unknown
+sensor.catnip_2_temperature	74.7
+### center tablee ###
+sensor.center_table_battery	0
+sensor.center_table_conductivity	718
+sensor.center_table_light_intensity	25318
+sensor.center_table_moisture	86
+sensor.center_table_temperature	74.5
+### passion fruit ###
+sensor.passion_fruit_battery	0
+sensor.passion_fruit_conductivity	151
+sensor.passion_fruit_light_intensity	9176
+sensor.passion_fruit_moisture	unknown
+sensor.passion_fruit_temperature	74.8
+### pond ###
+sensor.pond_battery	0
+sensor.pond_conductivity	705
+sensor.pond_light_intensity	unknown
+sensor.pond_moisture	4
+sensor.pond_temperature	72.0
+### rosemary ###
+sensor.rosemary_battery	0
+sensor.rosemary_conductivity	100
+sensor.rosemary_light_intensity	16165
+sensor.rosemary_moisture	unknown
+sensor.rosemary_temperature	72.3
+### tilapia tank ###
+sensor.tilapia_tank_battery	0
+sensor.tilapia_tank_conductivity	1
+sensor.tilapia_tank_light_intensity	10179
+sensor.tilapia_tank_moisture	unknown
+sensor.tilapia_tank_temperature	73.9
+sensor.tomato_pot_battery	0
+sensor.tomato_pot_conductivity	43
+sensor.tomato_pot_light_intensity	2380
+sensor.tomato_pot_moisture	unknown
+sensor.tomato_pot_temperature	71.1
+sensor.top_table_battery	0
+sensor.top_table_conductivity	unknown
+sensor.top_table_light_intensity	unknown
+sensor.top_table_moisture	unknown
+sensor.top_table_temperature	unknown
+sensor.tree_1_battery	0
+sensor.tree_1_conductivity	240
+sensor.tree_1_light_intensity	10743
+sensor.tree_1_moisture	34
+sensor.tree_1_temperature	75.9
+sensor.tree_2_battery	0
+sensor.tree_2_conductivity	262
+sensor.tree_2_light_intensity	20043
+sensor.tree_2_moisture	unknown
+sensor.tree_2_temperature	76.5
+sensor.tree_3_battery	0
+sensor.tree_3_conductivity	308
+sensor.tree_3_light_intensity	10083
+sensor.tree_3_moisture	unknown
+sensor.tree_3_temperature	76.1
+sensor.tree_4_battery	0
+sensor.tree_4_conductivity	224
+sensor.tree_4_light_intensity	31144
+sensor.tree_4_moisture	unknown
+sensor.tree_4_temperature	78.3
+sensor.tree_5_battery	0
+sensor.tree_5_conductivity	218
+sensor.tree_5_light_intensity	12530
+sensor.tree_5_moisture	27
+sensor.tree_5_temperature	75.2

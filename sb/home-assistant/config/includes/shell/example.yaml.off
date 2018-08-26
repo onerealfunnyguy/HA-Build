@@ -1,0 +1,5 @@
+shell_command:
+  doorbell:
+  'timeout 20s \
+  /home/homeassistant/stream2chromecast/stream2chromecast.py \
+  -devicename Bedroom-TV -transcoder avconv -transcode rtsp://xxx.xxx.xxx.xxx:7447/0c506deb4241e_2'

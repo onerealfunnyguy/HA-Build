@@ -1,0 +1,21 @@
+feed_the_vcat:
+  sequence:
+    - service: tts.google_say
+      entity_id: media_player.castaudio
+      data:
+        message: "Alexa, ask cat riser, how is my cat?"
+    - delay: '00:00:17'
+    - service: tts.google_say
+      entity_id: media_player.castaudio
+      data_template:
+        message: >-
+          {% if is_state('sun.sun', 'above_horizon') %}
+            Please give my cat some tuna.
+          {% else %}
+            Please give my cat a mouse.
+          {% endif %}
+    - delay: '00:00:13'
+    - service: tts.google_say
+      entity_id: media_player.castaudio
+      data:
+        message: "Pet my cats back!"

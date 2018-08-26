@@ -1,0 +1,977 @@
+#sensor:
+  - platform: speedtest
+    minute:
+      - 0
+      - 59
+    monitored_conditions:
+      - ping
+      - download
+      - upload
+  - platform: moon
+  - platform: yweather
+    monitored_conditions:
+#      - weather
+      - weather_current
+#      - temp_min
+#      - temp_max
+      - wind_speed
+      - pressure
+      - visibility
+      - humidity
+      - temperature
+  - platform: broadlink
+    update_interval: 60
+    host: emote
+    mac: 'B4:43:0D:EF:9E:73'
+    monitored_conditions:
+      - temperature
+#  - platform: zoneminder
+  - platform: haveibeenpwned
+    email:
+      !secret email_1
+  - platform: haveibeenpwned
+    email:
+      !secret email_2
+  - platform: haveibeenpwned
+    email:
+      !secret email_3
+  - platform: ohmconnect
+    id: !secret ohm_id
+  - platform: glances
+    host: sb
+    name: sb
+    resources:
+      - 'disk_use_percent'
+      - 'disk_use'
+      - 'disk_free'
+      - 'memory_use_percent'
+  #  - 'memory_use'
+  #  - 'memory_free'
+      - 'swap_use_percent'
+  #  - 'swap_use'
+  #  - 'swap_free'
+      - 'processor_load'
+      - 'process_running'
+      - 'process_total'
+      - 'process_thread'
+      - 'process_sleeping'
+  #  - 'cpu_temp'
+  # - platform: glances
+  #   host: shed
+  #   name: shed
+  #   resources:
+  #     - 'disk_use_percent'
+  #     - 'disk_use'
+  #     - 'disk_free'
+  #     - 'memory_use_percent'
+  #   #  - 'memory_use'
+  #   #  - 'memory_free'
+  #     - 'swap_use_percent'
+  #   #  - 'swap_use'
+  #   #  - 'swap_free'
+  #     - 'processor_load'
+  #     - 'process_running'
+  #     - 'process_total'
+  #     - 'process_thread'
+  #     - 'process_sleeping'
+  #   #  - 'cpu_temp'
+  # - platform: glances
+  #   host: hive
+  #   name: hive
+  #   resources:
+  #     - 'disk_use_percent'
+  #     - 'disk_use'
+  #     - 'disk_free'
+  #     - 'memory_use_percent'
+  #   #  - 'memory_use'
+  #   #  - 'memory_free'
+  #     - 'swap_use_percent'
+  #   #  - 'swap_use'
+  #   #  - 'swap_free'
+  #     - 'processor_load'
+  #     - 'process_running'
+  #     - 'process_total'
+  #     - 'process_thread'
+  #     - 'process_sleeping'
+  #   #  - 'cpu_temp'
+  # - platform: glances
+  #   host: maxx
+  #   name: maxx
+  #   resources:
+  #     - 'disk_use_percent'
+  #     - 'disk_use'
+  #     - 'disk_free'
+  #     - 'memory_use_percent'
+  #   #  - 'memory_use'
+  #   #  - 'memory_free'
+  #     - 'swap_use_percent'
+  #   #  - 'swap_use'
+  #   #  - 'swap_free'
+  #     - 'processor_load'
+  #     - 'process_running'
+  #     - 'process_total'
+  #     - 'process_thread'
+  #     - 'process_sleeping'
+  #   #  - 'cpu_temp'
+  - platform: glances
+    host: help.davedaley.com
+    name: help
+    resources:
+      - 'disk_use_percent'
+      - 'disk_use'
+      - 'disk_free'
+      - 'memory_use_percent'
+    #  - 'memory_use'
+    #  - 'memory_free'
+      - 'swap_use_percent'
+    #  - 'swap_use'
+    #  - 'swap_free'
+      - 'processor_load'
+      - 'process_running'
+      - 'process_total'
+      - 'process_thread'
+      - 'process_sleeping'
+  - platform: glances
+    host: pepper.davedaley.com
+    name: pepper
+    resources:
+      - 'disk_use_percent'
+      - 'disk_use'
+      - 'disk_free'
+      - 'memory_use_percent'
+    #  - 'memory_use'
+    #  - 'memory_free'
+      - 'swap_use_percent'
+  #    - 'swap_use'
+  #    - 'swap_free'
+      - 'processor_load'
+      - 'process_running'
+      - 'process_total'
+      - 'process_thread'
+      - 'process_sleeping'
+  - platform: glances
+    host: ovh.davedaley.com
+    name: ovh
+    resources:
+      - 'disk_use_percent'
+      - 'disk_use'
+      - 'disk_free'
+      - 'memory_use_percent'
+    #  - 'memory_use'
+    #  - 'memory_free'
+      - 'swap_use_percent'
+    #  - 'swap_use'
+    #  - 'swap_free'
+      - 'processor_load'
+      - 'process_running'
+      - 'process_total'
+      - 'process_thread'
+      - 'process_sleeping'
+  # - platform: glances
+  #   host: prime.optincall.com
+  #   name: prime
+  #   resources:
+  #     - 'disk_use_percent'
+  #     - 'disk_use'
+  #     - 'disk_free'
+  #     - 'memory_use_percent'
+  #   #  - 'memory_use'
+  #   #  - 'memory_free'
+  #     - 'swap_use_percent'
+  #   #  - 'swap_use'
+  #   #  - 'swap_free'
+  #     - 'processor_load'
+  #     - 'process_running'
+  #     - 'process_total'
+  #     - 'process_thread'
+  #     - 'process_sleeping'
+  - platform: glances
+    host: beta.optincall.com
+    name: beta
+    resources:
+      - 'disk_use_percent'
+      - 'disk_use'
+      - 'disk_free'
+      - 'memory_use_percent'
+    #  - 'memory_use'
+    #  - 'memory_free'
+      - 'swap_use_percent'
+    #  - 'swap_use'
+    #  - 'swap_free'
+      - 'processor_load'
+      - 'process_running'
+      - 'process_total'
+      - 'process_thread'
+      - 'process_sleeping'
+  - platform: zabbix
+    triggers:
+### SSL Cert Check - Owned ###
+  - platform: cert_expiry
+    host: davedaley.com
+    name: davedaley.com
+  # - platform: cert_expiry
+  #   host: 1915.davedaley.com
+  #   name: 1915.davedaley.com
+  - platform: cert_expiry
+    host: onerealfunnyguy.com
+    name: orfg
+  - platform: cert_expiry
+    host: litterbox.co
+    name: litterbox.co
+  - platform: cert_expiry
+    host: b-e-h.co
+    name: b-e-h.co
+  - platform: cert_expiry
+    host: joeydaley.com
+    name: joeydaley.com
+  - platform: cert_expiry
+    host: flashhunt.com
+    name: flashhunt.com
+  - platform: cert_expiry
+    host: froggyfarms.com
+    name: froggyfarms.com
+  - platform: cert_expiry
+    host: cdrblk.com
+    name: cdrblk.com
+  - platform: cert_expiry
+    host: chronictrackers.com
+    name: chronictrackers.com
+  - platform: cert_expiry
+    host: cart.chronictrackers.com
+    name: cart.chronictrackers.com
+  - platform: cert_expiry
+    host: cannablisscream.com
+    name: cannablisscream.com
+  - platform: cert_expiry
+    host: bakedwithbuddies.com
+    name: bakedwithbuddies.com
+  - platform: cert_expiry
+    host: dabnap.com
+    name: dabnap.com
+### SSL Cert Check - hosted ###
+  - platform: cert_expiry
+    host: trinitygrower.com
+    name: trinitygrower.com
+  - platform: cert_expiry
+    host: armbarassassin.com
+    name: armbarassassin.com
+  - platform: cert_expiry
+    host: simplyeffectsmakeup.com
+    name: simplyeffectsmakeup.com
+  - platform: cert_expiry
+    host: reliable-cable.com
+    name: reliable-cable.com
+  - platform: cert_expiry
+    host: auntiekskitchen.com
+    name: auntiekskitchen.com
+  - platform: cert_expiry
+    host: pinheadztradingpost.com
+    name: pinheadztradingpost.com
+  - platform: cert_expiry
+    host: concernedinkanab.com
+    name: concernedinkanab.com
+  # - platform: cert_expiry
+  #   host: cannadiamond.com
+  #   name: cannadiamond.com
+  # - platform: cert_expiry
+  #   host: demo.cannadiamond.com
+  #   name: demo.cannadiamond.com
+  - platform: cert_expiry
+    host: blog.optincall.com
+    name: blog.optincall.com
+  - platform: cert_expiry
+    host: optincall.com
+    name: optincall.com
+  - platform: cert_expiry
+    host: whereislithian.com
+    name: whereislithian.com
+# #### Start MiFlora Sensors ####
+#   - platform: miflora
+#     mac: 'C4:7C:8D:62:3F:9D'
+#     name: Center Table
+#     force_update: false
+#     median: 3
+#     monitored_conditions:
+#       - moisture
+#       - light
+#       - temperature
+#       - conductivity
+#       - battery
+#   - platform: miflora
+#     mac: 'C4:7C:8D:62:3F:2C'
+#     name: CatNip 1
+#     force_update: false
+#     median: 3
+#     monitored_conditions:
+#       - moisture
+#       - light
+#       - temperature
+#       - conductivity
+#       - battery
+#   - platform: miflora
+#     mac: 'C4:7C:8D:63:61:40'
+#     name: CatNip 2
+#     force_update: false
+#     median: 3
+#     monitored_conditions:
+#       - moisture
+#       - light
+#       - temperature
+#       - conductivity
+#       - battery
+#   - platform: miflora
+#     mac: 'C4:7C:8D:63:80:5C'
+#     name: Tilapia Tank
+#     force_update: false
+#     median: 3
+#     monitored_conditions:
+#       - moisture
+#       - light
+#       - temperature
+#       - conductivity
+#       - battery
+#   - platform: miflora
+#     mac: 'C4:7C:8D:63:7B:60'
+#     name: Top Table
+#     force_update: false
+#     median: 3
+#     monitored_conditions:
+#       - moisture
+#       - light
+#       - temperature
+#       - conductivity
+#       - battery
+#   - platform: miflora
+#     mac: 'C4:7C:8D:62:6C:BA'
+#     name: Bottom Table
+#     force_update: false
+#     median: 3
+#     monitored_conditions:
+#       - moisture
+#       - light
+#       - temperature
+#       - conductivity
+#       - battery
+#   - platform: miflora
+#     mac: 'C4:7C:8D:62:6B:96'
+#     name: Rosemary
+#     force_update: false
+#     median: 3
+#     monitored_conditions:
+#       - moisture
+#       - light
+#       - temperature
+#       - conductivity
+#       - battery
+#   - platform: miflora
+#     mac: 'C4:7C:8D:62:68:31'
+#     name: Pond
+#     force_update: false
+#     median: 3
+#     monitored_conditions:
+#       - moisture
+#       - light
+#       - temperature
+#       - conductivity
+#       - battery
+#   - platform: miflora
+#     mac: 'C4:7C:8D:62:6B:48'
+#     name: Tomato Pot
+#     force_update: false
+#     median: 3
+#     monitored_conditions:
+#       - moisture
+#       - light
+#       - temperature
+#       - conductivity
+#       - battery
+#   - platform: miflora
+#     mac: 'C4:7C:8D:62:E9:6C'
+#     name: Passion Fruit
+#     force_update: false
+#     median: 3
+#     monitored_conditions:
+#       - moisture
+#       - light
+#       - temperature
+#       - conductivity
+#       - battery
+#   - platform: miflora
+#     mac: 'C4:7C:8D:62:7E:D7'
+#     name: Tree 1
+#     force_update: false
+#     median: 3
+#     monitored_conditions:
+#       - moisture
+#       - light
+#       - temperature
+#       - conductivity
+#       - battery
+#   - platform: miflora
+#     mac: 'C4:7C:8D:62:6D:18'
+#     name: Tree 2
+#     force_update: false
+#     median: 3
+#     monitored_conditions:
+#       - moisture
+#       - light
+#       - temperature
+#       - conductivity
+#       - battery
+#   - platform: miflora
+#     mac: 'C4:7C:8D:62:6D:0C'
+#     name: Tree 3
+#     force_update: false
+#     median: 3
+#     monitored_conditions:
+#       - moisture
+#       - light
+#       - temperature
+#       - conductivity
+#       - battery
+#   - platform: miflora
+#     mac: 'C4:7C:8D:62:7E:6E'
+#     name: Tree 4
+#     force_update: false
+#     median: 3
+#     monitored_conditions:
+#       - moisture
+#       - light
+#       - temperature
+#       - conductivity
+#       - battery
+#   - platform: miflora
+#     mac: 'C4:7C:8D:62:6C:AC'
+#     name: Tree 5
+#     force_update: false
+#     median: 3
+#     monitored_conditions:
+#       - moisture
+#       - light
+#       - temperature
+#       - conductivity
+#       - battery
+# ## Transmission ##
+#   - platform: transmission
+#     host: maxx
+#     monitored_variables:
+#       - 'current_status'
+#       - 'download_speed'
+#       - 'upload_speed'
+### World Air Quality Index ###
+  - platform: waqi
+    token: !secret waqi
+    locations:
+      - Camp Pendleton
+#    stations:
+#      -
+### OutSide IP ###
+  - platform: rest
+    scan_interval: 86400
+    resource: http://ip.jsontest.com
+    name: External IPv6
+    value_template: '{{ value_json.ip }}'
+  - platform: rest
+    scan_interval: 86400
+    resource: https://api.ipify.org
+    name: External IPv4
+  #  value_template: '{{ value_json.ip }}'
+#   ### bottom table ###
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.bottom_table_battery
+#     name: bottom-table-battery
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "%"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.bottom_table_conductivity
+#     name: bottom-table-conductivity
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "\u00b5S/cm"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.bottom_table_light_intensity
+#     name: bottom_table_light
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "lux"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.bottom_table_moisture
+#     name: bottom_table-moisture
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "%"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.bottom_table_temperature
+#     name:  bottom_table-temp
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "\u00b0F"
+#   ### catnip 1 ###
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.catnip_1_battery
+#     name: catnip-1-battery
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "%"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.catnip_1_conductivity
+#     name: catnip_1-conductivity
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "\u00b5S/cm"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.catnip_1_light_intensity
+#     name: catnip_1_light
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "lux"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.catnip_1_temperature
+#     name:  catnip_1-temp
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "\u00b0F"
+#   ### catnap 2 ###
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.catnip_2_battery
+#     name: catnip-2-battery
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "%"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.catnip_2_conductivity
+#     name: catnip_2-conductivity
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "\u00b5S/cm"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.catnip_2_light_intensity
+#     name: catnip_2_light
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "lux"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.catnip_2_moisture
+#     name: catnip_2-moisture
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "%"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.catnip_2_temperature
+#     name:  catnip_2-temp
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "\u00b0F"
+#   ### center tablee ###
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.center_table_battery
+#     name: center-table-battery
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "%"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.center_table_conductivity
+#     name: center-table-conductivity
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "\u00b5S/cm"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.center_table_light_intensity
+#     name: center_table_light
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "lux"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.center_table_moisture
+#     name: center_table-moisture
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "%"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.center_table_temperature
+#     name:  center_table-temp
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "\u00b0F"
+#   ### passion fruit ###
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.passion_fruit_battery
+#     name: passion_fruit-battery
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "%"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.passion_fruit_conductivity
+#     name: passion_fruit-conductivity
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "\u00b5S/cm"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.passion_fruit_light_intensity
+#     name: passion_fruit_light
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "lux"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.passion_fruit_moisture
+#     name: passion_fruit-moisture
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "%"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.passion_fruit_temperature
+#     name:  passion_fruit-temp
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "\u00b0F"
+#   ### pond ###
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.pond_battery
+#     name: pond-battery
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "%"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.pond_conductivity
+#     name: pond-conductivity
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "\u00b5S/cm"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.pond_light_intensity
+#     name: pond_light
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "lux"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.pond_moisture
+#     name: pond-moisture
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "%"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.pond_temperature
+#     name:  pond-temp
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "\u00b0F"
+#   ### rosemary ###
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.rosemary_battery
+#     name: rosemary-battery
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "%"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.rosemary_conductivity
+#     name: rosemary-conductivity
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "\u00b5S/cm"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.rosemary_light_intensity
+#     name: rosemary-light
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "lux"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.rosemary_moisture
+#     name: rosemary-moisture
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "%"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.rosemary_temperature
+#     name:  rosemary-temp
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "\u00b0F"
+#   ### tilapia tank ###
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.tilapia_tank_battery
+#     name: tilapia_tank-battery
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "%"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.tilapia_tank_conductivity
+#     name: tilapia_tank-conductivity
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "\u00b5S/cm"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.tilapia_tank_light_intensity
+#     name: tilapia_tank_light
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "lux"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.tilapia_tank_moisture
+#     name:  tilapia_tank-moisture
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "%"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.tilapia_tank_temperature
+#     name:  tilapia_tank-temp
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "\u00b0F"
+#   ### tomato pot ###
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.tomato_pot_battery
+#     name: tomato_pot-battery
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "%"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.tomato_pot_conductivity
+#     name: tomato_pot-conductivity
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "\u00b5S/cm"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.tomato_pot_light_intensity
+#     name: tomato_pot_light
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "lux"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.tomato_pot_moisture
+#     name: tomato_pot-moisture
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "%"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.tomato_pot_temperature
+#     name:  tomato_pot-temp
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "\u00b0F"
+#   ### top table ###
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.top_table_battery
+#     name: top-table-battery
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "%"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.top_table_conductivity
+#     name: top-table-conductivity
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "\u00b5S/cm"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.top_table_light_intensity
+#     name: top-table_light
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "lux"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.top_table_moisture
+#     name:  top-table-moisture
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "%"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.top_table_temperature
+#     name:  top_table-temp
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "\u00b0F"
+#   ### Tree 1 ###
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.tree_1_battery
+#     name: tree-1-battery
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "%"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.tree_1_conductivity
+#     name: tree-1-conductivity
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "\u00b5S/cm"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.tree_1_light_intensity
+#     name: tree_1_light
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "lux"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.tree_1_moisture
+#     name:  tree-1-moisture
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "%"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.tree_1_temperature
+#     name:  tree-1-temp
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "\u00b0F"
+# ### tree 2 ###
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.tree_2_battery
+#     name: tree-2-battery
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "%"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.tree_2_conductivity
+#     name: tree-2-conductivity
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "\u00b5S/cm"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.tree_2_light_intensity
+#     name: tree_2_light
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "lux"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.tree_2_moisture
+#     name:  tree-2-moisture
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "%"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.tree_2_temperature
+#     name:  tree-2-temp
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "\u00b0F"
+# ### tree 3 ###
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.tree_3_battery
+#     name: tree-3-battery
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "%"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.tree_3_conductivity
+#     name: tree-3-conductivity
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "\u00b5S/cm"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.tree_3_light_intensity
+#     name: tree_3_light
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "lux"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.tree_3_moisture
+#     name:  tree-3-moisture
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "%"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.tree_3_temperature
+#     name:  tree-3-temp
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "\u00b0F"
+#  ### tree 4 ###
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.tree_4_battery
+#     name: tree-4-battery
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "%"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.tree_4_conductivity
+#     name: tree-4-conductivity
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "\u00b5S/cm"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.tree_4_light_intensity
+#     name: tree_4_light
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "lux"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.tree_4_moisture
+#     name:  tree-4-moisture
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "%"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.tree_4_temperature
+#     name:  tree-4-temp
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "\u00b0F"
+# ### tree 5 ###
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.tree_5_battery
+#     name: tree-5-battery
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "%"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.tree_5_conductivity
+#     name: tree-5-conductivity
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "\u00b5S/cm"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.tree_5_light_intensity
+#     name: tree_5_light
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "lux"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.tree_5_moisture
+#     name:  tree-5-moisture
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "%"
+#   - platform: rest
+#     resource: http://shed:8123/api/states/sensor.tree_5_temperature
+#     name:  tree-5-temp
+#     value_template: '{{ value_json.state }}'
+#     unit_of_measurement: "\u00b0F"
+#### Surf Data from NOAA ###
+  - platform: command_line
+    command: curl -s http://www.ndbc.noaa.gov/data/latest_obs/46242.rss|grep -i hei|grep -Eo '[0-9.]+'
+    name: NearShore - Wave Ht # Station 46242 - Camp Pendleton Nearshore, CA
+    unit_of_measurement: "ft"
+  - platform: command_line
+    command: curl -s http://www.ndbc.noaa.gov/data/latest_obs/46224.rss|grep -i hei|grep -Eo '[0-9.]+'
+    name: Offshore - Wave Ht # Station 46224 - Oceanside Offshore
+    unit_of_measurement: "ft"
+  - platform: command_line
+    command: curl -s http://www.ndbc.noaa.gov/data/latest_obs/46242.rss|grep -i temp|grep -Eo '[0-9.]+'|head -1
+    name:  Nearshore -  h2o Temp # Station 46242 - Camp Pendleton Nearshore, CA
+    unit_of_measurement: "°F"
+  - platform: command_line
+    command: curl -s http://www.ndbc.noaa.gov/data/latest_obs/46224.rss|grep -i temp|grep -Eo '[0-9.]+'|head -1
+    name:  Offshore - h2o Temp # Station 46224 - Oceanside Offshore
+    unit_of_measurement: "°F"
+  - platform: shodan
+    api_key: !secret SHODAN_API_KEY
+    query: 'home-assistant'
+  - platform: plex
+    host: maxx
+    name: maxx
+    username: !secret plex_user
+    password: !secret plex_pass
+  # - platform: sonarr
+  #   api_key: !secret sonarr_api
+  #   host: maxx
+  # - platform: sabnzbd
+  #   host: maxx
+  #   port: 8085
+  #   api_key: !secret sabnzbd_api
+  #   monitored_variables:
+  #     - 'current_status'
+  #     - 'speed'
+  #     - 'queue_size'
+  #     - 'queue_remaining'
+  #     - 'disk_size'
+  #     - 'disk_free'
+  #   unit: TB
+  - platform: season
+    type: astronomical
+  - platform: uptime
+    name: Time Online
+    unit_of_measurement: hours
+  ###### CUSTOM LINUX VERSION
+  ###### Thanks to https://github.com/Norien/Home-Assistant-Config/blob/master/packages/server_status.yaml#L92
+  # - platform: command_line
+  #   command: curl -X GET http://um001:61208/api/2/system
+  #   name: 'um001_linux_distro'
+  #   value_template: '{{ value_json.linux_distro }}'
+  #   scan_interval: 604800
+  - platform: command_line
+    command: curl -X GET http://sb:61208/api/2/system
+    name: 'hive_linux_distro'
+    value_template: '{{ value_json.linux_distro }}'
+    scan_interval: 604800
+  # - platform: command_line
+  #   command: curl -X GET http://shed:61208/api/2/system
+  #   name: 'shed_linux_distro'
+  #   value_template: '{{ value_json.linux_distro }}'
+  #   scan_interval: 604800
+  # - platform: command_line
+  #   command: curl -X GET http://maxx:61208/api/2/system
+  #   name: 'maxx_linux_distro'
+  #   value_template: '{{ value_json.linux_distro }}'
+  #   scan_interval: 604800
+  - platform: command_line
+    command: curl -X GET http://pepper.davedaley.com:61208/api/2/system
+    name: 'pepper_linux_distro'
+    value_template: '{{ value_json.linux_distro }}'
+    scan_interval: 604800
+  - platform: command_line
+    command: curl -X GET http://ovh.davedaley.com:61208/api/2/system
+    name: 'ovh_linux_distro'
+    value_template: '{{ value_json.linux_distro }}'
+    scan_interval: 604800
+  - platform: command_line
+    command: curl -X GET http://help.davedaley.com:61208/api/2/system
+    name: 'help_linux_distro'
+    value_template: '{{ value_json.linux_distro }}'
+    scan_interval: 604800
+  # - platform: command_line
+  #   command: curl -X GET http://prime.optincall.com:61208/api/2/system
+  #   name: 'prime_linux_distro'
+  #   value_template: '{{ value_json.linux_distro }}'
+  #   scan_interval: 604800
+  - platform: command_line
+    command: curl -X GET http://beta.optincall.com:61208/api/2/system
+    name: 'beta_linux_distro'
+    value_template: '{{ value_json.linux_distro }}'
+    scan_interval: 604800
+  - platform: command_line
+    command: curl -X GET http://sb:61208/api/2/sensors
+    name: hive CPU Temperature
+    value_template: '{{ value_json[0].value }}'
+    unit_of_measurement: '°C'
+    scan_interval: 300
+  # - platform: command_line
+  #   command: curl -X GET http://shed:61208/api/2/sensors
+  #   name: shed CPU Temperature
+  #   value_template: '{{ value_json[0].value }}'
+  #   unit_of_measurement: '°C'
+  #   scan_interval: 300
+  # - platform: command_line
+  #   command: curl -X GET http://maxx:61208/api/2/sensors
+  #   name: maxx CPU Temperature
+  #   value_template: '{{ value_json[0].value }}'
+  #   unit_of_measurement: '°C'
+  #   scan_interval: 300
+  # - platform: fitbit
+  #   clock_format: 12H
+  #   monitored_resources:
+  #     - "activities/heart"

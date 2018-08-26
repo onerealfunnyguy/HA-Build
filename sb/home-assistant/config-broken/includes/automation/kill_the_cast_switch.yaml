@@ -1,0 +1,11 @@
+alias: Kill the Cast input
+initial_state: True
+trigger:
+  platform: state
+  entity_id: input_boolean.notify_killthecast
+  to: 'on'
+  from: 'off'
+action:
+- service: shell_command.killcaststream
+- service: input_boolean.turn_off
+  entity_id: input_boolean.notify_killthecast

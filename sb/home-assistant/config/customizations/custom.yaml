@@ -1,0 +1,217 @@
+# GROUP PRIORITIES IN UI
+# DEFAULT VIEW
+# DEVICE VIEW
+  group.cave_control:
+    order: 1
+  group.droidvideo:
+    order: 2
+  group.mediaplayers:
+    order: 3
+  group.speed_test:
+    order: 4
+  group.network:
+    order: 5
+  group.server_load:
+    order: 6
+# SERVERS VIEW
+  group.hive:
+    icon: mdi:server
+    order: 7
+  group.pepper:
+    order: 8
+  group.ovh:
+    order: 9
+  group.help:
+    order: 10
+  group.prime:
+    order: 11
+  media_player.shortfire:
+    icon: mdi:amazon
+  media_player.shortstick:
+    icon: mdi:amazon
+  switch.lamp:
+    icon: mdi:lightbulb
+  switch.frog:
+    icon: mdi:lightbulb
+  switch.tv:
+    icon: mdi:monitor
+    emulated_hue: true
+    emulated_hue_name: "UpStar"
+  switch.tv_plasma:
+    emulated_hue: true
+    emulated_hue_name: "Plasma"
+    icon: mdi:monitor
+  switch.tv_emerson:
+    emulated_hue: true
+    emulated_hue_name: "Emerson"
+    icon: mdi:monitor
+  switch.fan_pwr:
+      emulated_hue: true
+      emulated_hue_name: "Fan"
+      icon: mdi:fan
+  switch.sleep:
+    icon: mdi:sleep
+  switch.plex:
+    icon: mdi:plex
+  switch.coffee:
+    icon: mdi:coffee
+  light.fireplace:
+    icon: mdi:fire
+  sensor.speedtest_ping:
+    icon: mdi:speedometer
+  sensor.speedtest_download:
+    icon: mdi:speedometer
+  sensor.speedtest_upload:
+    icon: mdi:speedometer
+  sensor.hive_disk_use:
+    icon: mdi:harddisk
+  sensor.hive_disk_free:
+    icon: mdi:harddisk
+  sensor.hive_disk_use_2:
+    icon: mdi:harddisk
+  sensor.hive_swap_free:
+    icon: mdi:harddisk
+  sensor.hive_swap_use:
+    icon: mdi:harddisk
+  sensor.hive_swap_use_2:
+    icon: mdi:harddisk
+  sensor.help_swap_free:
+    icon: mdi:harddisk
+  sensor.help_swap_use:
+    icon: mdi:harddisk
+  sensor.help_swap_use_2:
+    icon: mdi:harddisk
+  sensor.ovh_disk_use:
+    icon: mdi:harddisk
+  sensor.ovh_disk_free:
+    icon: mdi:harddisk
+  sensor.ovh_disk_use_2:
+    icon: mdi:harddisk
+  sensor.ovh_swap_free:
+    icon: mdi:harddisk
+  sensor.ovh_swap_use:
+    icon: mdi:harddisk
+  sensor.ovh_swap_use_2:
+    icon: mdi:harddisk
+  sensor.prime_disk_use:
+    icon: mdi:harddisk
+  sensor.prime_disk_free:
+    icon: mdi:harddisk
+  sensor.prime_disk_use_2:
+    icon: mdi:harddisk
+  sensor.prime_swap_free:
+    icon: mdi:harddisk
+  sensor.prime_swap_use:
+    icon: mdi:harddisk
+  sensor.prime_swap_use_2:
+    icon: mdi:harddisk
+  sensor.hive_cpu_load:
+    icon: mdi:settings
+  sensor.help_cpu_load:
+    icon: mdi:settings
+  sensor.ovh_cpu_load:
+    icon: mdi:settings
+  sensor.prime_cpu_load:
+    icon: mdi:settings
+  sensor.prime_running:
+    icon: mdi:settings
+  sensor.prime_sleeping:
+    icon: mdi:settings
+  sensor.prime_thread:
+    icon: mdi:settings
+  sensor.prime_total:
+    icon: mdi:settings
+  sensor.help_running:
+    icon: mdi:settings
+  sensor.help_sleeping:
+    icon: mdi:settings
+  sensor.help_thread:
+    icon: mdi:settings
+  sensor.help_total:
+    icon: mdi:settings
+  sensor.ovh_running:
+    icon: mdi:settings
+  sensor.ovh_sleeping:
+    icon: mdi:settings
+  sensor.ovh_thread:
+    icon: mdi:settings
+  sensor.ovh_total:
+    icon: mdi:settings
+  sensor.hive_running:
+    icon: mdi:settings
+  sensor.hive_sleeping:
+    icon: mdi:settings
+  sensor.hive_thread:
+    icon: mdi:settings
+  sensor.hive_total:
+    icon: mdi:settings
+  sensor.hive_ram_free:
+    icon: mdi:server
+  sensor.hive_ram_use:
+    icon: mdi:server
+  sensor.hive_ram_use_2:
+    icon: mdi:server
+  sensor.help_ram_free:
+    icon: mdi:server
+  sensor.help_ram_use:
+    icon: mdi:server
+  sensor.help_ram_use_2:
+    icon: mdi:server
+  sensor.ovh_ram_free:
+    icon: mdi:server
+  sensor.ovh_ram_use:
+    icon: mdi:server
+  sensor.ovh_ram_use_2:
+    icon: mdi:server
+  sensor.prime_ram_use:
+    icon: mdi:server
+  sensor.prime_ram_use_2:
+    icon: mdi:server
+  sensor.desk_cam_events:
+    icon: mdi:camera
+  sensor.desk_cam_status:
+    icon: mdi:camera
+  sensor.front_door_events:
+    icon: mdi:camera
+  sensor.front_door_motion:
+    icon: mdi:walk
+  sensor.front_door_status:
+    icon: mdi:camera
+  sensor.mister_bill_events:
+    icon: mdi:camera
+  sensor.mister_bill_status:
+    icon: mdi:camera
+  sensor.sk8board_events:
+    icon: mdi:camera
+  sensor.sk8board_status:
+    icon: mdi:camera
+  sensor.surfboard_events:
+    icon: mdi:camera
+  sensor.surfboard_status:
+    icon: mdi:camera
+  sensor.yweather_current:
+    friendly_name: Current
+  sensor.yweather_humidity:
+    friendly_name: Humidity
+  sensor.yweather_pressure:
+    friendly_name: Pressure
+  sensor.yweather_temperature:
+    friendly_name: Temperature
+  sensor.yweather_visibility:
+    friendly_name: Visibility
+  sensor.yweather_wind_speed:
+    friendly_name: Wind Speed
+  scene.imup:
+    friendly_name: Im Up
+    emulated_hue: true
+    emulated_hue_name: Wakey Wakey
+  scene.meds:
+    friendly_name: Took meds
+    emulated_hue: true
+    emulated_hue_name: Took Meds
+  scene.frogs:
+    friendly_name: Fed Frogs
+    emulated_hue: true
+    emulated_hue_name: Fed Frogs
+  media_player.aftm15:
+    hidden: true

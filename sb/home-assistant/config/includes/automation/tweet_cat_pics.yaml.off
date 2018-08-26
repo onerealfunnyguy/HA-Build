@@ -1,0 +1,25 @@
+alias: tweet the Cat
+trigger:
+  platform: state
+  entity_id:
+    - sensor.cat_cam_motion
+    - sensor.cat_cam_battery_level
+condition:
+  - condition: and
+    conditions:
+      - condition: numeric_state
+        entity_id: sensor.cat_cam_motion
+        above: 115
+      - condition: numeric_state
+        entity_id: sensor.cat_cam_battery_level
+        above: 75
+action:
+- service: notify.orfgcatcam
+  data:
+        message: "Test at {{ now().strftime('%I:%M:%S %p') }}."
+#        data:
+#          media: http://catcam:8080/shot.jpg
+#  data_template:
+#    message: "{{ trigger.to_state.attributes.friendly_name }} is now {{ trigger.to_state.state }}%"
+    #data:
+    #  media: /tmp/shot.jpg

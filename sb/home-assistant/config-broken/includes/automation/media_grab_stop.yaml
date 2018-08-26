@@ -1,0 +1,11 @@
+alias: Stop Media Grab
+initial_state: True
+trigger:
+  platform: state
+  entity_id: input_boolean.grab_stop
+  to: 'on'
+  from: 'off'
+action:
+- service: shell_command.media_grab_stop
+- service: input_boolean.turn_off
+  entity_id: input_boolean.grab_stop

@@ -1,0 +1,137 @@
+######################################################################################################
+#Alert Sound Ding
+######################################################################################################
+
+alert_sound_ding:
+  sequence:
+# Publish the current zone 2 state to mqtt
+  - service: mqtt.publish
+    data_template:
+     topic: "zone2/power"
+     retain: true
+     payload: '{{ states.media_player.yamaha_receiver_zone_2.state }}'
+  - service: media_player.turn_on
+    entity_id: media_player.yamaha_receiver_zone_2
+  - delay: 00:00:04
+# Publish the current source to mqtt
+  - service: mqtt.publish
+    data_template:
+     topic: "zone2/source"
+     retain: true
+     payload: '{{ states.media_player.yamaha_receiver_zone_2.attributes.source }}'
+  #- delay: 00:00:01
+# Change input to AUDIO 3 -
+  - service: media_player.select_source
+    entity_id: media_player.yamaha_receiver_zone_2
+    data:
+        source: "AUDIO3"
+#  - delay: 00:00:01
+# Save current volume
+  - service: mqtt.publish
+    data_template:
+     topic: "zone2/volume"
+     retain: true
+     payload: '{{ states.media_player.yamaha_receiver_zone_2.attributes.volume_level }}'
+  - service: media_player.volume_set
+    entity_id: media_player.yamaha_receiver_zone_2
+    data:
+        volume_level: "0.95"
+
+# Save zone3 Current State
+  - service: mqtt.publish
+    data_template:
+     topic: "zone3/status"
+     retain: true
+     payload: '{{ states.media_player.zone3.state }}'
+# Save MPD Current State
+  - service: mqtt.publish
+    data_template:
+     topic: "mpd/status"
+     retain: true
+     payload: '{{ states.media_player.mpd_player.state }}'
+# Save Living Speakers State
+  - service: mqtt.publish
+    data_template:
+     topic: "speakers/living"
+     retain: true
+     payload: '{{ states.switch.living_speakers.state }}'
+# Save Patio Speakers State
+  - service: mqtt.publish
+    data_template:
+     topic: "speakers/patio"
+     retain: true
+     payload: '{{ states.switch.patio_speakers.state }}'
+# Save Room Speakers State
+  - service: mqtt.publish
+    data_template:
+     topic: "speakers/rooms"
+     retain: true
+     payload: '{{ states.switch.room_speakers.state }}'
+# Save Kitchen Speakers State
+  - service: mqtt.publish
+    data_template:
+     topic: "speakers/kitchen"
+     retain: true
+     payload: '{{ states.switch.kicthen_speakers.state }}'
+# Turn On All Speakers
+  - service: switch.turn_on
+    entity_id: switch.patio_speakers
+  - service: switch.turn_on
+    entity_id: switch.kitchen_speakers
+  - service: switch.turn_on
+    entity_id: switch.living_speakers
+  - service: switch.turn_on
+    entity_id: switch.room_speakers
+
+# Play Notification Sound
+  - delay: 00:00:01
+  - service: media_player.play_media
+    entity_id: media_player.zone3
+    data_template:
+        media_content_id: >
+          http://192.168.2.10:50002/m/NDLNA/{{dlnafile}}.wav
+        media_content_type: audio/mp4
+  - delay: 00:00:04
+# Play Chime audio from synology DLNA server
+  - service: media_player.play_media
+    entity_id: media_player.zone3
+    data_template:
+        media_content_id: >
+          http://192.168.2.10:50002/m/NDLNA/{{dlnafile}}.wav
+        media_content_type: audio/mp4
+  - delay: 00:00:04
+# Return Zone 2 Back to Previous Source
+  - service: media_player.select_source
+    entity_id: media_player.yamaha_receiver_zone_2
+    data_template:
+        source: >
+           {{ states("sensor.zone_2_source") }}
+# Return Zone 2 Back to Previous Volume Level
+  - service: media_player.volume_set
+    entity_id: media_player.yamaha_receiver_zone_2
+    data_template:
+        volume_level: >
+           {{ states("sensor.zone_2_volume") }}
+
+# Return Speakers to previous state
+
+  - service_template: >
+        {{ 'homeassistant.turn_off' if ((states.sensor.living_speakers_status.state == "off" )) else 'homeassistant.turn_on' }}
+    entity_id: switch.living_speakers
+  - service_template: >
+        {{ 'homeassistant.turn_off' if ((states.sensor.kitchen_speakers_status.state == "off" )) else 'homeassistant.turn_on' }}
+    entity_id: switch.kitchen_speakers
+  - service_template: >
+        {{ 'homeassistant.turn_off' if ((states.sensor.room_speakers_status.state == "off" )) else 'homeassistant.turn_on' }}
+    entity_id: switch.room_speakers
+  - service_template: >
+        {{ 'homeassistant.turn_off' if ((states.sensor.patio_speakers_status.state == "off" )) else 'homeassistant.turn_on' }}
+    entity_id: switch.patio_speakers
+
+# Turn off Zone 2 depending on Media Player Activity
+
+  - delay: 00:00:01
+  - service_template: >
+        {{ 'media_player.turn_off' if ((states.sensor.mpd_status.state == "paused" or states.sensor.mpd_status.state == "off") and (states.sensor.zone3_status.state == "off" or states.sensor.zone3_status.state == "idle")) else 'media_player.turn_on' }}
+
+    entity_id: media_player.yamaha_receiver_zone_2

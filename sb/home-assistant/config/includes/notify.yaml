@@ -1,0 +1,35 @@
+# notify:
+  - name: twillo_call
+    platform: twilio_call
+    from_number: !secret twillo_from
+  - name: SMS 1
+    platform: twilio_sms
+    from_number: !secret twillo_from
+  - name: hive_slack
+    platform: slack
+    api_key: !secret slack_hive
+    default_channel: '#ha-notify'
+  - name: hive_cat_slack
+    platform: slack
+    api_key: !secret slack_hive
+    default_channel: '#cat-pics'
+  - name: hive_orfg_med_log
+    platform: slack
+    api_key: !secret slack_hive
+    default_channel: ' #orfg-medication-log'
+  - name: prime_slack
+    platform: slack
+    api_key: !secret slack_prime
+    default_channel: '#server-alerts'
+  - name: orfg-catcam
+    platform: twitter
+    consumer_key: !secret orfg_consumer_key
+    consumer_secret: !secret orfg_consumer_secret
+    access_token: !secret orfg_access_token
+    access_token_secret: !secret orfg_access_token_secret
+  - platform: nfandroidtv
+    name: ShortFire
+    host: shortfire
+  - platform: nfandroidtv
+    name: ShortStick
+    host: shortstick

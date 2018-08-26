@@ -1,0 +1,12 @@
+# Example configuration.yaml entry
+# alexa:
+#  flash_briefings:
+    serverhealth:
+      - title: How are the servers?
+        text: !include templates/getserverhealth.yaml
+    gardenhealth:
+      - title: How is the garden?
+        text: !include templates/getplanthealth.yaml
+    treehealth:
+      - title: How are the trees?
+        text: !include templates/gettreehealth.yaml
